@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "academicpages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: ""
 excerpt: "About me"
 author_profile: true
 redirect_from: 
@@ -8,3 +8,10 @@ redirect_from:
   - /about.html
 ---
 
+Welcome to my webpage. It is still under construction, but feel free to look around. 
+
+I am a PhD student in economics at the University of Oxford. 
+
+My research interests are: macroeconomics and monetary economics, inequality, networks and climate change.
+
+Before turning to economics, I worked in the performing arts. You can find some excerpts at the [Performing Arts](https://davidvandijcke.github.io/performing-arts) tab.
