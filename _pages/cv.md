@@ -11,30 +11,38 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* DPhil (PRS) in Economics, University of Oxford (2019-)
+* MSc in Economics (magna cum laude), KU Leuven, 2018-19
+  - Major: Research in Economics
+* MSc in Economic Policy (summa cum laude), KU Leuven, 2017-18
+* BA (abridged) in Philosophy (magna cum laude), KU Leuven, 2016-19
+* BA in Drama (cum laude), University College Ghent, 2013-16
+* Secondary education: Latin-Mathematics, Heilig-Hart Instituut Heverlee
+
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Summer 2019: Research Intern, Deutsche Bundesbank
+  * Duties included: Economic research, data analysis
+  * Supervisor: Dr. Vivien Lewis
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Spring 2019: Research Assistant, KU Leuven
+  * Duties included: Economic research, data analysis
+  * Supervisor: Prof. Dr. Iris Kesternich
+  
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Computer Skills
+  - Advanced: MATLAB, R, Python, Stata, LaTeX, Excel
+  - Basic: Linux
+  - Other: Graduate-level machine learning, numerical methods
+* Languages
+  * Dutch (Native)
+  * English (Proficiency, C2/4+)
+  * French (Advanced, C1/3)
+  * German (Lower Intermediate, B1/1+)
+  
 
 Publications
 ======
@@ -42,18 +50,21 @@ Publications
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Talks
-======
-  <ul>{% for post in site.talks %}
-    {% include archive-single-talk-cv.html %}
-  {% endfor %}</ul>
   
-Teaching
+Honors and Awards
 ======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+*	The Pinxten Award for the best student paper in the Master of Economics or the Master of Advanced Studies in Economics of the Department of Economics (2018-19, KU Leuven, BE). 
+* One of 20 best theatre pieces of 2017-18 (Het Theaterfestival, BE).
+
   
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* ‘Buddy program’ for international students arriving at KU Leuven (2018-2019).
+*	Volunteer for youth performing arts company fABULEUS, Leuven. 
+*	Guitar teacher for adults and children (including differently-abled persons) at JMA Crescendo, Leuven.
+
+
+[Full CV](https://drive.google.com/open?id=1B7pr0DKSw5JPlK4OLQT1bW37ye00kl6T)
+
+
+
