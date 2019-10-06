@@ -85,8 +85,8 @@ author:
   bio              : "PhD student in economics at the University of Oxford."
   location         : "Oxford"
   employer         :
-  pubmed           : ""
-  googlescholar    : ""
+  pubmed           : 
+  googlescholar    :
   email            : "david.vandijcke@economics.ox.ac.uk"
   researchgate     :  "https://www.researchgate.net/profile/David_Van_Dijcke"
   uri              :
