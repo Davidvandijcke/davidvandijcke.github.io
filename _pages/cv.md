@@ -11,12 +11,12 @@ redirect_from:
 
 Education
 ======
-* DPhil (PRS) in Economics, University of Oxford (2019-)
-* MSc in Economics (magna cum laude), KU Leuven, 2018-19
+* **Probationer Research Student**, Economics, University of Oxford (2019-)
+* **MSc**, Economics (magna cum laude), KU Leuven, 2018-19
   - Major: Research in Economics
-* MSc in Economic Policy (summa cum laude), KU Leuven, 2017-18
-* BA (abridged) in Philosophy (magna cum laude), KU Leuven, 2016-19
-* BA in Drama (cum laude), University College Ghent, 2013-16
+* **MSc**, Economic Policy (summa cum laude), KU Leuven, 2017-18
+* **BA** (abridged), Philosophy (magna cum laude), KU Leuven, 2016-19
+* **BA**, Drama (cum laude), University College Ghent, 2013-16
 * Secondary education: Latin-Mathematics, Heilig-Hart Instituut Heverlee
 
 
