@@ -1,15 +1,16 @@
 ---
-title: "Paper Title Number 1"
+title: "The Impact of ECB Quantitative Easing on Income Inequality in the Netherlands: a First Assessment"
 collection: publications
 permalink: /publication/2009-10-01-paper-title-number-1
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
+excerpt: 'This article looks at the impact of the 2015 European Central Bank unconventional monetary policy (UMP) on income inequality in the Netherlands. To that end, it uses a panel survey from the Dutch central bank to decompose the contributions of selected UMP channels to the change in household income between two periods (11-13 / 14-16). It finds that UMP&apos;s effect through these channels was strongly equalizing. The only two other papers on the topic find similar results for other euro area countries.'
 date: 2009-10-01
-venue: 'Journal 1'
-paperurl: 'http://academicpages.github.io/files/paper1.pdf'
-citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
+venue: 'Bank- en Financiewezen'
+paperurl: 'http://davidvandijcke.github.io/files/TheImpactofECBUnconventionalMonetaryPolicyonIncomeInequalityintheNetherlandsBF_proef2.pdf'
+citation: 'Van Dijcke, D. (2018). &quot;The Impact of ECB Quantitative Easing on Income Inequality in the Netherlands: a First Assessment.&quot;  <i>Bank- en Financiewezen<i>, 3/2018 '
 ---
-This paper is about the number 1. The number 2 is left for future work.
 
-[Download paper here](http://academicpages.github.io/files/paper1.pdf)
+<a href='http://davidvandijcke.github.io/files/TheImpactofECBUnconventionalMonetaryPolicyonIncomeInequalityintheNetherlandsBF_proef2.pdf'>Download paper here</a>
 
-Recommended citation: Your Name, You. (2009). "Paper Title Number 1." <i>Journal 1</i>. 1(1).
+This article looks at the impact of the 2015 European Central Bank unconventional monetary policy (UMP) on income inequality in the Netherlands. To that end, it uses a panel survey from the Dutch central bank to decompose the contributions of selected UMP channels to the change in household income between two periods (11-13 / 14-16). It finds that UMP&apos;s effect through these channels was strongly equalizing. The only two other papers on the topic find similar results for other euro area countries.
+
+Recommended citation: Van Dijcke, D. (2018). "The Impact of ECB Quantitative Easing on Income Inequality in the Netherlands: a First Assessment."  <i>Bank- en Financiewezen<i>, 3/2018 

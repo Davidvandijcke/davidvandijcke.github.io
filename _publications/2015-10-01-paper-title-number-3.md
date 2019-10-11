@@ -1,15 +1,16 @@
 ---
-title: "Paper Title Number 3"
+title: "Work Effort and the Cycle: Evidence from Survey Data"
 collection: publications
 permalink: /publication/2015-10-01-paper-title-number-3
-excerpt: 'This paper is about the number 3. The number 4 is left for future work.'
+excerpt: 'We use data from the World Values Survey and the Work Orientations Survey to analyse the cyclical nature of work effort and attitudes to work effort. Our aim is to test two competing theories of labor effort, the labor hoarding view and the Shapiro and Stiglitz (1984) &apos;shirking model&apos;. Self-reported work effort is found to be strongly procyclical, while attitudes to effort move slightly countercyclically. We provide evidence for the presence of labor hoarding by showing how the cyclicality of effort changes with the strictness of employment protection legislation. Finally, we document heterogeneity in effort cyclicality across occupations and individuals.'
 date: 2015-10-01
-venue: 'Journal 1'
-paperurl: 'http://academicpages.github.io/files/paper3.pdf'
-citation: 'Your Name, You. (2015). &quot;Paper Title Number 3.&quot; <i>Journal 1</i>. 1(3).'
+venue: 'Bundesbank Discussion Paper'
+paperurl: 'http://davidvandijcke.github.io/files/LvD_091019_NuCamp.pdf'
+citation: 'Lewis, V. and Van Dijcke, D. (2019). &quot;Work Effort and the Cycle: Evidence from Survey Data.&quot;  <i>Bundesbank Discussion Paper <i>. (forthcoming)'
 ---
-This paper is about the number 3. The number 4 is left for future work.
 
-[Download paper here](http://academicpages.github.io/files/paper3.pdf)
+<a href='http://davidvandijcke.github.io/files/LvD_091019_NuCamp.pdf'>Download paper here</a>
 
-Recommended citation: Your Name, You. (2015). "Paper Title Number 3." <i>Journal 1</i>. 1(3).
+We use data from the World Values Survey and the Work Orientations Survey to analyse the cyclical nature of work effort and attitudes to work effort. Our aim is to test two competing theories of labor effort, the labor hoarding view and the Shapiro and Stiglitz (1984) &apos;shirking model&apos;. Self-reported work effort is found to be strongly procyclical, while attitudes to effort move slightly countercyclically. We provide evidence for the presence of labor hoarding by showing how the cyclicality of effort changes with the strictness of employment protection legislation. Finally, we document heterogeneity in effort cyclicality across occupations and individuals.
+
+Recommended citation: Lewis, V. and Van Dijcke, D. (2019). "Work Effort and the Cycle: Evidence from Survey Data."  <i>Bundesbank Discussion Paper <i>. (forthcoming)
