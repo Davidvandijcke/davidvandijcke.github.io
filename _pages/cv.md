@@ -22,8 +22,8 @@ Education
 Work experience
 ======
 * Summer 2019: Research Intern, Deutsche Bundesbank
-  * Duties included: Economic research, data analysis
-  * Supervisor: Dr. Vivien Lewis
+  - Duties included: Economic research, data analysis
+  - Supervisor: Dr. Vivien Lewis
 
 * Spring 2019: Research Assistant, KU Leuven
   * Duties included: Economic research, data analysis
@@ -37,10 +37,10 @@ Skills
   - Basic: Linux
   - Other: Graduate-level machine learning, numerical methods
 * Languages
-  * Dutch (Native)
-  * English (Proficiency, C2/4+)
-  * French (Advanced, C1/3)
-  * German (Lower Intermediate, B1/1+)
+  - Dutch (Native)
+  - English (Proficiency, C2/4+)
+  - French (Advanced, C1/3)
+  - German (Lower Intermediate, B1/1+)
   
 
 Publications
