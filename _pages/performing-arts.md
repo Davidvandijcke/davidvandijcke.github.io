@@ -11,5 +11,5 @@ redirect_from:
 As Performer
 ======
 * *Ivona, Princess of Burgundy", Tibaldus / Toneelhuis
-![]( yvonne .jpg) 
+<img src="../images/yvonne.jpg" alt="hi" class="inline"/>
 
