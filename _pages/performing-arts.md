@@ -33,12 +33,12 @@ As Performer
 [<img src="../images/othello.jpg" alt="hi" class="inline"/>](https://vimeo.com/65708587) <br/>
 *"Top-notch text-based theatre"* </span>
 &ndash; \*\*\*\* [De Morgen](https://davidvandijcke.github.io/images/othello-review.png)
-<br/> <br/>
+<br/> <br/> <br/> <br/>
 
 As Director
 ======
 *[The Remaining Act](https://davidvandijcke.github.io/images/REMAININGACTFINI.pdf)*
-[<img src="../images/theRemainingAct.jpg" alt="hi" class="inline"/>](https://vimeo.com/171912737) <br/><br/>
+[<img src="../images/theRemainingAct.jpg" alt="hi" class="inline"/>](https://vimeo.com/171912737) <br/> <br/>
 
-*[Outwards (Exploration #1)](https://davidvandijcke.github.io/images/REMAININGACTFINI.pdf)*
+*Outwards (Exploration #1)*
 [<img src="../images/outwards.jpg" alt="hi" class="inline"/>](https://vimeo.com/139134269)
