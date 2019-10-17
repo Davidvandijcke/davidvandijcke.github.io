@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-Welcome to my webpage. It is still under construction, but feel free to look around. 
+Welcome to my webpage. Feel free to look around. 
 
 I am a PhD student in economics at the University of Oxford. 
 
