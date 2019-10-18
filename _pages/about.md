@@ -10,7 +10,7 @@ redirect_from:
 
 Welcome to my webpage. Feel free to look around. 
 
-I am a PhD student in economics at the University of Oxford. 
+I am a Probationer Research Student in economics at the University of Oxford. 
 
 My [research](https://davidvandijcke.github.io/research) interests are: macroeconomics and monetary economics, inequality, networks and climate change.
 
