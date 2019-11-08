@@ -12,7 +12,7 @@ Welcome to my webpage. Feel free to look around.
 
 I am a Probationer Research Student in economics at the University of Oxford. 
 
-My [research](https://davidvandijcke.github.io/research) interests are: macroeconomics and monetary economics, inequality, networks and climate change.
+My [research](https://davidvandijcke.github.io/research) interests are: macroeconomics and monetary economics, firm and agent heterogeneity, inequality, and climate change.
 
 Please find my [CV](https://davidvandijcke.github.io/cv) here.
 
