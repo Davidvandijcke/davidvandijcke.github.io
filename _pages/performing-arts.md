@@ -16,6 +16,10 @@ As Performer
 &ndash; Joyce McMillan in [The Scotsman](https://www.scotsman.com/lifestyle-2-15039/culture/edinburgh-festivals/theatre-review- ivona-princess-of-burgundia-1-4542136) \*\*\*\*, August 26, 2017 
 <br/> <br/>
 
+*[These Associations](https://www.theguardian.com/artanddesign/2016/nov/16/tino-sehgal-carte-blanche-mind-bending-exhibition-palais-de-tokyo-paris)*, Tino Sehgal / Palais de Tokyo
+[<img src="../images/tino.jpg" alt="hi" class="inline"/>](https://www.youtube.com/watch?v=woLx-Ty6E54) <br/>
+<br/> <br/>
+
 *[Répétitions](https://www.villaempain.com/en/exhibitions/past-exhibitions/repetition/)*, Asad Raza / Fondation Boghossian 
 [<img src="../images/repetitions.jpg" alt="hi" class="inline"/>](https://www.youtube.com/watch?v=G-sKmcCwpBk) <br/>
 <br/> <br/>
