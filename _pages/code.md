@@ -8,7 +8,9 @@ redirect_from:
 
 {% include base_path %}
 
-**[Shadow Rate Estimates](../files/SSR.csv)** 
+**Shadow Rate Estimates** 
+
+Download [here](../files/SSR.csv)
 [<img src="../images/shadowplot.jpg" alt="hi" class="inline"/>] <br/>
 
 Please cite: 
