@@ -8,8 +8,8 @@ redirect_from:
 
 {% include base_path %}
 
-** [Shadow Rate Estimates](../files/SSR.csv) ** 
-[<img src="../images/shadowplot.png" alt="hi" class="inline"/>]
+**[Shadow Rate Estimates](../files/SSR.csv)** 
+[<img src="../images/shadowplot.png" alt="hi" class="inline"/>] <br/>
 
 Please cite: Van Dijcke, D. (2019). Leaning Against the Wind When Inequality Bites Back. Working Paper. 
 
