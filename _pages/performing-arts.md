@@ -35,7 +35,7 @@ As Performer
 
 *[Othello](https://www.fabuleus.be/othello)*, Carl von Winckelmann / fABULEUS <br/>
 [<img src="../images/othello.jpg" alt="hi" class="inline"/>](https://vimeo.com/65708587) <br/>
-*"Top-notch text-based theatre"* </span>
+*"Top-notch text-based theatre"* <br/>
 &ndash; \*\*\*\* [De Morgen](https://davidvandijcke.github.io/images/othello-review.png)
 <br/> <br/> <br/> <br/>
 
