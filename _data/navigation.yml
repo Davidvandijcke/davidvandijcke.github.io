@@ -6,8 +6,9 @@ main:
   - title: "CV"
     url: /cv/
     
+  - title: "Code"
+    url: /code/
+    
   - title: "Performing Arts"
     url: /performing-arts/
     
-  - title: "Code"
-    url: /code/
