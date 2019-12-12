@@ -10,11 +10,11 @@ redirect_from:
 
 **Shadow Rate Estimates** 
 
-Extends the series on the Bank of New Zealand website to additional OECD countries. 
-See: https://www.rbnz.govt.nz/research-and-publications/research-programme/additional-research/measures-of-the-stance-of-united-states-monetary-policy/comparison-of-international-monetary-policy-measures
-
 Download [here](../files/SSR.csv)
 <img src="../images/shadowplot.jpg" alt="hi" class="inline"/> <br/>
+
+Extends the series on the Bank of New Zealand website to additional OECD countries. 
+See: https://www.rbnz.govt.nz/research-and-publications/research-programme/additional-research/measures-of-the-stance-of-united-states-monetary-policy/comparison-of-international-monetary-policy-measures
 
 
 Please cite: 
