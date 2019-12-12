@@ -11,7 +11,7 @@ redirect_from:
 **Shadow Rate Estimates** 
 
 Download [here](../files/SSR.csv)
-[<img src="../images/shadowplot.jpg" alt="hi" class="inline"/>] <br/>
+<img src="../images/shadowplot.jpg" alt="hi" class="inline"/> <br/>
 
 Please cite: 
 Van Dijcke, D. (2019). Leaning Against the Wind When Inequality Bites Back. Working Paper. 
