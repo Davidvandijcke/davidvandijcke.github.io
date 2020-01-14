@@ -8,6 +8,9 @@ redirect_from:
 
 {% include base_path %}
 
+*Showreel* <br/> <br/>
+[<img src="../images/showreel.jpg" alt="hi" class="inline"/>](https://vimeo.com/200251921) <br/>
+
 As Performer
 ======
 *[Ivona, Princess of Burgundy](https://www.toneelhuis.be/nl/programma/yvonne-prinses-van-bourgondie/)*, Tibaldus / Toneelhuis 
@@ -46,3 +49,4 @@ As Director
 
 *Outwards (Exploration #1)*
 [<img src="../images/outwards.jpg" alt="hi" class="inline"/>](https://vimeo.com/139134269)
+
