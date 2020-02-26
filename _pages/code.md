@@ -8,6 +8,14 @@ redirect_from:
 
 {% include base_path %}
 
+**GitHub** 
+
+Please find my GitHub commits and repositories here:
+
+<div class="github-card" data-github="davidvandijcke" data-width="400" data-height="" data-theme="default"></div>
+<script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+
+
 **Shadow Rate Estimates** 
 
 Download [here](../files/SSR.csv)
