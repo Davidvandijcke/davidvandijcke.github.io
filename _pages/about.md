@@ -12,7 +12,10 @@ Welcome to my webpage. Feel free to look around.
 
 I am a DPhil Student (PRS) in Economics at the University of Oxford. 
 
-My [research](https://davidvandijcke.github.io/research) interests are: macroeconomics and monetary economics, firm and agent heterogeneity, inequality, and climate change.
+My [research](https://davidvandijcke.github.io/research) fields are: macroeconomics, industrial organization, labor economics.
+
+My research interests are: market power, firm and household heterogeneity, inequality.
+
 
 Please find my [CV](https://davidvandijcke.github.io/cv) here.
 
