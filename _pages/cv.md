@@ -10,7 +10,7 @@ redirect_from:
 
 Education
 ======
-* **Probationer Research Student**, Economics, University of Oxford (2019-)
+* **DPhil (PRS)**, Economics, University of Oxford (2019-)
 * **MSc**, Economics (magna cum laude), KU Leuven, 2018-19
   - Major: Research in Economics
 * **MSc**, Economic Policy (summa cum laude), KU Leuven, 2017-18
