@@ -50,6 +50,11 @@ Publications
   {% endfor %}</ul>
   
   
+Media
+======
+* Van Dijcke, D. ["De grote boze markt."](../images/DeStandaard_19032020.jpg) De Standaard, 19 March 2020: 33. Print.
+
+  
 Honors and Awards
 ======
 *	The Pinxten Award for the best student paper in the Master of Economics or the Master of Advanced Studies in Economics of the Department of Economics (2018-19, KU Leuven, BE). 
