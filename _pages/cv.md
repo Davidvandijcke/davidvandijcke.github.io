@@ -52,7 +52,7 @@ Publications
   
 Media
 ======
-* Van Dijcke, D. ["De grote boze markt."](../images/Media/DeStandaard_19032020.pdf) De Standaard, 19 March 2020: 33. Print. ([.txt](./text/DeStandaard_19032020))
+* Van Dijcke, D. ["De grote boze markt."](../images/Media/DeStandaard_19032020.pdf) De Standaard, 19 March 2020: 33. Print. ([.txt](../text/DeStandaard_19032020))
 
   
 Honors and Awards
