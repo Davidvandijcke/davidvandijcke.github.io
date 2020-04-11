@@ -18,7 +18,7 @@ Please find my GitHub commits and repositories here:
 
 **COVID-19: US State Lock-Down Policies - Dates of Implementation** 
 
-The state policy dataset for our working paper "The COVID-19 Pandemic: Government vs. Community Action Across the United States" can be found [here](../files/SSR.csv). For the county-level dataset, see [this webpage](https://www.naco.org/resources/featured/coronavirus-disease-2019).
+The dataset with implementation dates of states' lock-down policies from our working paper "The COVID-19 Pandemic: Government vs. Community Action Across the United States" can be found [here](../files/SSR.csv). For the county-level dataset, see [this webpage](https://www.naco.org/resources/featured/coronavirus-disease-2019).
 
 <img src="../images/timeline.jpg" alt="hi" class="inline"/> <br/>
 
