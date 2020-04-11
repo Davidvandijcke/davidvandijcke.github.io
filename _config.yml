@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "David Van Dijcke"
 title_separator          : "-"
 name                     : &name "David Van Dijcke"
-description              : &description "PhD student in economics at the University of Oxford"
+description              : &description "PhD student in Economics at Lady Margaret Hall, University of Oxford. KU Leuven graduate."
 url                      : https://davidvandijcke.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "Davidvandijcke/davidvandijcke.github.io"
@@ -96,13 +96,13 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "davidvandijcke"
+  github           : "https://github.com/Davidvandijcke"
   google_plus      :
   keybase          :
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "david-van-dijcke"
+  linkedin         : "https://www.linkedin.com/in/david-van-dijcke/"
   orcid            : "https://orcid.org/0000-0001-5825-3447"
   pinterest        :
   soundcloud       :
