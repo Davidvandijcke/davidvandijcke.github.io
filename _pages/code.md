@@ -16,6 +16,13 @@ Please find my GitHub commits and repositories here:
 <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
 
 
+**COVID-19: US State Lock-Down Policies - Dates of Implementation** 
+
+The state policy dataset for our working paper "The COVID-19 Pandemic: Government vs. Community Action Across the United States" can be found [here](../files/SSR.csv). For the county-level dataset, see [this webpage](https://www.naco.org/resources/featured/coronavirus-disease-2019).
+
+<img src="../images/timeline.pdf" alt="hi" class="inline"/> <br/>
+
+
 **Shadow Rate Estimates** 
 
 Download [here](../files/SSR.csv)
