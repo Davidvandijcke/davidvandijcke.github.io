@@ -19,6 +19,7 @@ Please find my GitHub commits and repositories here:
 **COVID-19: US State Lock-Down Policies - Dates of Implementation** 
 
 The dataset with implementation dates of states' lock-down policies from our working paper "The COVID-19 Pandemic: Government vs. Community Action Across the United States" can be found [here](../files/CoronavirusStateTracking_15may_adj.csv). For the county-level dataset, see [this webpage](https://www.naco.org/resources/featured/coronavirus-disease-2019). 
+
 NB only emergency declarations, business and school closures and stay-at-home policies are updated until May 15. When a policy was implemented after 12pm on a given date, we assign it to the next date.
 
 <img src="../images/timeline.jpg" alt="hi" class="inline"/> <br/>
