@@ -21,6 +21,7 @@ Education
 
 Work experience
 ======
+* Summer 2020: PhD Intern, Advanced Analytics, Bank of England
 * Summer 2019: Research Intern, Deutsche Bundesbank
   - Duties included: Economic research, data analysis
   - Supervisor: Dr. Vivien Lewis
@@ -34,8 +35,9 @@ Skills
 ======
 * Computer Skills
   - Advanced: MATLAB, R, Python, Stata, LaTeX, Excel
-  - Basic: Linux
-  - Other: Graduate-level machine learning, numerical methods
+  - Intermediate: Linux
+  - Basic: R Shiny
+  - Other: Graduate-level machine learning, numerical methods, web scraping, big data
 * Languages
   - Dutch (Native)
   - English (Proficiency, C2/4+)
@@ -52,6 +54,7 @@ Publications
   
 Media
 ======
+* Todesco, F. ["Lockdown Measures Are Not the Only Thing Keeping Us In Place](https://www.knowledge.unibocconi.eu/notizia.php?idArt=21833). Bocconi Knowledge, 9 May 2020.
 * Van Dijcke, D. ["De grote boze markt."](../images/DeStandaard_19032020.jpg) De Standaard, 19 March 2020: 33. Print. ([.txt](./text/DeStandaard_19032020))
 
   
@@ -71,7 +74,7 @@ Service and leadership
 =======
 
 
-[Full CV](https://drive.google.com/open?id=1B7pr0DKSw5JPlK4OLQT1bW37ye00kl6T)
+[Full CV](../files/CV.pdf)
 
 
 
