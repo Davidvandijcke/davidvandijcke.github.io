@@ -74,7 +74,7 @@ Service and leadership
 =======
 
 
-[Full CV](../files/CV.pdf)
+[Full CV](../files/CV_DavidVanDijcke.pdf)
 
 
 
