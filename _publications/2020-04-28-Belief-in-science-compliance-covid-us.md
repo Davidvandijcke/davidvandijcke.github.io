@@ -6,11 +6,11 @@ excerpt: 'Physical distancing reduces transmission risks and slows the spread of
 date: 2020-04-28
 venue: 'University of Chicago, Becker Friedman Institute for Economics Working Paper No. 2020-56'
 paperurl: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3587990'
-citation: 'Brzezinski, Adam and Kecht, Valentin and Van Dijcke, David and Wright, Austin L., Belief in Science Influences Physical Distancing in Response to COVID-19 Lockdown Policies (April 30, 2020). University of Chicago, Becker Friedman Institute for Economics Working Paper No. 2020-56. '
+citation: 'Brzezinski, Adam and Kecht, Valentin and Van Dijcke, David and Wright, Austin L., (2020). â€œBelief in Science Influences Physical Distancing in Response to COVID-19 Lockdown Policies.â€ University of Chicago, Becker Friedman Institute for Economics Working Paper No. 2020-56. '
 ---
 
 <a href='https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3587990'>Download paper here</a>
 
 Physical distancing reduces transmission risks and slows the spread of COVID-19. Local and regional governments in the United States have issued shelter-in-place policies to mandate physical distancing. Yet compliance with these policies is uneven and may be influenced by beliefs about science and topics of scientific consensus. We theorize that individuals skeptical about the human causes of climate change are less likely to comply with physical distancing orders. Using county-day measures of physical distancing derived from cellphone location data, we demonstrate that the proportion of people who stay at home after lockdown policies go into effect is significantly lower in counties with a high concentration of climate change skeptics. These results are consistent when we study how belief in science influences physical distancing across as well as within Democratic and Republican counties. Our findings suggest public health interventions and messaging about risks associated with COVID-19 that take into account local attitudes towards science may be more effective.
 
-Recommended citation: Brzezinski, Adam and Kecht, Valentin and Van Dijcke, David and Wright, Austin L., Belief in Science Influences Physical Distancing in Response to COVID-19 Lockdown Policies (April 30, 2020). University of Chicago, Becker Friedman Institute for Economics Working Paper No. 2020-56. 
+Recommended citation: Brzezinski, Adam and Kecht, Valentin and Van Dijcke, David and Wright, Austin L., (2020). â€œBelief in Science Influences Physical Distancing in Response to COVID-19 Lockdown Policies.â€ University of Chicago, Becker Friedman Institute for Economics Working Paper No. 2020-56. 
