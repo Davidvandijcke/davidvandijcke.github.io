@@ -54,6 +54,10 @@ Publications
   
 Media
 ======
+  <ul>{% for post in site.media %}
+    {% include archive-single-cv.html %}
+  {% endfor %}</ul>
+  
 * Todesco, F. ["Lockdown Measures Are Not the Only Thing Keeping Us In Place](https://www.knowledge.unibocconi.eu/notizia.php?idArt=21833). Bocconi Knowledge, 9 May 2020.
 * Van Dijcke, D. ["De grote boze markt."](../images/DeStandaard_19032020.jpg) De Standaard, 19 March 2020: 33. Print. ([.txt](./text/DeStandaard_19032020))
 
