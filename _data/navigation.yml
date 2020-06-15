@@ -10,7 +10,7 @@ main:
     url: /code/
 
   - title: "Media"
-  - url: /media/
+    url: /media/
     
   - title: "Performing Arts"
     url: /performing-arts/
