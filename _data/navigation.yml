@@ -8,7 +8,12 @@ main:
     
   - title: "Code and Data"
     url: /code/
+
+  - title: "Media"
+  - url: /media/
     
   - title: "Performing Arts"
     url: /performing-arts/
+
+ 
     
