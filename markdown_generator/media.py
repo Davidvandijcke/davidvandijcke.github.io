@@ -34,7 +34,7 @@ import pandas as pd
 
 # In[3]:
 
-publications = pd.read_csv("publications2.csv", sep="\t", header=0, encoding = "utf-8")
+publications = pd.read_csv("media.csv", sep="\t", header=0, encoding = "utf-8")
 publications
 
 
@@ -67,7 +67,7 @@ for row, item in publications.iterrows():
     item.url_slug = str(item.url_slug)
     item.excerpt = str(item.excerpt)
     item.pub_date = str(item.pub_date)
-    item.citation = str(item.citation)
+    # item.citation = str(item.citation)
     item.venue = str(item.venue)
     item.paper_url = str(item.paper_url)
     
@@ -94,7 +94,7 @@ for row, item in publications.iterrows():
     if len(str(item.paper_url)) > 5:
         md += "\npaperurl: '" + item.paper_url + "'"
     
-    md += "\ncitation: '" + html_escape(item.citation) + "'"
+    # md += "\ncitation: '" + html_escape(item.citation) + "'"
     
     md += "\n---"
     
@@ -106,7 +106,7 @@ for row, item in publications.iterrows():
     if len(str(item.excerpt)) > 5:
         md += "\n" + html_escape(item.excerpt) + "\n"
         
-    md += "\nRecommended citation: " + item.citation
+    # md += "\nRecommended citation: " + item.citation
     
     md_filename = os.path.basename(md_filename)
        
