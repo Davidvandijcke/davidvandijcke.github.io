@@ -7,4 +7,4 @@ venue: 'Vox EU'
 paperurl: 'https://voxeu.org/article/voluntary-social-distancing-and-lockdowns-us'
 ---
 
-<a href='https://voxeu.org/article/voluntary-social-distancing-and-lockdowns-us'>Download paper here</a>
+<a href='https://voxeu.org/article/voluntary-social-distancing-and-lockdowns-us'>Read article here</a>

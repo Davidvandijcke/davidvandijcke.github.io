@@ -7,4 +7,4 @@ venue: 'Bocconi Knowledge'
 paperurl: 'https://www.knowledge.unibocconi.eu/notizia.php?idArt=21833'
 ---
 
-<a href='https://www.knowledge.unibocconi.eu/notizia.php?idArt=21833'>Download paper here</a>
+<a href='https://www.knowledge.unibocconi.eu/notizia.php?idArt=21833'>Read article here</a>
