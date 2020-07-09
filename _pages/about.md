@@ -8,13 +8,13 @@ redirect_from:
   - /about.html
 ---
 
-Welcome to my webpage. Feel free to look around. 
+Welcome to my webpage. 
 
-I am a DPhil Student (PRS) in Economics at the University of Oxford. 
+I am a DPhil (PRS) in Economics at the University of Oxford. Conceptually, I am interested in how different kinds of firms interact with different kinds of workers, and how this affects macroeconomic dynamics and outcomes. Methodologically, I am enthusiastic about the potential of large-scale micro data to shed light on questions about the economy and society at large. I believe in open science and open source. Feel free to bother me with data and code questions and requests.
 
 My [research](https://davidvandijcke.github.io/research) fields are: macroeconomics, industrial organization, labor economics.
 
-My research interests are: market power, firm and household heterogeneity, inequality.
+My research interests are: market power, firm and household heterogeneity, inequality, big data.
 
 
 Please find my [CV](https://davidvandijcke.github.io/cv) here.
