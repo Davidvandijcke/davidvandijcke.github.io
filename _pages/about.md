@@ -10,7 +10,9 @@ redirect_from:
 
 Welcome to my webpage. 
 
-I am a DPhil (PRS) in Economics at the University of Oxford. Conceptually, I am interested in how different kinds of firms interact with different kinds of workers, and how this affects macroeconomic dynamics and outcomes. Methodologically, I am enthusiastic about the potential of large-scale micro data to shed light on questions about the economy and society at large. I believe in open science and open source. Feel free to bother me with data and code questions and requests.
+I am PhD student in Economics at the University of Michigan - Ann Arbor. I am also a Visiting Academic at the Bank of England and an Honorary Fellow of the Belgian American Educational Foundation. 
+
+Conceptually, I am interested in how different kinds of firms interact with different kinds of workers, and how this affects macroeconomic dynamics and outcomes. Methodologically, I am enthusiastic about the potential of granular micro data to shed light on questions about the economy and society at large. I believe in open science and open source. Feel free to bother me with data and code questions and requests.
 
 My [research](https://davidvandijcke.github.io/research) fields are: macroeconomics, industrial organization, labor economics.
 
