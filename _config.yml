@@ -10,7 +10,9 @@ locale                   : "en-US"
 title                    : "David Van Dijcke"
 title_separator          : "-"
 name                     : &name "David Van Dijcke"
-description              : &description "PhD student in Economics at Lady Margaret Hall, University of Oxford. KU Leuven graduate."
+description              : &description "PhD student in economics @ University of Michigan - Ann Arbor. 
+Academic Visitor @ Bank of England. 
+Honorary Fellow @ Belgian American Educational Foundation."
 url                      : https://davidvandijcke.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "Davidvandijcke/davidvandijcke.github.io"
@@ -82,7 +84,9 @@ analytics:
 author:
   name             : "David Van Dijcke"
   avatar           : "bundesbank.jpg"
-  bio              : "PhD student in economics @ University of Michigan - Ann Arbor. Academic Visitor @ Bank of England. Honorary Fellow @ Belgian American Educational Foundation."
+  bio              : "PhD student in economics @ University of Michigan - Ann Arbor. 
+Academic Visitor @ Bank of England. 
+Honorary Fellow @ Belgian American Educational Foundation."
   location         : "Ann Arbor & London"
   employer         :
   pubmed           : 
@@ -258,7 +262,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: Europe/London # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: America/Detroit # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
