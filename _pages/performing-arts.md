@@ -28,8 +28,8 @@ As Performer
 <br/> <br/>
 
 
-*[It's Not About You Anymore](http://www.louisedegroef.com/fiction#/zielbeeld)*, Louise De Groef 
-[<img src="../images/zielbeeld.jpg" alt="hi" class="inline"/>](https://www.flandersimage.com/titles/its-not-about-you-anymore) <br/>
+*[It's Not About You Anymore](https://www.flandersimage.com/titles/its-not-about-you-anymore)*, Louise De Groef 
+[<img src="../images/zielbeeld.jpg" alt="hi" class="inline"/>](https://vimeo.com/106122383) <br/>
 &ndash; Official Selection, Blowup International Arthouse Film Festival Chicago
 &ndash; Honorable Mention, Canada Shorts Film Festival
 &ndash; Best Short Film Finalist, Skepto International Film Festival (IT)
