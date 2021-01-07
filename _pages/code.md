@@ -15,7 +15,11 @@ Please find my GitHub commits and repositories here:
 <div class="github-card" data-github="davidvandijcke" data-width="400" data-height="" data-theme="default"></div>
 <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
 
-[**Using Mobile Device Traces to Improve Near-Real Time Data Collection During the George Floyd Protests**](https://github.com/Davidvandijcke/FLOYDTRACES_PUBLIC)
+**Using Mobile Device Traces to Improve Near-Real Time Data Collection During the George Floyd Protests**
+
+The estimated protest locations and code to produce them can be found [here](https://github.com/Davidvandijcke/FLOYDTRACES_PUBLIC)
+
+<img src="../images/scatterByDay.pdf" alt="hi" class="inline"/> <br/>
 
 
 **COVID-19: US State Lock-Down Policies - Dates of Implementation** 
