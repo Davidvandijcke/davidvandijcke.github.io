@@ -17,9 +17,9 @@ Please find my GitHub commits and repositories here:
 
 **Using Mobile Device Traces to Improve Near-Real Time Data Collection During the George Floyd Protests**
 
-The estimated protest locations and code to produce them can be found [here](https://github.com/Davidvandijcke/FLOYDTRACES_PUBLIC)
+The estimated protest locations and code to produce them can be found [here](https://github.com/Davidvandijcke/FLOYDTRACES_PUBLIC).
 
-<img src="../images/scatterByDay.pdf" alt="hi" class="inline"/> <br/>
+<img src="../images/scatterByDay.jpg" alt="hi" class="inline"/> <br/>
 
 
 **COVID-19: US State Lock-Down Policies - Dates of Implementation** 
