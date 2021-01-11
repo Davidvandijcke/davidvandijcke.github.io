@@ -1,5 +1,5 @@
 ---
-title: "Poltiical polarisation impedes the public policy response to COVID-19"
+title: "Political polarisation impedes the public policy response to COVID-19"
 collection: media
 permalink: /media/2020-12-23-Voxeu-masks
 date: 2020-12-23
