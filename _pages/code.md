@@ -15,6 +15,12 @@ Please find my GitHub commits and repositories here:
 <div class="github-card" data-github="davidvandijcke" data-width="400" data-height="" data-theme="default"></div>
 <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
 
+**Census Block Group Level 2016 Election Results**
+A dataset of CBG-level election results, for granular matching with, e.g., the American Community Survey, can be found [here](https://github.com/Davidvandijcke/Census-Block-Group-Level-2016-Presidential-Election-Results). 
+
+Credits for the code basis to [Maria Milosh](https://twitter.com/miloshmk?lang=en). 
+
+
 **Using Mobile Device Traces to Improve Near-Real Time Data Collection During the George Floyd Protests**
 
 The estimated protest locations and code to produce them can be found [here](https://github.com/Davidvandijcke/FLOYDTRACES_PUBLIC).
