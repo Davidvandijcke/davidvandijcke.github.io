@@ -1,5 +1,5 @@
 ---
-title: "From coastal cities to rural towns, breadth of George Floyd protests Ð most peaceful Ð captured by data"
+title: "From coastal cities to rural towns, breadth of George Floyd protests -- most peaceful â captured by data"
 collection: media
 permalink: /media/2020-06-10-Usa-today-protests
 date: 2020-06-10
