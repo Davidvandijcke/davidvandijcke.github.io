@@ -15,4 +15,10 @@ author_profile: true
   {% include archive-single.html %}
 {% endfor %}
 
-## Working Papers
+
+
+# Working Papers
+
+{% for post in site.wps reversed %}
+  {% include archive-single.html %}
+{% endfor %}
