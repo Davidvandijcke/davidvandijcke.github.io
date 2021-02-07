@@ -58,9 +58,6 @@
       <p> Media: {{ post.media | markdownify | remove: '<p>' | remove: '</p>' }} </p>
     {% endif %}
 
-    {% if post.paperurl and post.collection == 'publications' %}
-      <p>Download <a href=" {{ post.paperurl }} "><u>here</u></a></p>
-    {% endif %}
 
     {% if post.workingpaper %}
      <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Working paper version: {{ post.workingpaper }} </p>
