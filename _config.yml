@@ -194,6 +194,9 @@ collections:
   media:
     output: true
     permalink: /:collection/:path/
+  wps:
+    output: true
+    permalink: /:collection/:path/
 
 
 # Defaults
