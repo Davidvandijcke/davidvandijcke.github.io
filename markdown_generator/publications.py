@@ -122,7 +122,6 @@ for iterator in [publications.iterrows(), wps.iterrows()]:
         #     for key, value in media.items():
         #         md += "<a href='" + value + "'>" + key + "</a> "
         
-        md += "\nRecommended citation: " + item.citation
         
         md_filename = os.path.basename(md_filename)
         
