@@ -22,3 +22,4 @@ author_profile: true
 {% for post in site.wps reversed %}
   {% include archive-single.html %}
 {% endfor %}
+
