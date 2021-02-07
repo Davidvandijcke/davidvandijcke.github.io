@@ -7,6 +7,7 @@ date: 2020-06-01
 venue: 'Economics Series Working Papers 910, University of Oxford, Department of Economics'
 paperurl: 'https://www.economics.ox.ac.uk/department-of-economics-discussion-paper-series/the-cost-of-staying-open-voluntary-social-distancing-and-lockdowns-in-the-us'
 citation: 'Brzezinski, Adam, Kecht, Valentin, and Van Dijcke, David (2020). &quot;The Cost of Staying Open: Voluntary Social Distancing and Lockdowns in the US.&quot; Economics Series Working Papers 910, University of Oxford, Department of Economics.'
+media: '[Vox EU](https://voxeu.org/article/voluntary-social-distancing-and-lockdowns-us), [video](https://www.placekey.io/seminars/economy-vs-safety-understanding-the-tradeoffs-during-the-covid-19-pandemic)'
 ---
 
 <a href='https://www.economics.ox.ac.uk/department-of-economics-discussion-paper-series/the-cost-of-staying-open-voluntary-social-distancing-and-lockdowns-in-the-us'>Download paper here</a>
