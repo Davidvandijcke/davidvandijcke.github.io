@@ -55,7 +55,7 @@
     {% endif %}
 
     {%if post.media%}
-      <p> Media: {{ post.media }} </p>
+      <p> Media: {{ post.media | markdownify }} </p>
     {% endif %}
 
 
