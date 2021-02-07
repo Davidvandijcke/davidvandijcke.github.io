@@ -19,6 +19,8 @@ author_profile: true
 
 # Working Papers
 
+{% include base_path %}
+
 {% for post in site.wps reversed %}
   {% include archive-single.html %}
 {% endfor %}
