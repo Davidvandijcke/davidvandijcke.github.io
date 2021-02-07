@@ -84,10 +84,15 @@ for iterator in [publications.iterrows(), wps.iterrows()]:
    	    ## YAML variables
    
         md = "---\ntitle: \""   + item.title + '"\n'
+        
+        if i == 1:
+            md += """collection: publications"""
+            md += """\npermalink: /publication/""" + html_filename
+        else:
+            md += """collection: wps"""
+            md += """\npermalink: /wp/""" + html_filename
+
    
-        md += """collection: publications"""
-   
-        md += """\npermalink: /publication/""" + html_filename
        
         if len(str(item.excerpt)) > 5:
             md += "\nexcerpt: '" + html_escape(item.excerpt) + "'"

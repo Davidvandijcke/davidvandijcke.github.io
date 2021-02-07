@@ -1,7 +1,7 @@
 ---
 title: "Belief in Science Influences Physical Distancing in Response to COVID-19 Lockdown Policies"
-collection: publications
-permalink: /publication/2020-04-28-Belief-in-science-compliance-covid-us
+collection: wps
+permalink: /wp/2020-04-28-Belief-in-science-compliance-covid-us
 excerpt: 'Physical distancing reduces transmission risks and slows the spread of COVID-19. Local and regional governments in the United States have issued shelter-in-place policies to mandate physical distancing. Yet compliance with these policies is uneven and may be influenced by beliefs about science and topics of scientific consensus. We theorize that individuals skeptical about the human causes of climate change are less likely to comply with physical distancing orders. Using county-day measures of physical distancing derived from cellphone location data, we demonstrate that the proportion of people who stay at home after lockdown policies go into effect is significantly lower in counties with a high concentration of climate change skeptics. These results are consistent when we study how belief in science influences physical distancing across as well as within Democratic and Republican counties. Our findings suggest public health interventions and messaging about risks associated with COVID-19 that take into account local attitudes towards science may be more effective.'
 date: 2020-04-28
 venue: 'Revise &amp; Resubmit'
