@@ -7,7 +7,6 @@ date: 2021-01-31
 venue: 'University of Chicago, Becker Friedman Institute for Economics Working Paper No. 2021-13'
 paperurl: 'https://bfi.uchicago.edu/working-paper/profiling-insurrection-characterizing-collective-action-using-mobile-device-data/'
 citation: 'nan'
-media: '[The Daily Beast](https://www.thedailybeast.com/heres-what-a-ton-of-capitol-rioters-had-in-common), [BFI](https://bfi.uchicago.edu/insight/finding/profiling-insurrection-characterizing-collective-action-using-mobile-device-data/)'
 ---
 
 <a href='https://bfi.uchicago.edu/working-paper/profiling-insurrection-characterizing-collective-action-using-mobile-device-data/'>Download paper here</a>
