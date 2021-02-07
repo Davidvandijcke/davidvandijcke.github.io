@@ -118,7 +118,7 @@ for iterator in [publications.iterrows(), wps.iterrows()]:
             media = media.replace('“','"').replace('”','"') # replace fucking smart quotes
             media = json.loads(media)
             for key, value in media.items():
-                md += "<a href='" + value + "'>" + key + " "
+                md += "<a href='" + value + "'>" + key + "</a> "
         
         md += "\nRecommended citation: " + item.citation
         
@@ -130,3 +130,8 @@ for iterator in [publications.iterrows(), wps.iterrows()]:
             fn = "../_wps/"
         with open(fn + md_filename, 'w') as f:
             f.write(md)
+    i += 1
+
+
+for key, value in media.items():
+    key, value
