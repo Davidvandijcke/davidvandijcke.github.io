@@ -7,7 +7,7 @@ date: 2020-04-12
 venue: 'Covid Economics: Vetted and Real-Time Papers 7 (CEPR)'
 paperurl: 'https://cepr.org/sites/default/files/news/CovidEconomics7.pdf'
 citation: 'Brzezinski, A., Deiana, G., Kecht, V. &amp; Van Dijcke, D. (2020). &apos;The COVID-19 Pandemic: Government vs. Community Action Across the United States&apos;. Covid Economics: Vetted and Real-Time Papers 7. 115-156.'
-media: 'DArt=21833 )'
+media: '[Bocconi Knowledge](https://www.knowledge.unibocconi.eu/notizia.php?idArt=21833)'
 ---
 
 <a href='https://cepr.org/sites/default/files/news/CovidEconomics7.pdf'>Download paper here</a>
