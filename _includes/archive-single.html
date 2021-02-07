@@ -54,8 +54,8 @@
     <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
     {% endif %}
 
-    {%if post.media%}
-      <p> Media: {{ post.media | markdownify }} </p>
+    {% if post.media %}
+      <p> Media: {{ post.media | markdownify | remove: '<p>' | remove: '</p>' }} </p>
     {% endif %}
 
 
