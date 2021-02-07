@@ -75,7 +75,7 @@ for iterator in [publications.iterrows(), wps.iterrows()]:
         item.citation = str(item.citation)
         item.venue = str(item.venue)
         item.paper_url = str(item.paper_url)
-           
+        
    
         md_filename = str(item.pub_date) + "-" + item.url_slug + ".md"
         html_filename = str(item.pub_date) + "-" + item.url_slug
@@ -101,6 +101,9 @@ for iterator in [publications.iterrows(), wps.iterrows()]:
         
         md += "\ncitation: '" + html_escape(item.citation) + "'"
         
+        if not isinstance(item.media, float):
+            md += "\nmedia: '" + html_escape(item.media)  + "'"
+        
         md += "\n---"
         
         # Markdown description for individual page
@@ -111,14 +114,13 @@ for iterator in [publications.iterrows(), wps.iterrows()]:
         if len(str(item.excerpt)) > 5:
             md += "\n" + html_escape(item.excerpt) + "\n"
             
-        md += "\n"
         
-        if not isinstance(item.media, float):
-            media = item.media
-            media = media.replace('“','"').replace('”','"') # replace fucking smart quotes
-            media = json.loads(media)
-            for key, value in media.items():
-                md += "<a href='" + value + "'>" + key + "</a> "
+        # if not isinstance(item.media, float):
+        #     media = item.media
+        #     media = media.replace('“','"').replace('”','"') # replace fucking smart quotes
+        #     media = json.loads(media)
+        #     for key, value in media.items():
+        #         md += "<a href='" + value + "'>" + key + "</a> "
         
         md += "\nRecommended citation: " + item.citation
         
@@ -133,5 +135,3 @@ for iterator in [publications.iterrows(), wps.iterrows()]:
     i += 1
 
 
-for key, value in media.items():
-    key, value
