@@ -6,7 +6,7 @@ excerpt: 'Physical distancing reduces transmission risks and slows the spread of
 date: 2020-04-28
 venue: 'Revise &amp; Resubmit'
 paperurl: 'https://bfi.uchicago.edu/working-paper/belief-in-science-influences-physical-distancing-in-response-to-covid-19-lockdown-policies/'
-citation: 'Brzezinski, Adam and Kecht, Valentin and Van Dijcke, David and Wright, Austin L., (2020). â€œBelief in Science Influences Physical Distancing in Response to COVID-19 Lockdown Policies.â€ University of Chicago, Becker Friedman Institute for Economics Working Paper No. 2020-56. '
+citation: 'Brzezinski, Adam and Kecht, Valentin and Van Dijcke, David and Wright, Austin L., (2020). Belief in Science Influences Physical Distancing in Response to COVID-19 Lockdown Policies. University of Chicago, Becker Friedman Institute for Economics Working Paper No. 2020-56. '
 ---
 
 <a href='https://bfi.uchicago.edu/working-paper/belief-in-science-influences-physical-distancing-in-response-to-covid-19-lockdown-policies/'>Download paper here</a>
