@@ -7,7 +7,7 @@ date: 2020-07-31
 venue: 'University of Chicago, Becker Friedman Institute for Economics Working Paper No. 2020-102'
 paperurl: 'https://bfi.uchicago.edu/working-paper/unmasking-partisanship-how-polarization-influences-public-responses-to-collective-risk/'
 citation: 'Milosh, Maria and Painter, Marcus and Van Dijcke, David and Wright, Austin L., Unmasking Partisanship: How Polarization Influences Public Responses to Collective Risk (July 31, 2020). University of Chicago, Becker Friedman Institute for Economics Working Paper No. 2020-102.'
-media: '[Vox EU](https://voxeu.org/article/political-polarisation-impedes-public-policy-response-covid-19), [Time magazine](https://time.com/5941599/basic-health-care-postponed-covid-19/), [Uchicago News](UChicago News(]()'
+media: '[Vox EU](https://voxeu.org/article/political-polarisation-impedes-public-policy-response-covid-19), [Time magazine](https://time.com/5941599/basic-health-care-postponed-covid-19/),  [UChicago News](https://news.uchicago.edu/story/who-does-or-doesnt-wear-mask-partisanship-explains-response-covid-19)'
 ---
 
 <a href='https://bfi.uchicago.edu/working-paper/unmasking-partisanship-how-polarization-influences-public-responses-to-collective-risk/'>Download paper here</a>
