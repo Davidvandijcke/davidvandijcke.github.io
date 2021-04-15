@@ -1,5 +1,5 @@
 ---
-title: "When bigger isnât better: UK firmsâ equity price performance during the Covid-19 pandemic"
+title: "When bigger isn’t better: UK firms’ equity price performance during the Covid-19 pandemic"
 collection: media
 permalink: /media/2020-11-26-Bank-underground
 date: 2020-11-26
