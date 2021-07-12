@@ -15,7 +15,14 @@ Please find my GitHub commits and repositories here:
 <div class="github-card" data-github="davidvandijcke" data-width="400" data-height="" data-theme="default"></div>
 <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
 
+**Science Skepticism Reduces Compliance with COVID-19 Shelter-in-Place Policies**
+
+Git for the paper can be found [here](https://github.com/Davidvandijcke/science_skepticism_nature_hb), full replication materials are on [OpenICPSR](https://www.openicpsr.org/openicpsr/project/144861).
+
+<img src="../images/county_eventstudy_popweights_5.png" alt="hi" class="inline"/> <br/>
+
 **Census Block Group Level Presidential Election Results**
+
 Datasets of CBG-level election results, for granular matching with, e.g., the American Community Survey, can be found [here](https://github.com/Davidvandijcke/Census-Block-Group-Level-2016-Presidential-Election-Results) for 2016 and [here](https://github.com/Davidvandijcke/Census-Block-Group-Level-2020-Presidential-Election-Results) for 2020.
 
 Credits for the code basis to [Maria Milosh](https://twitter.com/miloshmk?lang=en). 
