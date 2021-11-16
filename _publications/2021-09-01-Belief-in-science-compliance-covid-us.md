@@ -7,6 +7,8 @@ date: 2021-09-01
 venue: 'Nature Human Behaviour'
 paperurl: 'https://www.nature.com/articles/s41562-021-01227-0'
 citation: 'Brzezinski, Adam and Kecht, Valentin and Van Dijcke, David and Wright, Austin L. (2021). Science skepticism reduced compliance with COVID-19 shelter-in-place policies in the United States. Nature Human Behavior.'
+workingpaper: 'https://bfi.uchicago.edu/working-paper/belief-in-science-influences-physical-distancing-in-response-to-covid-19-lockdown-policies/'
+replication: 'https://www.openicpsr.org/openicpsr/project/144861/version/V1/view'
 ---
 
 <a href='https://www.nature.com/articles/s41562-021-01227-0'>Download paper here</a>

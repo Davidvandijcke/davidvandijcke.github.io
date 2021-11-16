@@ -108,6 +108,12 @@ for iterator in [publications.iterrows(), wps.iterrows()]:
         
         if not isinstance(item.media, float):
             md += "\nmedia: '" + html_escape(item.media)  + "'"
+            
+        if not isinstance(item.workingpaper, float):
+            md += "\nworkingpaper: '" + html_escape(item.workingpaper)  + "'"
+            
+        if not isinstance(item.replication, float):
+            md += "\nreplication: '" + html_escape(item.replication)  + "'"
         
         md += "\n---"
         
