@@ -62,11 +62,11 @@
 
 
     {% if post.workingpaper %}
-     <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Working paper version: {{ post.workingpaper }} </p>
+     <p>  Working paper version: {{ post.workingpaper  | markdownify | remove: '<p>' | remove: '</p>' }} </p>
     {% endif %}
 
     {% if post.replication %}
-     <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Replication materials: {{ post.replication }} </p>
+     <p> Replication materials: {{ post.replication  | markdownify | remove: '<p>' | remove: '</p>' }} </p>
     {% endif %}
 
 
