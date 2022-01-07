@@ -11,9 +11,9 @@ redirect_from:
 Welcome to my webpage. 
 
 I am a PhD student in Economics at the University of Michigan - Ann Arbor. 
-I am also an Academic Visitor at the [Bank of England](https://www.bankofengland.co.uk/) and an Honorary Fellow of the [Belgian American Education Foundation](http://www.baef.be/documents/home.xml). 
+I am also an Academic Visitor at the [Bank of England](https://www.bankofengland.co.uk/).
 
-My [research](https://davidvandijcke.github.io/research) interests lie in industrial organization, econometrics and political economy.
+My [research](https://davidvandijcke.github.io/research) interests lie in industrial organization, political economy, and econometrics.
 
 I believe in open science and data sharing. Feel free to bother me with code or data questions.
 
