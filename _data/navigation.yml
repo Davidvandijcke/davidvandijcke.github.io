@@ -12,8 +12,8 @@ main:
   - title: "Media"
     url: /media/
     
-  - title: "Blog Posts"
-    url: /posts/
+- title: "Blog Posts"
+    url: /year-archive/
 
 
  
