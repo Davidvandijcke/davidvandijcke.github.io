@@ -19,4 +19,4 @@ I believe in open science and data sharing. Feel free to bother me with code or 
 
 Please find my [CV](https://davidvandijcke.github.io/cv) here. 
 
-To make sure I was well-prepared for a career in economics, I got a BA in theatre. You can find evidence of my knowledge of real analysis [here](https://davidvandijcke.github.io/performing-arts). 
+To make sure I was well-prepared for a career in economics, I got a BA in theatre. You can find the evidence [here](https://davidvandijcke.github.io/performing-arts). 
