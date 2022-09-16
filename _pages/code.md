@@ -5,7 +5,7 @@ author_profile: true
 redirect_from:
   - /resume
 header:
-  overlay_image: /images/kul.jpg
+  overlay_image: /kul.jpg
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
 ---
 
