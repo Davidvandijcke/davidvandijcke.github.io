@@ -1,7 +1,7 @@
 ---
 layout: archive
 permalink: /code/
-title: "Code"
+title: "Code and Data"
 author_profile: true
 redirect_from:
   - /resume
