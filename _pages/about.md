@@ -6,7 +6,8 @@ author_profile: true
 redirect_from: 
   - /about/
   - /about.html
-overlay_image: /images/umich.jpg
+header:
+  overlay_image: /umich.jpg
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
 ---
 
