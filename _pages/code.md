@@ -8,7 +8,7 @@ redirect_from:
 
 {% include base_path %}
 
-<img src="/images/favicon.ico" alt="drawing" width="20"/>  **GitHub** 
+<img src="/images/favicon.ico" alt="drawing" width="20"/>  ## **GitHub** 
 
 Please find my GitHub commits and repositories here:
 
