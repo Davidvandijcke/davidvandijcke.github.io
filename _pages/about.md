@@ -2,6 +2,8 @@
 permalink: /
 title: ""
 excerpt: "About me"
+overlay_image: /images/umich.jpg
+  overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
 author_profile: true
 redirect_from: 
   - /about/
