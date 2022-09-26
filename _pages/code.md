@@ -1,41 +1,45 @@
 ---
 layout: archive
 permalink: /code/
+title: "Code and Data"
 author_profile: true
 redirect_from:
   - /resume
+header:
+  overlay_image: /kul.jpg
+  overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
 ---
 
 {% include base_path %}
 
-**GitHub** 
+<img src="/images/favicon.ico" alt="drawing" width="20"/>  **GitHub** 
 
 Please find my GitHub commits and repositories here:
 
 <div class="github-card" data-github="davidvandijcke" data-width="400" data-height="" data-theme="default"></div>
 <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
 
-**Science Skepticism Reduces Compliance with COVID-19 Shelter-in-Place Policies**
+<img src="/images/favicon.ico" alt="drawing" width="20"/>  **Science Skepticism Reduces Compliance with COVID-19 Shelter-in-Place Policies**
 
 Git for the paper can be found [here](https://github.com/Davidvandijcke/science_skepticism_nature_hb), full replication materials are on [OpenICPSR](https://www.openicpsr.org/openicpsr/project/144861).
 
 <img src="../images/county_eventstudy_popweights_5.png" alt="hi" class="inline"/> <br/>
 
-**Census Block Group Level Presidential Election Results**
+<img src="/images/favicon.ico" alt="drawing" width="20"/>  **Census Block Group Level Presidential Election Results**
 
 Datasets of CBG-level election results, for granular matching with, e.g., the American Community Survey, can be found [here](https://github.com/Davidvandijcke/Census-Block-Group-Level-2016-Presidential-Election-Results) for 2016 and [here](https://github.com/Davidvandijcke/Census-Block-Group-Level-2020-Presidential-Election-Results) for 2020.
 
 Credits for the code basis to [Maria Milosh](https://twitter.com/miloshmk?lang=en). 
 
 
-**Using Mobile Device Traces to Improve Near-Real Time Data Collection During the George Floyd Protests**
+<img src="/images/favicon.ico" alt="drawing" width="20"/>  **Using Mobile Device Traces to Improve Near-Real Time Data Collection During the George Floyd Protests**
 
 The estimated protest locations and code to produce them can be found [here](https://github.com/Davidvandijcke/FLOYDTRACES_PUBLIC).
 
 <img src="../images/scatterByDay.jpg" alt="hi" class="inline"/> <br/>
 
 
-**COVID-19: US State Lock-Down Policies - Dates of Implementation** 
+<img src="/images/favicon.ico" alt="drawing" width="20"/>  **COVID-19: US State Lock-Down Policies - Dates of Implementation** 
 
 The dataset with implementation dates of states' lock-down policies from our working paper "The COVID-19 Pandemic: Government vs. Community Action Across the United States" can be found [here](../files/CoronavirusStateTracking_15may_adj.csv). For the county-level dataset, see [this webpage](https://www.naco.org/resources/featured/coronavirus-disease-2019). 
 
@@ -44,7 +48,7 @@ NB only emergency declarations, business and school closures and stay-at-home po
 <img src="../images/timeline.jpg" alt="hi" class="inline"/> <br/>
 
 
-**Shadow Rate Estimates** 
+<img src="/images/favicon.ico" alt="drawing" width="20"/>  **Shadow Rate Estimates** 
 
 Download [here](../files/SSR.csv)
 <img src="../images/shadowplot.jpg" alt="hi" class="inline"/> <br/>

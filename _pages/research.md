@@ -3,6 +3,9 @@ layout: archive
 title: "Publications"
 permalink: /research/
 author_profile: true
+header:
+  overlay_image: /boe.jpg
+  overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
 ---
 
 {% if author.googlescholar %}
