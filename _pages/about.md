@@ -16,7 +16,7 @@ I am also an Academic Visitor at the [Bank of England](https://www.bankofengland
 
 My [research](https://davidvandijcke.github.io/research) interests lie in industrial organization, political economy, and econometrics.
 
-I believe in open science and data sharing. Feel free to bother me with code or data questions.
+You can book a meeting with me via [this link](https://calendar.app.google/dKeDaigmFwnJPm8s6). 
 
 Please find my [CV](https://davidvandijcke.github.io/cv) here. 
 
