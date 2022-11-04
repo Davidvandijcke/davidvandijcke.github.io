@@ -6,8 +6,8 @@ excerpt: 'We develop a novel approach for estimating spatially dispersed communi
 date: 2021-01-31
 venue: 'University of Chicago, Becker Friedman Institute for Economics Working Paper No. 2021-13'
 paperurl: 'https://bfi.uchicago.edu/working-paper/profiling-insurrection-characterizing-collective-action-using-mobile-device-data/'
-citation: 'Van Dijcke, D., &amp; Wright, A. L. (2021). Profiling insurrection: Characterizing collective action using mobile device data.Available at SSRN 3776854'
-media: '[The Daily Beast](https://www.thedailybeast.com/heres-what-a-ton-of-capitol-rioters-had-in-common), [BFI](https://bfi.uchicago.edu/insight/finding/profiling-insurrection-characterizing-collective-action-using-mobile-device-data/), [UChicago News](https://news.uchicago.edu/story/capitol-unrest-linked-trump-voting-islands-proximity-proud-boys-chapters?utm_source=uc_newsletter&amp;utm_medium=email&amp;utm_campaign=UChicago_News_M02_18_2021), [Salon](https://www.salon.com/2022/01/21/new-research-trumpists-jan-6-loneliness-feeling-isolated-dems-non-whites-and-liberals/) '
+citation: 'Van Dijcke, D., &amp; Wright, A. L. (2021). Profiling insurrection: Characterizing collective action using mobile device data. Available at SSRN 3776854'
+media: '[The Daily Beast](https://www.thedailybeast.com/heres-what-a-ton-of-capitol-rioters-had-in-common), [BFI](https://bfi.uchicago.edu/insight/finding/profiling-insurrection-characterizing-collective-action-using-mobile-device-data/), [UChicago News](https://news.uchicago.edu/story/capitol-unrest-linked-trump-voting-islands-proximity-proud-boys-chapters?utm_source=uc_newsletter&amp;utm_medium=email&amp;utm_campaign=UChicago_News_M02_18_2021), [Salon](https://www.salon.com/2022/01/21/new-research-trumpists-jan-6-loneliness-feeling-isolated-dems-non-whites-and-liberals/)'
 ---
 
 <a href='https://bfi.uchicago.edu/working-paper/profiling-insurrection-characterizing-collective-action-using-mobile-device-data/'>Download paper here</a>
