@@ -1,10 +1,10 @@
 ---
 title: "Unmasking Partisanship: How Polarization Influences Public Responses to Collective Risk"
 collection: publications
-permalink: /publication/10/14/21-Unmasking-partisanship
+permalink: /publication/2021-10-14-Unmasking-partisanship
 coauthors: Maria Milosh, Marcus Painter, Konstantin Sonin, Austin Wright
 excerpt: 'Political polarization and competing narratives can undermine public policy implementation. Partisanship may play a particularly important role in shaping heterogeneous responses to collective risk during periods of crisis when political agents manipulate signals received by the public (i.e., alternative facts). We study these dynamics in the United States, focusing on how partisanship has influenced the use of face masks to stem the spread of COVID-19. Using a wealth of micro-level data, machine learning approaches, and a novel quasi-experimental design, we document four facts: (1) mask use is robustly correlated with partisanship; (2) the impact of partisanship on mask use is not offset by local policy interventions; (3) partisanship is the single most important predictor of local mask use, not COVID severity or local policies; (4) Trump&apos;s unexpected mask use at Walter Reed on July 11, 2020 significantly increased social media engagement with and positive sentiment towards mask-related topics. These results unmask how partisanship undermines effective public responses to collective risk and how messaging by political agents can increase public engagement with mask use.'
-date: 10/14/21
+date: 2021-10-14
 venue: 'Journal of Public Economics'
 paperurl: 'https://authors.elsevier.com/c/1e4yAAlw9lYqE'
 citation: 'Milosh, Maria and Painter, Marcus and Sonin, Konstantin and Van Dijcke, David and Wright, Austin L. (2021). Unmasking Partisanship: How Polarization Influences Public Responses to Collective Risk. Journal of Public Economics.'

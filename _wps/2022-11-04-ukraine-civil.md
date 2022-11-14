@@ -1,10 +1,10 @@
 ---
 title: "Civil Response to Government Alerts Declines During Russian Invasion of Ukraine"
 collection: wps
-permalink: /wp/11/4/22-ukraine-civil
+permalink: /wp/2022-11-04-ukraine-civil
 coauthors: Austin Wright, Mark Polyak
 excerpt: 'War is the cause of tremendous human suffering. To reduce such harm, governments have developed tools to alert civilians of imminent threats. Whether these systems are effective remains largely unknown. We study the introduction of an innovative smartphone application that notifies civilians of impending military operations developed in coordination with the Ukrainian government after the Russian invasion. We leverage quasi-experimental variation in the timing of more than 3,000 alerts to study the sheltering behavior of persons using high frequency geolocation pings tied to 17 million mobile devices, 60% of the connected population in Ukraine. We find that civilians respond sharply to alerts overall, quickly seeking shelter. These rapid post-alert changes in population movement attenuate over time, in a manner that cannot be explained by sheltering underground or calibration to the signal quality of alerts. Responsiveness is weakest when civilians have been living under an extended state of emergency, consistent with the presence of an alert fatigue effect. Our results suggest 8-15% of civilian casualties observed during the later periods of the conflict could have been avoided with sustained public responsiveness to government alerts.'
-date: 11/4/22
+date: 2022-11-04
 venue: 'University of Chicago, Becker Friedman Institute for Economics Working Paper No. 2022-148'
 paperurl: 'https://bfi.uchicago.edu/wp-content/uploads/2022/10/BFI_WP_2022-148.pdf'
 citation: 'Van Dijcke, D., Wright, A. L., and Polyak, M. (2022). Civil Response to Government Alerts Declines During Russian Invasion of Ukraine. University of Chicago, Becker Friedman Institute for Economics Working Paper No. 2022-148.'
