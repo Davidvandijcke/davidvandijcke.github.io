@@ -36,7 +36,7 @@ import math
 # In[3]:
 
 #publications = pd.read_csv("/home/antonvocalis/Dropbox (University of Michigan)/website/markdown_generator/publications2.csv", sep="\t", header=0, encoding = "utf-8")
-publications = pd.read_csv("publications2.csv", sep="\t", header=0, encoding = "utf-8")
+publications = pd.read_csv("publications2.csv", sep=",", header=0, encoding = "utf-8")
 wps =  pd.read_csv("wps.csv", sep=",", header=0, encoding = "utf-8")
 
 
@@ -76,6 +76,7 @@ for iterator in [publications.iterrows(), wps.iterrows()]:
         item.venue = str(item.venue)
         item.paper_url = str(item.paper_url)
         
+        
    
         md_filename = str(item.pub_date) + "-" + item.url_slug + ".md"
         html_filename = str(item.pub_date) + "-" + item.url_slug
@@ -92,7 +93,8 @@ for iterator in [publications.iterrows(), wps.iterrows()]:
             md += """collection: wps"""
             md += """\npermalink: /wp/""" + html_filename
 
-   
+        if len(str(item.coauthors)) > 3:
+            md += """\ncoauthors: """ + html_escape(item.coauthors)
        
         if len(str(item.excerpt)) > 5:
             md += "\nexcerpt: '" + html_escape(item.excerpt) + "'"
