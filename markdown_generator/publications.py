@@ -27,6 +27,9 @@ import pandas as pd
 import json
 import math
 
+import os 
+os.chdir("/Users/davidvandijcke/Dropbox (University of Michigan)/website/markdown_generator")
+
 # ## Import TSV
 #
 # Pandas makes this easy with the read_csv function. We are using a TSV, so we specify the separator as a tab, or `\t`.
@@ -78,7 +81,8 @@ for iterator in [publications.iterrows(), wps.iterrows()]:
         
         
    
-        md_filename = str(item.pub_date) + "-" + item.url_slug + ".md"
+        md_filename = str(pd.to_datetime(item.pub_date).date()) + "-" + item.url_slug + ".md"
+        md_filename = md_filename.replace("/", "-")
         html_filename = str(item.pub_date) + "-" + item.url_slug
         year = item.pub_date[:4]
    
