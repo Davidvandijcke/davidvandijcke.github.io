@@ -30,7 +30,7 @@
 <p class="p1"><span class="s1">{% if post.read_time %}</span></p>
 <p class="p2"><span class="s1">{% include read-time.html %}</span></p>
 <p class="p2"><span class="s1">{% if post.coauthors %}</span></p>
-<p class="p2"><span class="s1">(joint with {{ post.coauthors }})</span></p>
+<p class="p2"><span class="s1">(joint with {{ post.coauthors }} ) {% endif %} </span></p>
 <p class="p1"><span class="s1">{% endif %} {% if post.collection == 'teaching' %}</span></p>
 <p class="p2"><span class="s1">{{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}<span class="Apple-converted-space"> </span></span></p>
 <p class="p1"><span class="s1">{% elsif post.collection == 'publications' %}</span></p>
