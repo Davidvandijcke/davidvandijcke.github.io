@@ -40,7 +40,7 @@ os.chdir("/Users/davidvandijcke/Dropbox (University of Michigan)/website/markdow
 
 #publications = pd.read_csv("/home/antonvocalis/Dropbox (University of Michigan)/website/markdown_generator/publications2.csv", sep="\t", header=0, encoding = "utf-8")
 publications = pd.read_csv("publications2.csv", sep=",", header=0, encoding = "utf-8")
-wps =  pd.read_csv("wps.csv", sep=",", header=0, encoding = "utf-8")
+wps =  pd.read_csv("wps.csv", sep=",", header=0, encoding = "latin1")
 
 
 # ## Escape special characters
