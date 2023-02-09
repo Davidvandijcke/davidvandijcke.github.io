@@ -7,6 +7,7 @@ date: 2022-12-08
 venue: 'arXiv'
 paperurl: 'https://www.dropbox.com/s/s0j2dcjms3uc9ig/BOE_revision_8dec2022.pdf?dl=0'
 citation: 'Van Dijcke, D. (2022) On the Non-Identification of Revenue Production Functions. Manuscript.'
+media: '.'
 ---
 
 <a href='https://www.dropbox.com/s/s0j2dcjms3uc9ig/BOE_revision_8dec2022.pdf?dl=0'>Download paper here</a>
