@@ -15,7 +15,7 @@ Welcome to my webpage.
 
 <img src="/images/favicon.ico" alt="drawing" width="20"/> I am a PhD student in Economics at the University of Michigan - Ann Arbor. You can find a great overview of my recent research by Michigan News [here](https://news.umich.edu/u-m-economic-expert-others-find-views-on-politics-science-have-driven-public-response-to-pandemic/).
 
-<img src="/images/favicon.ico" alt="drawing" width="20"/> I am also a consulting analyst with Ipsos Public Affairs ([email](david.vandijcke@ipsos.com) and an Academic Visitor at the [Bank of England](https://www.bankofengland.co.uk/).
+<img src="/images/favicon.ico" alt="drawing" width="20"/> I am also a consulting analyst with Ipsos Public Affairs ([email](david.vandijcke@ipsos.com)) and an Academic Visitor at the [Bank of England](https://www.bankofengland.co.uk/).
 
 <img src="/images/favicon.ico" alt="drawing" width="20"/>  My [research](https://davidvandijcke.github.io/research) interests lie in industrial organization, political economy, and econometrics.
 
