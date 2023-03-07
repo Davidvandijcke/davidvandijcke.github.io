@@ -34,7 +34,7 @@ import pandas as pd
 
 # In[3]:
 
-publications = pd.read_csv("media.csv", sep=",", header=0, encoding = "UTF-8")
+publications = pd.read_csv("media.csv", sep=",", header=0, encoding = "ISO-8859-1")
 publications
 
 

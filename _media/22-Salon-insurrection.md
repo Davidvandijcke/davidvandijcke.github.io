@@ -1,0 +1,13 @@
+---
+title: "Who were the Jan. 6 attackers? Isolated white folks, searching for meaning âand enemies"
+collection: media
+permalink: /media/1/21/22-Salon-insurrection
+excerpt: 'New research offers clearer picture: Capitol rioters were often suburban and middle-class â and many felt isolated'
+date: 1/21/22
+venue: 'Salon'
+paperurl: 'https://www.salon.com/2022/01/21/new-research-trumpists-jan-6-loneliness-feeling-isolated-dems-non-whites-and-liberals/'
+---
+
+<a href='https://www.salon.com/2022/01/21/new-research-trumpists-jan-6-loneliness-feeling-isolated-dems-non-whites-and-liberals/'>Read article here</a>
+
+New research offers clearer picture: Capitol rioters were often suburban and middle-class â and many felt isolated
