@@ -1,5 +1,5 @@
 ---
-title: "Here’s What a Ton of Capitol Rioters Had in Common"
+title: "Here's What a Ton of Capitol Rioters Had in Common"
 collection: media
 permalink: /media/2021-02-05-Daily-beast-insurrection
 date: 2021-02-05

@@ -35,7 +35,6 @@ import pandas as pd
 # In[3]:
 
 publications = pd.read_csv("media.csv", sep=",", header=0, encoding = "ISO-8859-1")
-publications
 
 
 # ## Escape special characters
@@ -66,7 +65,7 @@ for row, item in publications.iterrows():
     
     item.url_slug = str(item.url_slug)
     item.excerpt = str(item.excerpt)
-    item.pub_date = str(item.pub_date)
+    item.pub_date =  str( str(pd.to_datetime(item.pub_date).date()))
     # item.citation = str(item.citation)
     item.venue = str(item.venue)
     item.paper_url = str(item.paper_url)

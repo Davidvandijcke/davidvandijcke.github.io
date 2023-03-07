@@ -1,5 +1,5 @@
 ---
-title: "Biden’s plea for masks will fail. Blame political polarization."
+title: "Biden's plea for masks will fail. Blame political polarization."
 collection: media
 permalink: /media/2021-04-13-Wapo-masks
 date: 2021-04-13
