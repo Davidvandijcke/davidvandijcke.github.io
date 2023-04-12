@@ -23,7 +23,7 @@ Please find my GitHub commits and repositories here:
 
 Git for the paper can be found [here](https://github.com/Davidvandijcke/ukraine_air_raids), full replication materials are on [Harvard Dataverse](https://doi.org/10.7910/DVN/YH1GJT).
 
-<img src="../images/coeffs_split_mvmt_levels.pdf" alt="hi" class="inline"/> <br/>
+<img src="../images/coeffs_split_mvmt_levels.jpg" alt="hi" class="inline"/> <br/>
 
 
 <img src="/images/favicon.ico" alt="drawing" width="20"/>  **Science Skepticism Reduces Compliance with COVID-19 Shelter-in-Place Policies**
