@@ -19,6 +19,11 @@ Please find my GitHub commits and repositories here:
 <div class="github-card" data-github="davidvandijcke" data-width="400" data-height="" data-theme="default"></div>
 <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
 
+<img src="/images/favicon.ico" alt="drawing" width="20"/>  **Public response to government alerts saves lives during Russian invasion of Ukraine**
+
+Git for the paper can be found [here](https://github.com/Davidvandijcke/ukraine_air_raids), full replication materials are on [Harvard Dataverse](https://doi.org/10.7910/DVN/YH1GJT).
+
+
 <img src="/images/favicon.ico" alt="drawing" width="20"/>  **Science Skepticism Reduces Compliance with COVID-19 Shelter-in-Place Policies**
 
 Git for the paper can be found [here](https://github.com/Davidvandijcke/science_skepticism_nature_hb), full replication materials are on [OpenICPSR](https://www.openicpsr.org/openicpsr/project/144861).
