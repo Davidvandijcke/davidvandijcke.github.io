@@ -1,0 +1,16 @@
+---
+title: "Return to Office and the Tenure Distribution"
+collection: wps
+permalink: /wp/2024-05-13-return-to-office
+coauthors: Florian Gunsilius, Austin Wright
+excerpt: 'With the official end of the COVID-19 pandemic, debates about the return to office have taken center stage among companies and employees. Despite their ubiquity, the economic implications of return to office policies are not fully understood. Using 260 million resumes matched to company data, we analyze the causal effects of such policies on employeesÕ tenure and seniority levels at three of the largest US tech companies: Microsoft, SpaceX, and Apple. Our estimation procedure is nonparametric and captures the full heterogeneity of tenure and seniority of employees in a distributional synthetic controls framework. We estimate a reduction in counterfactual tenure that increases for employees with longer tenure. Similarly, we document a leftward shift in the seniority distribution towards positions below the senior level. These shifts appear to be driven by employees leaving to larger firms that are direct competitors. Our results suggest that return to office policies can lead to an outflow of senior employees, posing a potential threat to the productivity, innovation, and competitiveness of the wider firm.'
+date: 2024-05-13
+venue: 'University of Chicago, Becker Friedman Institute for Economics Working PaperÊ2024-56'
+paperurl: 'https://bfi.uchicago.edu/working-paper/return-to-office-and-the-tenure-distribution/'
+citation: 'Van Dijcke, David, Florian Gunsilius, and Austin L. Wright. &quot;Return to Office and the Tenure Distribution.&quot;ÊUniversity of Chicago, Becker Friedman Institute for Economics Working PaperÊ2024-56 (2024).'
+media: '[Washington Post](https://www.washingtonpost.com/business/2024/05/12/rto-microsoft-apple-spacex/), [Computerworld](https://www.computerworld.com/article/2099785/strict-return-to-work-policies-may-be-driving-tech-workers-away.html)'
+---
+
+<a href='https://bfi.uchicago.edu/working-paper/return-to-office-and-the-tenure-distribution/'>Download paper here</a>
+
+With the official end of the COVID-19 pandemic, debates about the return to office have taken center stage among companies and employees. Despite their ubiquity, the economic implications of return to office policies are not fully understood. Using 260 million resumes matched to company data, we analyze the causal effects of such policies on employeesÕ tenure and seniority levels at three of the largest US tech companies: Microsoft, SpaceX, and Apple. Our estimation procedure is nonparametric and captures the full heterogeneity of tenure and seniority of employees in a distributional synthetic controls framework. We estimate a reduction in counterfactual tenure that increases for employees with longer tenure. Similarly, we document a leftward shift in the seniority distribution towards positions below the senior level. These shifts appear to be driven by employees leaving to larger firms that are direct competitors. Our results suggest that return to office policies can lead to an outflow of senior employees, posing a potential threat to the productivity, innovation, and competitiveness of the wider firm.
