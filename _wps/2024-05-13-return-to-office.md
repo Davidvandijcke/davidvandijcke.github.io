@@ -8,7 +8,7 @@ date: 2024-05-13
 venue: 'University of Chicago, Becker Friedman Institute for Economics Working PaperÊ2024-56'
 paperurl: 'https://bfi.uchicago.edu/working-paper/return-to-office-and-the-tenure-distribution/'
 citation: 'Van Dijcke, David, Florian Gunsilius, and Austin L. Wright. &quot;Return to Office and the Tenure Distribution.&quot;ÊUniversity of Chicago, Becker Friedman Institute for Economics Working PaperÊ2024-56 (2024).'
-media: '[Washington Post](https://www.washingtonpost.com/business/2024/05/12/rto-microsoft-apple-spacex/), [Computerworld](https://www.computerworld.com/article/2099785/strict-return-to-work-policies-may-be-driving-tech-workers-away.html)'
+media: '[Washington Post](https://www.washingtonpost.com/business/2024/05/12/rto-microsoft-apple-spacex/), [Computerworld](https://www.computerworld.com/article/2099785/strict-return-to-work-policies-may-be-driving-tech-workers-away.html), [KCBS Radio](https://davidvandijcke.com/files/kcbs_interview.mp3)'
 ---
 
 <a href='https://bfi.uchicago.edu/working-paper/return-to-office-and-the-tenure-distribution/'>Download paper here</a>
