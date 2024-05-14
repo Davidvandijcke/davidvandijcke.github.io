@@ -8,7 +8,7 @@ date: 2024-05-13
 venue: 'University of Chicago, Becker Friedman Institute for Economics Working PaperÊ2024-56'
 paperurl: 'https://bfi.uchicago.edu/working-paper/return-to-office-and-the-tenure-distribution/'
 citation: 'Van Dijcke, David, Florian Gunsilius, and Austin L. Wright. &quot;Return to Office and the Tenure Distribution.&quot;ÊUniversity of Chicago, Becker Friedman Institute for Economics Working PaperÊ2024-56 (2024).'
-media: '[Washington Post](https://www.washingtonpost.com/business/2024/05/12/rto-microsoft-apple-spacex/), [Computerworld](https://www.computerworld.com/article/2099785/strict-return-to-work-policies-may-be-driving-tech-workers-away.html), [KCBS Radio](https://davidvandijcke.com/files/kcbs_interview.mp3)'
+media: '[Washington Post](https://www.washingtonpost.com/business/2024/05/12/rto-microsoft-apple-spacex/), [Computerworld](https://www.computerworld.com/article/2099785/strict-return-to-work-policies-may-be-driving-tech-workers-away.html), [KCBS Radio](https://davidvandijcke.com/files/kcbs_interview.mp3), (Ars Technica)[https://arstechnica.com/information-technology/2024/05/rto-mandates-led-to-pronounced-exodus-of-senior-workers-at-top-tech-firms/], (Inc.com)[https://www.inc.com/bruce-crumley/study-shows-higher-staff-employee-departures-in-response-to-rto-mandates.html], (Cheddar)[https://www.youtube.com/watch?v=U5fwPI9GKqo]'
 ---
 
 <a href='https://bfi.uchicago.edu/working-paper/return-to-office-and-the-tenure-distribution/'>Download paper here</a>
