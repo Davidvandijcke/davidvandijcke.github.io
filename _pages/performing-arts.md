@@ -8,8 +8,6 @@ redirect_from:
 
 {% include base_path %}
 
-*Showreel* <br/> <br/>
-[<img src="../images/showreel.jpg" alt="hi" class="inline"/>](https://vimeo.com/200251921) <br/>
 
 As Performer
 ======
