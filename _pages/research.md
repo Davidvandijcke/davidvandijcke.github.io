@@ -15,13 +15,16 @@ header:
 {% include base_path %}
 
 {% for post in site.publications reversed %}
-  {% include archive-single.html %}
+  {% include publication-entry.html post=post %}
 {% endfor %}
+
 
 <br>
 
 # Working Papers
 
 
-{% for post in site.wps reversed %} {% include archive-single.html %} {% endfor %}
+{% for post in site.wps reversed %}
+  {% include publication-entry.html post=post %}
+{% endfor %}
 
