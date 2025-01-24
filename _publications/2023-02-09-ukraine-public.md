@@ -10,6 +10,7 @@ paperurl: 'https://www.pnas.org/doi/10.1073/pnas.2220160120'
 citation: 'Van Dijcke, David, Mark Polyak, and Austin L. Wright. &quot;Civil Response to Government Alerts Declines During Russian Invasion of Ukraine.&quot; (2022).'
 media: '[Fast Company](https://www.fastcompany.com/90922662/ajax-systems-air-raid-alert-ukraine?partner=rss), [Newsweek](https://newsweek.com/ukrainians-tired-air-raid-sirens-bombs-russia-war-1802956#:~:text=Air%20raid%20alerts%20have%20prevented,according%20to%20a%20recent%20study), [Voice of America Ukraine](https://www.holosameryky.com/a/postijni-povitrjani-tryvoghy-jak-ukrajinci-prystosuvaly-svoje-zhyttja-do-takogho-rezhymu/7171554.html)'
 workingpaper: '[WP version](https://bfi.uchicago.edu/wp-content/uploads/2022/10/BFI_WP_2022-148.pdf)'
+field: 'Policy'
 ---
 
 <a href='https://www.pnas.org/doi/10.1073/pnas.2220160120'>Download paper here</a>

@@ -9,6 +9,7 @@ venue: 'SSRN'
 paperurl: 'https://ssrn.com/abstract=3621731'
 citation: 'Van Dijcke, David and Wright, Austin L. (2020). Ã¢Using Mobile Device Traces to Improve Near-Real Time Data Collection During the George Floyd Protests.'
 media: '[USA Today](https://eu.usatoday.com/story/news/politics/2020/06/10/george-floyd-black-lives-matter-police-protests-widespread-peaceful/5325737002/) [Ipsos](https://www.ipsos.com/en-us/knowledge/society/Protests-in-the-wake-of-George-Floyd-killing-touch-all-50-states )'
+field: 'Policy'
 ---
 
 <a href='https://ssrn.com/abstract=3621731'>Download paper here</a>

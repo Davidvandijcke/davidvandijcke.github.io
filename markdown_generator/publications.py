@@ -120,6 +120,9 @@ for iterator in [publications.iterrows(), wps.iterrows()]:
             
         if not isinstance(item.replication, float):
             md += "\nreplication: '" + html_escape(item.replication)  + "'"
+            
+        if not isinstance(item.field, float):
+            md += "\nfield: '" + html_escape(item.field)  + "'"
         
         md += "\n---"
         

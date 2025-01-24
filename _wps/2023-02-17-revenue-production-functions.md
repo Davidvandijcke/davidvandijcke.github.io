@@ -10,6 +10,7 @@ paperurl: 'https://arxiv.org/abs/2212.04620'
 citation: 'Van Dijcke, D. (2023) On the Non-Identification of Revenue Production Functions. Bank of England Staff Working Papers 1015.'
 media: '.'
 workingpaper: 'https://www.bankofengland.co.uk/working-paper/2023/on-the-non-identification-of-revenue-production-functions'
+field: 'Econometrics'
 ---
 
 <a href='https://arxiv.org/abs/2212.04620'>Download paper here</a>

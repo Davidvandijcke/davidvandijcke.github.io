@@ -10,6 +10,7 @@ paperurl: 'https://cepr.org/publications/dp18209'
 citation: 'Sonin, K., &amp; Van Dijcke, D., &amp; Wright, A. L. (2023). Isolation and Insurrection: How Partisanship and Political Geography Fueled January 6, 2021. CEPR Discussion Paper 18209.'
 media: '[The Daily Beast](https://www.thedailybeast.com/heres-what-a-ton-of-capitol-rioters-had-in-common), [BFI](https://bfi.uchicago.edu/insight/finding/profiling-insurrection-characterizing-collective-action-using-mobile-device-data/), [UChicago News](https://news.uchicago.edu/story/capitol-unrest-linked-trump-voting-islands-proximity-proud-boys-chapters?utm_source=uc_newsletter&amp;utm_medium=email&amp;utm_campaign=UChicago_News_M02_18_2021), [Salon](https://www.salon.com/2022/01/21/new-research-trumpists-jan-6-loneliness-feeling-isolated-dems-non-whites-and-liberals/)'
 workingpaper: 'https://bfi.uchicago.edu/wp-content/uploads/2021/02/BFI_WP_2021-13.pdf'
+field: 'Policy'
 ---
 
 <a href='https://cepr.org/publications/dp18209'>Download paper here</a>

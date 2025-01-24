@@ -10,6 +10,7 @@ paperurl: 'https://cepr.org/sites/default/files/news/CovidEconomics7.pdf'
 citation: 'Brzezinski, A., Deiana, G., Kecht, V. &amp; Van Dijcke, D. (2020). &apos;The COVID-19 Pandemic: Government vs. Community Action Across the United States&apos;. Covid Economics: Vetted and Real-Time Papers 7. 115-156.'
 media: '[Bocconi Knowledge](https://www.knowledge.unibocconi.eu/notizia.php?idArt=21833)'
 workingpaper: '[WP version](https://www.inet.ox.ac.uk/publications/no-2020-06-the-covid-19-pandemic-government-vs-community-action-across-the-united-states/)'
+field: 'Policy'
 ---
 
 <a href='https://cepr.org/sites/default/files/news/CovidEconomics7.pdf'>Download paper here</a>

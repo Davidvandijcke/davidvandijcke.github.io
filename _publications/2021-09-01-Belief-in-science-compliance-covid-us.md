@@ -11,6 +11,7 @@ citation: 'Brzezinski, Adam and Kecht, Valentin and Van Dijcke, David and Wright
 media: '[PsyPost](https://www.psypost.org/2022/01/science-skepticism-appears-to-be-an-important-predictor-of-non-compliance-with-covid-19-shelter-in-place-policies-62322)'
 workingpaper: '[WP version](https://bfi.uchicago.edu/working-paper/belief-in-science-influences-physical-distancing-in-response-to-covid-19-lockdown-policies/)'
 replication: '[Replication materials](https://www.openicpsr.org/openicpsr/project/144861/version/V1/view)'
+field: 'Policy'
 ---
 
 <a href='https://www.nature.com/articles/s41562-021-01227-0'>Download paper here</a>

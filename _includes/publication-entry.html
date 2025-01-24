@@ -1,5 +1,6 @@
 {% comment %}
-  Custom "publication-entry.html" to show minimal info in main block, and everything else in a collapsible
+  publication-entry.html: Minimal info on main block,
+  collapsible details for extra info.
 {% endcomment %}
 {% include base_path %}
 
@@ -18,14 +19,28 @@
     <p><strong>Coauthors:</strong> {{ post.coauthors }}</p>
   {% endif %}
 
-  {% if post.media %}
-    <!-- strip_newlines ensures any multiline markdown is forced inline -->
+  {% comment %}
+    Show media coverage only if "media" is present and not ".".
+    Also strip newlines to ensure links stay on the same line.
+  {% endcomment %}
+  {% if post.media and post.media != '.' %}
     <p>
       <strong>Media coverage:</strong>
-      {{ post.media | markdownify | strip_newlines }}
+      {{ post.media | markdownify | strip_newlines | strip }}
     </p>
   {% endif %}
 
+  {% comment %}
+    Determine if there's anything for the details section.
+    If none of these fields are present, we won't show <details> at all.
+  {% endcomment %}
+  {% assign has_any_details = false %}
+  {% if post.paperurl %}{% assign has_any_details = true %}{% endif %}
+  {% if post.excerpt %}{% assign has_any_details = true %}{% endif %}
+  {% if post.replication %}{% assign has_any_details = true %}{% endif %}
+  {% if post.workingpaper %}{% assign has_any_details = true %}{% endif %}
+
+  {% if has_any_details %}
   <!-- Collapsible Section -->
   <details class="pub-details">
     <summary>Show details</summary>
@@ -39,7 +54,7 @@
 
     {% if post.excerpt %}
       <p>
-        <strong>Abstract:</strong>
+        <strong>Abstract:</strong><br>
         {{ post.excerpt | markdownify }}
       </p>
     {% endif %}
@@ -47,15 +62,17 @@
     {% if post.replication %}
       <p>
         <strong>Replication Materials:</strong>
-        {{ post.replication | markdownify | strip_newlines }}
+        {{ post.replication | markdownify | strip_newlines | strip }}
       </p>
     {% endif %}
 
     {% if post.workingpaper %}
       <p>
         <strong>WP Version:</strong>
-        {{ post.workingpaper | markdownify | strip_newlines }}
+        {{ post.workingpaper | markdownify | strip_newlines | strip }}
       </p>
     {% endif %}
+
   </details>
+  {% endif %}
 </div>

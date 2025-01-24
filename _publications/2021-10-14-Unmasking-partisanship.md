@@ -10,6 +10,7 @@ paperurl: 'https://www.sciencedirect.com/science/article/pii/S0047272721001742'
 citation: 'Milosh, Maria and Painter, Marcus and Sonin, Konstantin and Van Dijcke, David and Wright, Austin L. (2021). Unmasking Partisanship: How Polarization Influences Public Responses to Collective Risk. Journal of Public Economics.'
 media: '[Vox EU](https://voxeu.org/article/political-polarisation-impedes-public-policy-response-covid-19), [Time magazine](https://time.com/5941599/basic-health-care-postponed-covid-19/),  [UChicago News](https://news.uchicago.edu/story/who-does-or-doesnt-wear-mask-partisanship-explains-response-covid-19), [Washington Post](https://www.washingtonpost.com/outlook/2021/04/13/masks-mandate-partisanship-politics/)'
 workingpaper: '[WP version](https://bfi.uchicago.edu/working-paper/unmasking-partisanship-how-polarization-influences-public-responses-to-collective-risk/)'
+field: 'Policy'
 ---
 
 <a href='https://www.sciencedirect.com/science/article/pii/S0047272721001742'>Download paper here</a>
