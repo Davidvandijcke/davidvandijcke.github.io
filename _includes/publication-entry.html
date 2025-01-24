@@ -26,10 +26,11 @@
   {% if post.media and post.media != '.' %}
     <p>
         <strong>Media coverage:</strong>
-        {% for link in post.media | split: '
-        ' %}
-          {{ link | markdownify }}
-        {% endfor %}
+        <ul>
+          {% for link in post.media | split: '\n' %}
+            <li>{{ link | markdownify | remove: '<p>' | remove: '</p>' }}</li>
+          {% endfor %}
+        </ul>
     </p>
   {% endif %}
 
