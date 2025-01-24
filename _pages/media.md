@@ -10,5 +10,11 @@ header:
 
 {% include base_path %}
 
-{% for post in site.media reversed %} {% include archive-single.html %} {% endfor %}
+{% assign econ_pubs = site.media  %}
+{% if econ_pubs.size > 0 %}
+## Publications
+{% for post in econ_pubs reversed %}
+  {% include publication-entry.html post=post %}
+{% endfor %}
+{% endif %}
 
