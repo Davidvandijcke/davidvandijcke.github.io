@@ -25,8 +25,11 @@
   {% endcomment %}
   {% if post.media and post.media != '.' %}
     <p>
-      <strong>Media coverage:</strong>
-      {{ post.media | markdownify | strip_newlines | strip }}
+        <strong>Media coverage:</strong>
+        {% for link in post.media | split: '
+        ' %}
+          {{ link | markdownify }}
+        {% endfor %}
     </p>
   {% endif %}
 

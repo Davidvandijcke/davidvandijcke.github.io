@@ -8,11 +8,11 @@ header:
   overlay_filter: 0.5
 ---
 
-## Econometrics (Primary Field)
+# Econometrics 
 
 {% assign econ_pubs = site.publications | where: "field", "Econometrics" %}
 {% if econ_pubs.size > 0 %}
-### Publications
+## Publications
 {% for post in econ_pubs reversed %}
   {% include publication-entry.html post=post %}
 {% endfor %}
@@ -20,18 +20,18 @@ header:
 
 {% assign econ_wps = site.wps | where: "field", "Econometrics" %}
 {% if econ_wps.size > 0 %}
-### Working Papers
+## Working Papers
 {% for post in econ_wps reversed %}
   {% include publication-entry.html post=post %}
 {% endfor %}
 {% endif %}
 
 
-## Policy
+# Policy
 
 {% assign policy_pubs = site.publications | where: "field", "Policy" %}
 {% if policy_pubs.size > 0 %}
-### Publications
+## Publications
 {% for post in policy_pubs reversed %}
   {% include publication-entry.html post=post %}
 {% endfor %}
@@ -39,7 +39,7 @@ header:
 
 {% assign policy_wps = site.wps | where: "field", "Policy" %}
 {% if policy_wps.size > 0 %}
-### Working Papers
+## Working Papers
 {% for post in policy_wps reversed %}
   {% include publication-entry.html post=post %}
 {% endfor %}
