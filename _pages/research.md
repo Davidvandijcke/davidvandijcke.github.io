@@ -8,59 +8,39 @@ header:
   overlay_filter: 0.5
 ---
 
-<!-- 
-  We'll assume each publication or working paper in your 
-  front matter has a "field" that is either 
-    "Econometrics" 
-  or 
-    "Policy & Political Economy"
--->
+## Econometrics (Primary Field)
 
-# Econometrics
-
-<details>
-<summary><strong>Publications</strong></summary>
-
-{% for post in site.publications reversed %}
-  {% if post.field == "Econometrics" %}
-    {% include publication-entry.html post=post %}
-  {% endif %}
+{% assign econ_pubs = site.publications | where: "field", "Econometrics" %}
+{% if econ_pubs.size > 0 %}
+### Publications
+{% for post in econ_pubs reversed %}
+  {% include publication-entry.html post=post %}
 {% endfor %}
+{% endif %}
 
-</details>
-
-<details>
-<summary><strong>Working Papers</strong></summary>
-
-{% for post in site.wps reversed %}
-  {% if post.field == "Econometrics" %}
-    {% include publication-entry.html post=post %}
-  {% endif %}
+{% assign econ_wps = site.wps | where: "field", "Econometrics" %}
+{% if econ_wps.size > 0 %}
+### Working Papers
+{% for post in econ_wps reversed %}
+  {% include publication-entry.html post=post %}
 {% endfor %}
+{% endif %}
 
-</details>
 
+## Policy
 
-# Policy & Political Economy
-
-<details>
-<summary><strong>Publications</strong></summary>
-
-{% for post in site.publications reversed %}
-  {% if post.field == "Policy & Political Economy" %}
-    {% include publication-entry.html post=post %}
-  {% endif %}
+{% assign policy_pubs = site.publications | where: "field", "Policy" %}
+{% if policy_pubs.size > 0 %}
+### Publications
+{% for post in policy_pubs reversed %}
+  {% include publication-entry.html post=post %}
 {% endfor %}
+{% endif %}
 
-</details>
-
-<details>
-<summary><strong>Working Papers</strong></summary>
-
-{% for post in site.wps reversed %}
-  {% if post.field == "Policy & Political Economy" %}
-    {% include publication-entry.html post=post %}
-  {% endif %}
+{% assign policy_wps = site.wps | where: "field", "Policy" %}
+{% if policy_wps.size > 0 %}
+### Working Papers
+{% for post in policy_wps reversed %}
+  {% include publication-entry.html post=post %}
 {% endfor %}
-
-</details>
+{% endif %}
