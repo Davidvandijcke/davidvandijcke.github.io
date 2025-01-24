@@ -1,55 +1,61 @@
 {% comment %}
-  This file defines a "card-like" or "sleek" view for a single publication entry
+  Custom "publication-entry.html" to show minimal info in main block, and everything else in a collapsible
 {% endcomment %}
 {% include base_path %}
 
-{% assign title = post.title %}
+{% assign title       = post.title %}
 {% assign date_string = post.date | default: "1900-01-01" | date: "%Y" %}
 
 <div class="pub-entry">
-  <!-- Title -->
+  <!-- Main Block -->
   <h3 class="pub-title">{{ title }}</h3>
 
-  <!-- Authors -->
-  {% if post.coauthors %}
-    <p class="pub-coauthors">(<em>With {{ post.coauthors }}</em>)</p>
-  {% endif %}
-
-  <!-- Citation or short info line -->
-  {% if post.citation %}
-    <p class="pub-citation">{{ post.citation }}</p>
-  {% endif %}
-
-  <!-- Venue / Journal or WP link -->
   {% if post.venue %}
-    <p class="pub-venue"><strong>Venue:</strong> <em>{{ post.venue }}</em> ({{ date_string }})</p>
+    <p><strong>Venue:</strong> <em>{{ post.venue }}</em> ({{ date_string }})</p>
   {% endif %}
 
-  <!-- Paper link if you have it -->
-  {% if post.paperurl %}
-    <p class="pub-links"><strong>Paper:</strong> <a href="{{ post.paperurl }}">View/Download</a></p>
+  {% if post.coauthors %}
+    <p><strong>Coauthors:</strong> {{ post.coauthors }}</p>
   {% endif %}
 
-  <!-- Working paper link if you have it -->
-  {% if post.workingpaper %}
-    <p class="pub-links">{{ post.workingpaper | markdownify }}</p>
-  {% endif %}
-
-  <!-- Replication materials link if you have it -->
-  {% if post.replication %}
-    <p class="pub-links">{{ post.replication | markdownify }}</p>
-  {% endif %}
-
-  <!-- Media link(s) if you have it -->
   {% if post.media %}
-    <p class="pub-media"><strong>Media coverage:</strong> {{ post.media | markdownify }}</p>
+    <!-- strip_newlines ensures any multiline markdown is forced inline -->
+    <p>
+      <strong>Media coverage:</strong>
+      {{ post.media | markdownify | strip_newlines }}
+    </p>
   {% endif %}
 
-  <!-- Collapsible Abstract -->
-  {% if post.excerpt %}
-    <details class="pub-abstract">
-      <summary>Abstract</summary>
-      <p>{{ post.excerpt | markdownify }}</p>
-    </details>
-  {% endif %}
+  <!-- Collapsible Section -->
+  <details class="pub-details">
+    <summary>Show details</summary>
+
+    {% if post.paperurl %}
+      <p>
+        <strong>Paper Download Link:</strong>
+        <a href="{{ post.paperurl }}" target="_blank">View/Download</a>
+      </p>
+    {% endif %}
+
+    {% if post.excerpt %}
+      <p>
+        <strong>Abstract:</strong>
+        {{ post.excerpt | markdownify }}
+      </p>
+    {% endif %}
+
+    {% if post.replication %}
+      <p>
+        <strong>Replication Materials:</strong>
+        {{ post.replication | markdownify | strip_newlines }}
+      </p>
+    {% endif %}
+
+    {% if post.workingpaper %}
+      <p>
+        <strong>WP Version:</strong>
+        {{ post.workingpaper | markdownify | strip_newlines }}
+      </p>
+    {% endif %}
+  </details>
 </div>

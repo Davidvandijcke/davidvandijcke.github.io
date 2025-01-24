@@ -1,4 +1,3 @@
-/* Make each publication a card-like block */
 .pub-entry {
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -7,42 +6,25 @@
   background-color: #fafafa;
 }
 
-/* Title styling */
 .pub-title {
   margin-top: 0;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 600;
 }
 
-/* Co-authors styling */
-.pub-coauthors {
-  margin: 0.2rem 0 0.5rem 0;
-  font-style: italic;
-  color: #666;
-}
-
-/* Citation/venue links */
-.pub-citation,
-.pub-venue,
-.pub-links,
-.pub-media {
-  margin-bottom: 0.5rem;
-  color: #444;
-}
-
-/* Collapsible section (the <details> element) */
-.pub-abstract summary {
+/* Collapsible details styling */
+.pub-details summary {
   cursor: pointer;
   font-weight: 500;
+  margin-top: 1rem;
   color: #444;
 }
 
-/* Indentation after clicking summary */
-.pub-abstract > p {
-  margin: 0.5rem 0 0.5rem 1.2rem;
+.pub-details[open] summary {
+  margin-bottom: 0.5rem;
 }
 
-/* Slightly nicer arrow for the details summary (optional) */
-.pub-abstract summary::-webkit-details-marker {
-  color: #aaa;
+/* Improve the default arrow (optional) */
+.pub-details summary::-webkit-details-marker {
+  color: #888;
 }
