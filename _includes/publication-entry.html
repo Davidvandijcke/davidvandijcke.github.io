@@ -55,10 +55,10 @@
       </p>
     {% endif %}
 
-    {% if post.excerpt %}
+    {% if post.excerpt and post.excerpt != '' %}
       <p>
-        <strong>Abstract:</strong><br>
-        {{ post.excerpt | markdownify }}
+      <strong>Abstract:</strong><br>
+      {{ post.excerpt | markdownify }}
       </p>
     {% endif %}
 
