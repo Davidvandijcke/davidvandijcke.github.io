@@ -83,14 +83,13 @@ analytics:
 author:
   name             : "David Van Dijcke"
   avatar           : "headshot.jpg"
-  bio              : "PhD student in Economics @ University of Michigan - Ann Arbor. 
-Academic Visitor @ Bank of England."
-  location         : "Ann Arbor & London"
+  bio              : "PhD student in Economics @ University of Michigan - Ann Arbor"
+  location         : "Ann Arbor"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=T3mPijUAAAAJ&hl=en&authuser=1&oi=ao"
   email            : "dvdijcke@umich.edu"
-  researchgate     :  "https://www.researchgate.net/profile/David_Van_Dijcke"
+  researchgate     : 
   uri              :
   bitbucket        :
   codepen          :
