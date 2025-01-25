@@ -19,6 +19,8 @@ Please find my GitHub commits and repositories here:
 <div class="github-card" data-github="davidvandijcke" data-width="400" data-height="" data-theme="default"></div>
 <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
 
+<img src="/images/favicon.ico" alt="drawing" width="20"/>  [**Distributional Synthetic Controls (disco) Stata package**](https://github.com/Davidvandijcke/DiSCos_stata) Implements the method in Gunsilius (2023). 
+
 <img src="/images/favicon.ico" alt="drawing" width="20"/>  [**Distributional Synthetic Controls (DiSCos) R package**](https://www.davidvandijcke.com/DiSCos/) Implements the method in Gunsilius (2023). 
 
 <img src="/images/favicon.ico" alt="drawing" width="20"/>  **Public response to government alerts saves lives during Russian invasion of Ukraine**

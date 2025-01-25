@@ -26,11 +26,11 @@
   {% if post.media and post.media != '.' %}
     <p>
         <strong>Media coverage:</strong>
-        <ul>
+        <span>
           {% for link in post.media | split: '\n' %}
-            <li>{{ link | markdownify | remove: '<p>' | remove: '</p>' }}</li>
+            {{ link | markdownify | remove: '<p>' | remove: '</p>' }}{% if forloop.last == false %}, {% endif %}
           {% endfor %}
-        </ul>
+        </span>
     </p>
   {% endif %}
 
@@ -51,8 +51,7 @@
 
     {% if post.paperurl %}
       <p>
-        <strong>Paper Download Link:</strong>
-        <a href="{{ post.paperurl }}" target="_blank">View/Download</a>
+      <a href="{{ post.paperurl }}" target="_blank">View/Download</a>
       </p>
     {% endif %}
 
@@ -65,15 +64,14 @@
 
     {% if post.replication %}
       <p>
-        <strong>Replication Materials:</strong>
         {{ post.replication | markdownify | strip_newlines | strip }}
       </p>
     {% endif %}
 
     {% if post.workingpaper %}
       <p>
-        <strong>WP Version:</strong>
-        {{ post.workingpaper | markdownify | strip_newlines | strip }}
+      <strong>WP Version:</strong>
+      <a href="{{ post.workingpaper }}" target="_blank">View/Download</a>
       </p>
     {% endif %}
 
