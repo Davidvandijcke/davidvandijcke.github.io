@@ -12,7 +12,7 @@
   <h3 class="pub-title">{{ title }}</h3>
 
   {% if post.venue %}
-    <p><strong>Venue:</strong> <em>{{ post.venue }}</em> ({{ date_string }})</p>
+    <p><strong>Venue:</strong> <em>{{ post.venue | markdownify }}</em> ({{ date_string }})</p>
   {% endif %}
 
   {% if post.coauthors %}
