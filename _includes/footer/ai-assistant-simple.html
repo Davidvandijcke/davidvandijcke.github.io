@@ -1,21 +1,9 @@
-<!-- AI Assistant Button and Chat Interface - FIXED VERSION -->
+<!-- AI Assistant Button - Ultra Simple -->
 <style>
-  /* AI Assistant Container */
-  #ai-assistant-wrapper {
+  .ai-button {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    z-index: 999999;
-    animation: float 3s ease-in-out infinite;
-  }
-  
-  @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-  }
-  
-  #ai-assistant-trigger {
     background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
     border: none;
     border-radius: 50px;
@@ -25,22 +13,23 @@
     font-weight: 600;
     cursor: pointer;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 9999;
+    animation: float 3s ease-in-out infinite;
   }
   
-  #ai-assistant-trigger:hover {
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .ai-button:hover {
     transform: scale(1.08);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-  }
-  
-  #ai-assistant-wrapper:hover {
     animation-play-state: paused;
   }
   
-  #ai-chat-window {
+  .ai-modal {
+    display: none;
     position: fixed;
     bottom: 120px;
     right: 30px;
@@ -49,200 +38,54 @@
     background: white;
     border-radius: 16px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    display: none;
-    flex-direction: column;
-    overflow: hidden;
-    z-index: 999999;
+    z-index: 10000;
   }
   
-  #ai-chat-header {
+  .ai-modal-header {
     background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
     color: white;
     padding: 20px;
+    border-radius: 16px 16px 0 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   
-  #ai-chat-header h3 {
+  .ai-modal-header h3 {
     margin: 0;
     font-size: 18px;
   }
   
-  #ai-chat-close {
+  .ai-close {
     background: none;
     border: none;
     color: white;
     font-size: 24px;
     cursor: pointer;
+    padding: 0;
     width: 30px;
     height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   
-  #ai-chat-close:hover {
-    background: rgba(255, 255, 255, 0.2);
-  }
-  
-  #ai-chat-frame {
-    flex: 1;
-    border: none;
+  .ai-modal iframe {
     width: 100%;
-  }
-  
-  #ai-chat-loading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #666;
-    font-size: 16px;
-    padding: 20px;
-  }
-  
-  #ai-chat-loading .spinner {
-    border: 3px solid #f3f3f3;
-    border-top: 3px solid #7c3aed;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
-    margin: 0 auto 15px;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-  @media (max-width: 768px) {
-    #ai-assistant-wrapper {
-      bottom: 20px;
-      right: 20px;
-    }
-    
-    #ai-assistant-trigger {
-      padding: 12px 24px;
-      font-size: 14px;
-    }
-    
-    #ai-chat-window {
-      bottom: 100px;
-      right: 20px;
-      width: calc(100vw - 40px);
-      max-width: 400px;
-      height: 70vh;
-      max-height: 600px;
-    }
+    height: calc(100% - 60px);
+    border: none;
+    border-radius: 0 0 16px 16px;
   }
 </style>
 
-<div id="ai-assistant-wrapper">
-  <button id="ai-assistant-trigger" type="button">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 2C10.9 2 10 2.9 10 4C10 5.1 10.9 6 12 6C13.1 6 14 5.1 14 4C14 2.9 13.1 2 12 2ZM12 8C9.79 8 8 9.79 8 12C8 14.21 9.79 16 12 16C14.21 16 16 14.21 16 12C16 9.79 14.21 8 12 8ZM12 18C10.9 18 10 18.9 10 20C10 21.1 10.9 22 12 22C13.1 22 14 21.1 14 20C14 18.9 13.1 18 12 18ZM6 12C6 10.9 5.1 10 4 10C2.9 10 2 10.9 2 12C2 13.1 2.9 14 4 14C5.1 14 6 13.1 6 12ZM20 10C18.9 10 18 10.9 18 12C18 13.1 18.9 14 20 14C21.1 14 22 13.1 22 12C22 10.9 21.1 10 20 10ZM17.66 4.34C16.88 3.56 15.61 3.56 14.83 4.34C14.05 5.12 14.05 6.39 14.83 7.17C15.61 7.95 16.88 7.95 17.66 7.17C18.44 6.39 18.44 5.12 17.66 4.34ZM7.17 14.83C6.39 14.05 5.12 14.05 4.34 14.83C3.56 15.61 3.56 16.88 4.34 17.66C5.12 18.44 6.39 18.44 7.17 17.66C7.95 16.88 7.95 15.61 7.17 14.83ZM19.66 14.83C18.88 14.05 17.61 14.05 16.83 14.83C16.05 15.61 16.05 16.88 16.83 17.66C17.61 18.44 18.88 18.44 19.66 17.66C20.44 16.88 20.44 15.61 19.66 14.83ZM7.17 7.17C7.95 6.39 7.95 5.12 7.17 4.34C6.39 3.56 5.12 3.56 4.34 4.34C3.56 5.12 3.56 6.39 4.34 7.17C5.12 7.95 6.39 7.95 7.17 7.17Z" fill="currentColor"/>
-    </svg>
-    <span>Ask about my research</span>
-  </button>
-</div>
+<button class="ai-button" onclick="document.getElementById('aiModal').style.display='block'; document.getElementById('aiButton').style.display='none';" id="aiButton">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+    <path d="M12 2C10.9 2 10 2.9 10 4C10 5.1 10.9 6 12 6C13.1 6 14 5.1 14 4C14 2.9 13.1 2 12 2ZM12 8C9.79 8 8 9.79 8 12C8 14.21 9.79 16 12 16C14.21 16 16 14.21 16 12C16 9.79 14.21 8 12 8ZM12 18C10.9 18 10 18.9 10 20C10 21.1 10.9 22 12 22C13.1 22 14 21.1 14 20C14 18.9 13.1 18 12 18Z" fill="currentColor"/>
+  </svg>
+  Ask about my research
+</button>
 
-<div id="ai-chat-window">
-  <div id="ai-chat-header">
+<div class="ai-modal" id="aiModal">
+  <div class="ai-modal-header">
     <h3>David's Research Assistant</h3>
-    <button id="ai-chat-close" type="button">&times;</button>
+    <button class="ai-close" onclick="document.getElementById('aiModal').style.display='none'; document.getElementById('aiButton').style.display='block';">&times;</button>
   </div>
-  <div id="ai-chat-loading">
-    <div class="spinner"></div>
-    <p>Loading AI Assistant...</p>
-    <p style="font-size: 14px; color: #999;">If this takes too long, the Hugging Face Space might be starting up.</p>
-  </div>
-  <iframe 
-    id="ai-chat-frame"
-    src="https://dvdijcke-david-research-assistant.hf.space"
-    title="AI Research Assistant"
-    onload="document.getElementById('ai-chat-loading').style.display='none';">
-  </iframe>
+  <iframe src="https://dvdijcke-david-research-assistant.hf.space"></iframe>
 </div>
-
-<script type="text/javascript">
-(function() {
-  'use strict';
-  
-  // Simple function to show chat
-  function showChat() {
-    var chatWindow = document.getElementById('ai-chat-window');
-    var wrapper = document.getElementById('ai-assistant-wrapper');
-    if (chatWindow) {
-      chatWindow.style.display = 'flex';
-    }
-    if (wrapper) {
-      wrapper.style.display = 'none';
-    }
-  }
-  
-  // Simple function to hide chat
-  function hideChat() {
-    var chatWindow = document.getElementById('ai-chat-window');
-    var wrapper = document.getElementById('ai-assistant-wrapper');
-    if (chatWindow) {
-      chatWindow.style.display = 'none';
-    }
-    if (wrapper) {
-      wrapper.style.display = 'block';
-    }
-  }
-  
-  // Initialize when DOM is ready
-  function init() {
-    var triggerBtn = document.getElementById('ai-assistant-trigger');
-    var closeBtn = document.getElementById('ai-chat-close');
-    
-    if (triggerBtn) {
-      triggerBtn.onclick = function(e) {
-        e.preventDefault();
-        showChat();
-        return false;
-      };
-    }
-    
-    if (closeBtn) {
-      closeBtn.onclick = function(e) {
-        e.preventDefault();
-        hideChat();
-        return false;
-      };
-    }
-    
-    // Close on outside click
-    document.onclick = function(e) {
-      var chatWindow = document.getElementById('ai-chat-window');
-      var triggerBtn = document.getElementById('ai-assistant-trigger');
-      
-      if (chatWindow && chatWindow.style.display === 'flex') {
-        if (!chatWindow.contains(e.target) && !triggerBtn.contains(e.target)) {
-          hideChat();
-        }
-      }
-    };
-    
-    // Stop propagation on chat window
-    var chatWindow = document.getElementById('ai-chat-window');
-    if (chatWindow) {
-      chatWindow.onclick = function(e) {
-        e.stopPropagation();
-      };
-    }
-  }
-  
-  // Run init when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-})();
-</script>
