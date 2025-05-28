@@ -1,0 +1,3 @@
+[submodule "david-research-assistant"]
+	path = david-research-assistant
+	url = https://huggingface.co/spaces/dvdijcke/david-research-assistant
