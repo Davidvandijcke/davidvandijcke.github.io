@@ -6,6 +6,15 @@
     bottom: 30px;
     right: 30px;
     z-index: 999999;
+    /* Apply the cool floating animation to the container */
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  /* Cool floating animation */
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
   }
   
   /* Button styling */
@@ -23,17 +32,35 @@
     align-items: center;
     gap: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: float-button 3s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
   }
   
-  @keyframes float-button {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+  /* Add the cool hover effect back */
+  #ai-assistant-trigger::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s;
   }
   
   #ai-assistant-trigger:hover {
-    transform: scale(1.05) translateY(-2px);
+    transform: scale(1.08);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  }
+  
+  #ai-assistant-trigger:hover::before {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  
+  /* Stop floating on hover for better clickability */
+  #ai-assistant-wrapper:hover {
     animation-play-state: paused;
   }
   
@@ -144,43 +171,56 @@
 </div>
 
 <script>
-  // Simple, direct functions
-  function openAIChat() {
+  // Make functions global so onclick can access them
+  window.openAIChat = function() {
     console.log('Opening AI chat...');
     const chatWindow = document.getElementById('ai-chat-window');
     const trigger = document.getElementById('ai-assistant-trigger');
+    const wrapper = document.getElementById('ai-assistant-wrapper');
     
-    if (chatWindow && trigger) {
+    if (chatWindow && trigger && wrapper) {
       chatWindow.style.display = 'flex';
-      trigger.style.display = 'none';
+      wrapper.style.display = 'none';
+      console.log('Chat window opened successfully');
+    } else {
+      console.error('Missing elements:', {chatWindow: !!chatWindow, trigger: !!trigger, wrapper: !!wrapper});
     }
   }
   
-  function closeAIChat() {
+  window.closeAIChat = function() {
     console.log('Closing AI chat...');
     const chatWindow = document.getElementById('ai-chat-window');
-    const trigger = document.getElementById('ai-assistant-trigger');
+    const wrapper = document.getElementById('ai-assistant-wrapper');
     
-    if (chatWindow && trigger) {
+    if (chatWindow && wrapper) {
       chatWindow.style.display = 'none';
-      trigger.style.display = 'flex';
+      wrapper.style.display = 'block';
+      console.log('Chat window closed successfully');
     }
   }
   
-  // Close on outside click
-  document.addEventListener('click', function(event) {
-    const chatWindow = document.getElementById('ai-chat-window');
-    const trigger = document.getElementById('ai-assistant-trigger');
+  // Initialize when DOM is ready
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('AI Assistant initialized');
     
-    if (chatWindow && chatWindow.style.display === 'flex') {
-      if (!chatWindow.contains(event.target) && !trigger.contains(event.target)) {
-        closeAIChat();
+    // Close on outside click
+    document.addEventListener('click', function(event) {
+      const chatWindow = document.getElementById('ai-chat-window');
+      const trigger = document.getElementById('ai-assistant-trigger');
+      
+      if (chatWindow && chatWindow.style.display === 'flex') {
+        if (!chatWindow.contains(event.target) && !trigger.contains(event.target)) {
+          closeAIChat();
+        }
       }
+    });
+    
+    // Prevent event bubbling on chat window clicks
+    const chatWindow = document.getElementById('ai-chat-window');
+    if (chatWindow) {
+      chatWindow.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
     }
-  });
-  
-  // Prevent event bubbling on chat window clicks
-  document.getElementById('ai-chat-window')?.addEventListener('click', function(e) {
-    e.stopPropagation();
   });
 </script>
