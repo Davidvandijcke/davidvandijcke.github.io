@@ -38,17 +38,20 @@
     font-weight: 600;
     position: relative;
     overflow: hidden;
+    pointer-events: all !important; /* Ensure button is clickable */
+    user-select: none; /* Prevent text selection */
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
   }
   
-  /* Add floating animation */
+  /* Add floating animation to button only, not container */
   @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0px); }
   }
   
-  #ai-assistant-container {
-    animation: float 3s ease-in-out infinite !important;
+  #ai-assistant-btn {
+    animation: float 3s ease-in-out infinite;
   }
   
   #ai-assistant-btn:hover {
@@ -136,25 +139,30 @@
 
 <script>
 (function() {
-  // Wait for page to be fully loaded
-  function waitForLoad() {
-    if (document.readyState === 'complete') {
-      initAIAssistant();
-    } else {
-      window.addEventListener('load', initAIAssistant);
-    }
-  }
+  console.log('AI Assistant script starting...');
   
   function initAIAssistant() {
+    console.log('Initializing AI Assistant...');
+    
+    // Get elements
     const container = document.getElementById('ai-assistant-container');
     const assistantBtn = document.getElementById('ai-assistant-btn');
     const chatInterface = document.getElementById('ai-chat-interface');
     const closeChat = document.getElementById('close-chat');
     
+    // Check if elements exist
+    if (!container) console.error('AI Assistant: Container not found');
+    if (!assistantBtn) console.error('AI Assistant: Button not found');
+    if (!chatInterface) console.error('AI Assistant: Chat interface not found');
+    if (!closeChat) console.error('AI Assistant: Close button not found');
+    
     if (!container || !assistantBtn || !chatInterface || !closeChat) {
-      console.error('AI Assistant: Missing required elements');
+      console.error('AI Assistant: Missing required elements, retrying in 500ms...');
+      setTimeout(initAIAssistant, 500);
       return;
     }
+    
+    console.log('All elements found, setting up handlers...');
     
     // Hide chat interface initially
     chatInterface.style.display = 'none';
@@ -164,13 +172,21 @@
     container.style.visibility = 'visible';
     container.style.opacity = '1';
     
-    // Open chat handler
-    assistantBtn.addEventListener('click', function(e) {
+    // Remove any existing listeners to prevent duplicates
+    const newAssistantBtn = assistantBtn.cloneNode(true);
+    assistantBtn.parentNode.replaceChild(newAssistantBtn, assistantBtn);
+    
+    const newCloseChat = closeChat.cloneNode(true);
+    closeChat.parentNode.replaceChild(newCloseChat, closeChat);
+    
+    // Open chat handler with multiple event types
+    newAssistantBtn.onclick = function(e) {
       e.preventDefault();
       e.stopPropagation();
-      e.stopImmediatePropagation();
+      console.log('Button clicked! Opening chat...');
       
-      console.log('Opening AI chat interface');
+      // Pause animation during transition
+      this.style.animation = 'none';
       
       // Show chat interface
       chatInterface.style.display = 'block';
@@ -179,51 +195,73 @@
       
       // Hide button container
       container.style.display = 'none';
+    };
+    
+    // Also add touch support for mobile
+    newAssistantBtn.addEventListener('touchend', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      this.click();
     });
     
     // Close chat handler
-    closeChat.addEventListener('click', function(e) {
+    newCloseChat.onclick = function(e) {
       e.preventDefault();
       e.stopPropagation();
-      e.stopImmediatePropagation();
-      
-      console.log('Closing AI chat interface');
+      console.log('Close button clicked!');
       
       // Hide chat interface
       chatInterface.style.display = 'none';
       
       // Show button container
       container.style.display = 'block';
-    });
+      
+      // Resume animation
+      setTimeout(function() {
+        newAssistantBtn.style.animation = 'float 3s ease-in-out infinite';
+      }, 100);
+    };
     
     // Add hover effect for close button
-    closeChat.addEventListener('mouseover', function() {
+    newCloseChat.onmouseover = function() {
       this.style.background = 'rgba(255,255,255,0.2)';
-    });
+    };
     
-    closeChat.addEventListener('mouseout', function() {
+    newCloseChat.onmouseout = function() {
       this.style.background = 'none';
-    });
+    };
     
     // Close on outside click
     document.addEventListener('click', function(event) {
       if (chatInterface.style.display === 'block') {
         const clickedInside = chatInterface.contains(event.target) || container.contains(event.target);
         if (!clickedInside) {
+          console.log('Clicked outside, closing chat...');
           chatInterface.style.display = 'none';
           container.style.display = 'block';
+          
+          // Resume animation
+          setTimeout(function() {
+            newAssistantBtn.style.animation = 'float 3s ease-in-out infinite';
+          }, 100);
         }
       }
     });
     
-    console.log('AI Assistant initialized successfully');
+    console.log('AI Assistant initialized successfully!');
   }
   
-  // Start initialization
+  // Multiple initialization strategies
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', waitForLoad);
+    document.addEventListener('DOMContentLoaded', initAIAssistant);
   } else {
-    waitForLoad();
+    // Try immediate initialization
+    initAIAssistant();
   }
+  
+  // Also try on window load as backup
+  window.addEventListener('load', function() {
+    setTimeout(initAIAssistant, 100);
+  });
 })();
 </script>
