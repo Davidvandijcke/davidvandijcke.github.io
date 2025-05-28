@@ -44,7 +44,7 @@ Welcome to my webpage.
 <sup></sup>To make sure I was well-prepared for a career in economics, I got a BA in theatre. You can find the evidence [here](https://davidvandijcke.com/performing-arts). <sup></sup>
 
 <!-- AI Assistant Button -->
-<div id="ai-assistant-container" style="position: fixed; bottom: 30px; right: 30px; z-index: 1000;">
+<div id="ai-assistant-container">
   <button id="ai-assistant-btn" class="btn btn--primary" style="border-radius: 50px; padding: 1rem 1.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); display: flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%); border: none; color: white; cursor: pointer; transition: transform 0.2s;">
     <i class="fas fa-robot"></i>
     <span>Ask about my research</span>
@@ -52,7 +52,7 @@ Welcome to my webpage.
 </div>
 
 <!-- AI Assistant Chat Interface -->
-<div id="ai-chat-interface" style="display: none; position: fixed; bottom: 100px; right: 30px; width: 450px; height: 600px; background: white; border-radius: 16px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); z-index: 1001; overflow: hidden;">
+<div id="ai-chat-interface" style="display: none; background: white; border-radius: 16px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); overflow: hidden;">
   <div style="background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%); color: white; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center;">
     <h3 style="margin: 0; font-size: 1.1rem; font-weight: 600;">David's Research Assistant</h3>
     <button id="close-chat" style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; padding: 0; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='none'">&times;</button>

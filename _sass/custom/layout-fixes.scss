@@ -1,0 +1,69 @@
+/* ==========================================================================
+   Layout Fixes for Footer and AI Assistant
+   ========================================================================== */
+
+/* Reduce footer size and spacing */
+.page__footer {
+  margin-top: 2em !important; /* Reduced from 3em */
+  
+  footer {
+    margin-top: 1em !important; /* Reduced from 2em */
+    padding: 0 1em 1em !important; /* Reduced bottom padding from 2em */
+  }
+}
+
+/* Make footer more compact */
+.page__footer-follow {
+  li {
+    padding-top: 2px !important; /* Reduced from 5px */
+    padding-bottom: 2px !important; /* Reduced from 5px */
+  }
+}
+
+/* Ensure main content has enough bottom margin */
+#main {
+  padding-bottom: 6em !important; /* Add space for footer */
+}
+
+/* Fix AI assistant button positioning */
+#ai-assistant-container {
+  position: fixed !important;
+  bottom: 100px !important; /* Increased from 30px to stay above footer */
+  right: 30px !important;
+  z-index: 9999 !important; /* Ensure it's above everything */
+}
+
+/* Ensure AI chat interface is also properly positioned */
+#ai-chat-interface {
+  position: fixed !important;
+  bottom: 170px !important; /* Positioned above the button */
+  right: 30px !important;
+  z-index: 10000 !important; /* Higher than the button */
+  max-height: 500px !important; /* Prevent it from being too tall */
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  #ai-assistant-container {
+    bottom: 80px !important;
+    right: 20px !important;
+  }
+  
+  #ai-chat-interface {
+    bottom: 150px !important;
+    right: 20px !important;
+    width: calc(100vw - 40px) !important;
+    max-width: 400px !important;
+  }
+  
+  .page__footer {
+    margin-top: 1.5em !important;
+  }
+}
+
+/* Ensure footer doesn't overlap with content on smaller screens */
+@media (max-width: 600px) {
+  #main {
+    padding-bottom: 8em !important;
+  }
+}
