@@ -1,4 +1,4 @@
-<!-- AI Assistant Button and Chat Interface - Working Version -->
+<!-- AI Assistant Button and Chat Interface - FIXED VERSION -->
 <style>
   /* AI Assistant Container */
   #ai-assistant-wrapper {
@@ -142,7 +142,7 @@
 </style>
 
 <div id="ai-assistant-wrapper">
-  <button id="ai-assistant-trigger">
+  <button id="ai-assistant-trigger" type="button">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M12 2C10.9 2 10 2.9 10 4C10 5.1 10.9 6 12 6C13.1 6 14 5.1 14 4C14 2.9 13.1 2 12 2ZM12 8C9.79 8 8 9.79 8 12C8 14.21 9.79 16 12 16C14.21 16 16 14.21 16 12C16 9.79 14.21 8 12 8ZM12 18C10.9 18 10 18.9 10 20C10 21.1 10.9 22 12 22C13.1 22 14 21.1 14 20C14 18.9 13.1 18 12 18ZM6 12C6 10.9 5.1 10 4 10C2.9 10 2 10.9 2 12C2 13.1 2.9 14 4 14C5.1 14 6 13.1 6 12ZM20 10C18.9 10 18 10.9 18 12C18 13.1 18.9 14 20 14C21.1 14 22 13.1 22 12C22 10.9 21.1 10 20 10ZM17.66 4.34C16.88 3.56 15.61 3.56 14.83 4.34C14.05 5.12 14.05 6.39 14.83 7.17C15.61 7.95 16.88 7.95 17.66 7.17C18.44 6.39 18.44 5.12 17.66 4.34ZM7.17 14.83C6.39 14.05 5.12 14.05 4.34 14.83C3.56 15.61 3.56 16.88 4.34 17.66C5.12 18.44 6.39 18.44 7.17 17.66C7.95 16.88 7.95 15.61 7.17 14.83ZM19.66 14.83C18.88 14.05 17.61 14.05 16.83 14.83C16.05 15.61 16.05 16.88 16.83 17.66C17.61 18.44 18.88 18.44 19.66 17.66C20.44 16.88 20.44 15.61 19.66 14.83ZM7.17 7.17C7.95 6.39 7.95 5.12 7.17 4.34C6.39 3.56 5.12 3.56 4.34 4.34C3.56 5.12 3.56 6.39 4.34 7.17C5.12 7.95 6.39 7.95 7.17 7.17Z" fill="currentColor"/>
     </svg>
@@ -153,7 +153,7 @@
 <div id="ai-chat-window">
   <div id="ai-chat-header">
     <h3>David's Research Assistant</h3>
-    <button id="ai-chat-close">&times;</button>
+    <button id="ai-chat-close" type="button">&times;</button>
   </div>
   <div id="ai-chat-loading">
     <div class="spinner"></div>
@@ -168,49 +168,81 @@
   </iframe>
 </div>
 
-<script>
-// Wait for everything to be ready
-window.addEventListener('load', function() {
-  setTimeout(function() {
-    var triggerBtn = document.getElementById('ai-assistant-trigger');
-    var closeBtn = document.getElementById('ai-chat-close');
+<script type="text/javascript">
+(function() {
+  'use strict';
+  
+  // Simple function to show chat
+  function showChat() {
     var chatWindow = document.getElementById('ai-chat-window');
     var wrapper = document.getElementById('ai-assistant-wrapper');
+    if (chatWindow) {
+      chatWindow.style.display = 'flex';
+    }
+    if (wrapper) {
+      wrapper.style.display = 'none';
+    }
+  }
+  
+  // Simple function to hide chat
+  function hideChat() {
+    var chatWindow = document.getElementById('ai-chat-window');
+    var wrapper = document.getElementById('ai-assistant-wrapper');
+    if (chatWindow) {
+      chatWindow.style.display = 'none';
+    }
+    if (wrapper) {
+      wrapper.style.display = 'block';
+    }
+  }
+  
+  // Initialize when DOM is ready
+  function init() {
+    var triggerBtn = document.getElementById('ai-assistant-trigger');
+    var closeBtn = document.getElementById('ai-chat-close');
     
     if (triggerBtn) {
-      triggerBtn.addEventListener('click', function(e) {
+      triggerBtn.onclick = function(e) {
         e.preventDefault();
-        e.stopPropagation();
-        if (chatWindow) chatWindow.style.display = 'flex';
-        if (wrapper) wrapper.style.display = 'none';
-      });
+        showChat();
+        return false;
+      };
     }
     
     if (closeBtn) {
-      closeBtn.addEventListener('click', function(e) {
+      closeBtn.onclick = function(e) {
         e.preventDefault();
-        e.stopPropagation();
-        if (chatWindow) chatWindow.style.display = 'none';
-        if (wrapper) wrapper.style.display = 'block';
-      });
+        hideChat();
+        return false;
+      };
     }
     
     // Close on outside click
-    document.addEventListener('click', function(event) {
+    document.onclick = function(e) {
+      var chatWindow = document.getElementById('ai-chat-window');
+      var triggerBtn = document.getElementById('ai-assistant-trigger');
+      
       if (chatWindow && chatWindow.style.display === 'flex') {
-        if (!chatWindow.contains(event.target) && !wrapper.contains(event.target)) {
-          chatWindow.style.display = 'none';
-          wrapper.style.display = 'block';
+        if (!chatWindow.contains(e.target) && !triggerBtn.contains(e.target)) {
+          hideChat();
         }
       }
-    });
+    };
     
-    // Prevent clicks inside chat window from closing it
+    // Stop propagation on chat window
+    var chatWindow = document.getElementById('ai-chat-window');
     if (chatWindow) {
-      chatWindow.addEventListener('click', function(event) {
-        event.stopPropagation();
-      });
+      chatWindow.onclick = function(e) {
+        e.stopPropagation();
+      };
     }
-  }, 100); // Small delay to ensure everything is rendered
-});
+  }
+  
+  // Run init when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
 </script>
