@@ -35,4 +35,29 @@
 </script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
 
+<!-- Critical layout fixes -->
+<style>
+  /* Emergency footer fix */
+  .page__footer {
+    position: relative !important;
+    bottom: auto !important;
+    margin-top: 4em !important;
+    height: auto !important;
+    padding: 1em 0 !important;
+  }
+  
+  /* Ensure AI assistant is visible */
+  #ai-assistant-container {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 30px !important;
+    z-index: 99999 !important;
+  }
+  
+  #ai-chat-interface {
+    position: fixed !important;
+    z-index: 100000 !important;
+  }
+</style>
+
 <!-- end custom head snippets -->

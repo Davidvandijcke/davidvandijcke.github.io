@@ -2,44 +2,71 @@
    Layout Fixes for Footer and AI Assistant
    ========================================================================== */
 
-/* Reduce footer size and spacing */
+/* Fix the sticky footer to be relative positioned */
 .page__footer {
-  margin-top: 2em !important; /* Reduced from 3em */
+  position: relative !important; /* Override absolute positioning */
+  bottom: auto !important;
+  margin-top: 4em !important; /* Give good spacing from content */
   
   footer {
-    margin-top: 1em !important; /* Reduced from 2em */
-    padding: 0 1em 1em !important; /* Reduced bottom padding from 2em */
+    margin-top: 0.5em !important; /* Reduced from 2em */
+    padding: 0.5em 1em 1em !important; /* Compact padding */
   }
 }
 
 /* Make footer more compact */
 .page__footer-follow {
+  margin-bottom: 0.5em !important;
+  
+  ul {
+    margin-bottom: 0 !important;
+  }
+  
   li {
     padding-top: 2px !important; /* Reduced from 5px */
     padding-bottom: 2px !important; /* Reduced from 5px */
+    font-size: 0.9em !important; /* Slightly smaller text */
   }
+}
+
+.page__footer-copyright {
+  margin-top: 0.5em !important;
+  font-size: 0.75em !important; /* Smaller copyright text */
+}
+
+/* Give the body proper min-height */
+body {
+  min-height: 100vh !important;
+  position: relative !important;
 }
 
 /* Ensure main content has enough bottom margin */
 #main {
-  padding-bottom: 6em !important; /* Add space for footer */
+  padding-bottom: 2em !important; /* Normal padding since footer is relative now */
+  margin-bottom: 0 !important;
 }
 
-/* Fix AI assistant button positioning */
+/* Fix AI assistant button positioning - make it truly fixed */
 #ai-assistant-container {
   position: fixed !important;
-  bottom: 100px !important; /* Increased from 30px to stay above footer */
+  bottom: 20px !important; /* Lower since footer won't overlap */
   right: 30px !important;
   z-index: 9999 !important; /* Ensure it's above everything */
+}
+
+#ai-assistant-btn {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 }
 
 /* Ensure AI chat interface is also properly positioned */
 #ai-chat-interface {
   position: fixed !important;
-  bottom: 170px !important; /* Positioned above the button */
+  bottom: 90px !important; /* Positioned above the button */
   right: 30px !important;
   z-index: 10000 !important; /* Higher than the button */
   max-height: 500px !important; /* Prevent it from being too tall */
+  width: 450px !important;
+  height: 500px !important;
 }
 
 /* Mobile responsive adjustments */
