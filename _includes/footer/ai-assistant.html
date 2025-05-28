@@ -113,17 +113,17 @@
 
 <!-- AI Assistant Button -->
 <div id="ai-assistant-container">
-  <button id="ai-assistant-btn" class="btn btn--primary">
+  <button id="ai-assistant-btn" type="button">
     <i class="fas fa-robot"></i>
     <span>Ask about my research</span>
   </button>
 </div>
 
 <!-- AI Assistant Chat Interface -->
-<div id="ai-chat-interface" style="display: none;">
+<div id="ai-chat-interface">
   <div style="background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%); color: white; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center;">
     <h3 style="margin: 0; font-size: 1.1rem; font-weight: 600;">David's Research Assistant</h3>
-    <button id="close-chat" style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; padding: 0; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">&times;</button>
+    <button id="close-chat" type="button" style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; padding: 0; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">&times;</button>
   </div>
   <iframe
     src="https://dvdijcke-david-research-assistant.hf.space"
@@ -135,85 +135,95 @@
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  let initialized = false;
+(function() {
+  // Wait for page to be fully loaded
+  function waitForLoad() {
+    if (document.readyState === 'complete') {
+      initAIAssistant();
+    } else {
+      window.addEventListener('load', initAIAssistant);
+    }
+  }
   
   function initAIAssistant() {
-    if (initialized) return;
-    
     const container = document.getElementById('ai-assistant-container');
     const assistantBtn = document.getElementById('ai-assistant-btn');
     const chatInterface = document.getElementById('ai-chat-interface');
     const closeChat = document.getElementById('close-chat');
     
     if (!container || !assistantBtn || !chatInterface || !closeChat) {
-      // If elements not found, try again
-      setTimeout(initAIAssistant, 100);
+      console.error('AI Assistant: Missing required elements');
       return;
     }
     
-    initialized = true;
+    // Hide chat interface initially
+    chatInterface.style.display = 'none';
     
-    // Ensure visibility
+    // Ensure button is visible
     container.style.display = 'block';
     container.style.visibility = 'visible';
     container.style.opacity = '1';
     
-    // Remove any existing click handlers
-    const newBtn = assistantBtn.cloneNode(true);
-    assistantBtn.parentNode.replaceChild(newBtn, assistantBtn);
-    
-    const newClose = closeChat.cloneNode(true);
-    closeChat.parentNode.replaceChild(newClose, closeChat);
-    
-    // Button click handler
-    newBtn.onclick = function(e) {
+    // Open chat handler
+    assistantBtn.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
-      console.log('AI Assistant button clicked');
+      e.stopImmediatePropagation();
+      
+      console.log('Opening AI chat interface');
+      
+      // Show chat interface
       chatInterface.style.display = 'block';
+      chatInterface.style.visibility = 'visible';
+      chatInterface.style.opacity = '1';
+      
+      // Hide button container
       container.style.display = 'none';
-      return false;
-    };
+    });
     
-    // Close button handler
-    newClose.onclick = function(e) {
+    // Close chat handler
+    closeChat.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
-      console.log('Close button clicked');
+      e.stopImmediatePropagation();
+      
+      console.log('Closing AI chat interface');
+      
+      // Hide chat interface
       chatInterface.style.display = 'none';
+      
+      // Show button container
       container.style.display = 'block';
-      return false;
-    };
+    });
     
     // Add hover effect for close button
-    newClose.onmouseover = function() {
+    closeChat.addEventListener('mouseover', function() {
       this.style.background = 'rgba(255,255,255,0.2)';
-    };
+    });
     
-    newClose.onmouseout = function() {
+    closeChat.addEventListener('mouseout', function() {
       this.style.background = 'none';
-    };
+    });
     
-    // Close chat when clicking outside
+    // Close on outside click
     document.addEventListener('click', function(event) {
-      if (chatInterface.style.display === 'block' && 
-          !chatInterface.contains(event.target) && 
-          !container.contains(event.target)) {
-        chatInterface.style.display = 'none';
-        container.style.display = 'block';
+      if (chatInterface.style.display === 'block') {
+        const clickedInside = chatInterface.contains(event.target) || container.contains(event.target);
+        if (!clickedInside) {
+          chatInterface.style.display = 'none';
+          container.style.display = 'block';
+        }
       }
     });
     
     console.log('AI Assistant initialized successfully');
   }
   
-  // Try to initialize immediately
-  initAIAssistant();
-  
-  // Also try on window load
-  window.addEventListener('load', function() {
-    setTimeout(initAIAssistant, 100);
-  });
-});
+  // Start initialization
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', waitForLoad);
+  } else {
+    waitForLoad();
+  }
+})();
 </script>
