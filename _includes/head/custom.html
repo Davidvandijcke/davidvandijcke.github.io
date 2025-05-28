@@ -52,11 +52,27 @@
     bottom: 20px !important;
     right: 30px !important;
     z-index: 99999 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    animation: none !important;
+  }
+  
+  #ai-assistant-btn {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
   #ai-chat-interface {
     position: fixed !important;
     z-index: 100000 !important;
+  }
+  
+  /* Override any animations that might hide elements */
+  #ai-assistant-container * {
+    animation: none !important;
+    transition: transform 0.2s !important;
   }
 </style>
 

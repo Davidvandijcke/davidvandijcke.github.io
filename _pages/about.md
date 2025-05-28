@@ -67,36 +67,51 @@ Welcome to my webpage.
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const assistantBtn = document.getElementById('ai-assistant-btn');
-  const chatInterface = document.getElementById('ai-chat-interface');
-  const closeChat = document.getElementById('close-chat');
-  
-  // Add hover effect to button
-  assistantBtn.addEventListener('mouseenter', function() {
-    this.style.transform = 'scale(1.05)';
-  });
-  
-  assistantBtn.addEventListener('mouseleave', function() {
-    this.style.transform = 'scale(1)';
-  });
-  
-  assistantBtn.addEventListener('click', function() {
-    chatInterface.style.display = 'block';
-    assistantBtn.style.display = 'none';
-  });
-  
-  closeChat.addEventListener('click', function() {
-    chatInterface.style.display = 'none';
-    assistantBtn.style.display = 'flex';
-  });
-  
-  // Close chat when clicking outside
-  document.addEventListener('click', function(event) {
-    if (!chatInterface.contains(event.target) && !assistantBtn.contains(event.target) && chatInterface.style.display === 'block') {
-      chatInterface.style.display = 'none';
-      assistantBtn.style.display = 'flex';
+// Ensure button stays visible
+window.addEventListener('load', function() {
+  // Force show the AI assistant button after page fully loads
+  setTimeout(function() {
+    const container = document.getElementById('ai-assistant-container');
+    const assistantBtn = document.getElementById('ai-assistant-btn');
+    const chatInterface = document.getElementById('ai-chat-interface');
+    const closeChat = document.getElementById('close-chat');
+    
+    if (container) {
+      container.style.cssText = 'position: fixed !important; bottom: 20px !important; right: 30px !important; z-index: 99999 !important; display: block !important; visibility: visible !important; opacity: 1 !important;';
     }
-  });
+    
+    if (assistantBtn) {
+      assistantBtn.style.cssText = 'border-radius: 50px; padding: 1rem 1.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); display: flex !important; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%); border: none; color: white; cursor: pointer; transition: transform 0.2s; visibility: visible !important; opacity: 1 !important;';
+      
+      // Add hover effect to button
+      assistantBtn.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.05)';
+      });
+      
+      assistantBtn.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+      });
+      
+      assistantBtn.addEventListener('click', function() {
+        chatInterface.style.display = 'block';
+        container.style.display = 'none';
+      });
+    }
+    
+    if (closeChat && chatInterface) {
+      closeChat.addEventListener('click', function() {
+        chatInterface.style.display = 'none';
+        container.style.display = 'block';
+      });
+      
+      // Close chat when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!chatInterface.contains(event.target) && !container.contains(event.target) && chatInterface.style.display === 'block') {
+          chatInterface.style.display = 'none';
+          container.style.display = 'block';
+        }
+      });
+    }
+  }, 500); // Wait 500ms to ensure all other scripts have run
 });
 </script>
