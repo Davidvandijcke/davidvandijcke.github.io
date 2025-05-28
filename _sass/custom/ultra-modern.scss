@@ -1,0 +1,577 @@
+// Ultra-modern enhancements for academic website
+
+// CSS Variables for theme consistency
+:root {
+  --primary-color: #1e40af;
+  --primary-hover: #1e3a8a;
+  --secondary-color: #7c3aed;
+  --accent-color: #06b6d4;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-light: #64748b;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --border-color: #e2e8f0;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+// Glassmorphism effect mixin
+@mixin glassmorphism {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+// Modern gradient backgrounds
+@mixin gradient-bg {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+// Refined typography with better hierarchy
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-primary);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+// Enhanced page layout with modern spacing
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.page__content {
+  max-width: 800px;
+  margin: 0 auto;
+  
+  p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+  }
+}
+
+// Ultra-modern navigation with glassmorphism
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  @include glassmorphism;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  
+  &.scrolled {
+    box-shadow: var(--shadow-md);
+  }
+}
+
+.greedy-nav {
+  background: transparent;
+  box-shadow: none;
+  
+  .visible-links {
+    a {
+      font-weight: 500;
+      color: var(--text-primary);
+      position: relative;
+      padding: 0.75rem 1.25rem;
+      transition: all 0.3s ease;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 3px;
+        background: var(--primary-color);
+        transform: translateX(-50%);
+        transition: width 0.3s ease;
+      }
+      
+      &:hover {
+        color: var(--primary-color);
+        
+        &::before {
+          width: 80%;
+        }
+      }
+      
+      &.active::before {
+        width: 80%;
+        background: var(--accent-color);
+      }
+    }
+  }
+}
+
+// Hero section with modern overlay
+.page__hero {
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.9) 0%, rgba(124, 58, 237, 0.8) 100%);
+    z-index: 1;
+  }
+  
+  .wrapper {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .page__title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: none;
+    letter-spacing: -0.03em;
+    animation: fadeInUp 0.8s ease;
+  }
+  
+  .page__lead {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+    animation: fadeInUp 0.8s ease 0.2s;
+    animation-fill-mode: both;
+  }
+}
+
+// Enhanced author profile with modern card design
+.sidebar {
+  @media (min-width: 64em) {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+  }
+}
+
+.author__avatar {
+  margin-bottom: 1.5rem;
+  
+  img {
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.4s ease;
+    
+    &:hover {
+      transform: scale(1.05) rotate(-2deg);
+      box-shadow: var(--shadow-xl);
+    }
+  }
+}
+
+.author__content {
+  text-align: left;
+  
+  h3 {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .author__bio {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+}
+
+// Modern social icons with hover effects
+.author__urls {
+  margin-top: 1.5rem;
+  
+  .social-icons {
+    li {
+      margin-bottom: 0.75rem;
+      
+      a {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        background: var(--bg-tertiary);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        color: var(--text-primary);
+        
+        &:hover {
+          background: var(--primary-color);
+          color: white;
+          transform: translateX(5px);
+          box-shadow: var(--shadow-md);
+          
+          i, svg {
+            color: white;
+          }
+        }
+        
+        i, svg {
+          margin-right: 0.75rem;
+          font-size: 1.25rem;
+          transition: color 0.3s ease;
+        }
+      }
+    }
+  }
+}
+
+// Ultra-modern publication cards
+.pub-entry {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: transparent;
+    
+    &::before {
+      transform: scaleY(1);
+    }
+    
+    .pub-title {
+      color: var(--primary-color);
+    }
+  }
+}
+
+.pub-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.pub-authors {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.pub-venue {
+  color: var(--text-light);
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+// Modern details/summary with smooth animations
+.pub-details {
+  margin-top: 1rem;
+  
+  summary {
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--primary-color);
+    padding: 0.75rem 1rem;
+    background: var(--bg-tertiary);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    &:hover {
+      background: var(--primary-color);
+      color: white;
+    }
+    
+    &::after {
+      content: '+';
+      font-size: 1.25rem;
+      font-weight: 300;
+      transition: transform 0.3s ease;
+    }
+  }
+  
+  &[open] {
+    summary {
+      background: var(--primary-color);
+      color: white;
+      border-radius: 8px 8px 0 0;
+      
+      &::after {
+        transform: rotate(45deg);
+      }
+    }
+    
+    .pub-abstract {
+      background: var(--bg-tertiary);
+      padding: 1.5rem;
+      border-radius: 0 0 8px 8px;
+      animation: slideDown 0.3s ease;
+    }
+  }
+}
+
+// Enhanced buttons with modern styling
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  
+  &--primary {
+    background: var(--primary-color);
+    color: white;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+      
+      &::before {
+        width: 300px;
+        height: 300px;
+      }
+    }
+  }
+  
+  &--secondary {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    
+    &:hover {
+      background: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+  }
+}
+
+// Modern form inputs
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: var(--bg-primary);
+  
+  &:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+  }
+}
+
+// Enhanced footer with gradient
+.page__footer {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #e2e8f0;
+  padding: 3rem 0;
+  margin-top: 4rem;
+  
+  .page__footer-copyright {
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
+  a {
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: #67e8f9;
+    }
+  }
+}
+
+// Modern archive items
+.archive__item {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
+    
+    .archive__item-title a {
+      color: var(--primary-color);
+    }
+  }
+  
+  .archive__item-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.35rem;
+    
+    a {
+      color: var(--text-primary);
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
+  }
+  
+  .archive__item-excerpt {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+// Loading animation
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+  }
+}
+
+// Responsive improvements
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  
+  .page__hero {
+    .page__title {
+      font-size: 2rem;
+    }
+    
+    .page__lead {
+      font-size: 1.25rem;
+    }
+  }
+  
+  .pub-entry {
+    padding: 1.25rem;
+  }
+  
+  .greedy-nav .visible-links a {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+// Dark mode support (optional)
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-light: #94a3b8;
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-tertiary: #334155;
+    --border-color: #334155;
+  }
+  
+  body {
+    background: var(--bg-primary);
+  }
+  
+  .masthead {
+    background: rgba(15, 23, 42, 0.85);
+  }
+}
+
+// Smooth scroll behavior
+* {
+  scroll-behavior: smooth;
+}
+
+// Better focus styles for accessibility
+*:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+// Print styles
+@media print {
+  .masthead,
+  .page__footer,
+  .author__urls {
+    display: none;
+  }
+}
