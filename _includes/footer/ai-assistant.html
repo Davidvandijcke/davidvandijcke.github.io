@@ -1,0 +1,148 @@
+<!-- AI Assistant Button and Chat Interface -->
+<style>
+  /* Override any animations that might affect the AI assistant */
+  #ai-assistant-container,
+  #ai-assistant-container *,
+  #ai-chat-interface,
+  #ai-chat-interface * {
+    animation: none !important;
+    animation-delay: 0s !important;
+    animation-fill-mode: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  /* Ensure the container is always visible and fixed */
+  #ai-assistant-container {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 30px !important;
+    z-index: 99999 !important;
+    display: block !important;
+  }
+  
+  /* Style the button */
+  #ai-assistant-btn {
+    border-radius: 50px;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex !important;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  #ai-assistant-btn:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Style the chat interface */
+  #ai-chat-interface {
+    position: fixed !important;
+    bottom: 90px !important;
+    right: 30px !important;
+    z-index: 100000 !important;
+    width: 450px;
+    height: 500px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  @media (max-width: 768px) {
+    #ai-assistant-container {
+      bottom: 80px !important;
+      right: 20px !important;
+    }
+    
+    #ai-chat-interface {
+      bottom: 150px !important;
+      right: 20px !important;
+      width: calc(100vw - 40px) !important;
+      max-width: 400px !important;
+    }
+  }
+</style>
+
+<!-- AI Assistant Button -->
+<div id="ai-assistant-container">
+  <button id="ai-assistant-btn" class="btn btn--primary">
+    <i class="fas fa-robot"></i>
+    <span>Ask about my research</span>
+  </button>
+</div>
+
+<!-- AI Assistant Chat Interface -->
+<div id="ai-chat-interface" style="display: none;">
+  <div style="background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%); color: white; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+    <h3 style="margin: 0; font-size: 1.1rem; font-weight: 600;">David's Research Assistant</h3>
+    <button id="close-chat" style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; padding: 0; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">&times;</button>
+  </div>
+  <iframe
+    src="https://dvdijcke-david-research-assistant.hf.space"
+    frameborder="0"
+    width="100%"
+    height="calc(100% - 60px)"
+    style="display: block;"
+  ></iframe>
+</div>
+
+<script>
+(function() {
+  // Wait for DOM to be ready
+  function initAIAssistant() {
+    const container = document.getElementById('ai-assistant-container');
+    const assistantBtn = document.getElementById('ai-assistant-btn');
+    const chatInterface = document.getElementById('ai-chat-interface');
+    const closeChat = document.getElementById('close-chat');
+    
+    if (!container || !assistantBtn || !chatInterface || !closeChat) {
+      // If elements not found, try again
+      setTimeout(initAIAssistant, 100);
+      return;
+    }
+    
+    // Ensure visibility
+    container.style.display = 'block';
+    container.style.visibility = 'visible';
+    container.style.opacity = '1';
+    
+    // Button click handler
+    assistantBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      chatInterface.style.display = 'block';
+      container.style.display = 'none';
+    });
+    
+    // Close button handler
+    closeChat.addEventListener('click', function(e) {
+      e.stopPropagation();
+      chatInterface.style.display = 'none';
+      container.style.display = 'block';
+    });
+    
+    // Close chat when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!chatInterface.contains(event.target) && !container.contains(event.target) && chatInterface.style.display === 'block') {
+        chatInterface.style.display = 'none';
+        container.style.display = 'block';
+      }
+    });
+  }
+  
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAIAssistant);
+  } else {
+    initAIAssistant();
+  }
+  
+  // Also initialize on window load as a fallback
+  window.addEventListener('load', initAIAssistant);
+})();
+</script>
