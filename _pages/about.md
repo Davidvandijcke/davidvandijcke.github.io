@@ -44,8 +44,8 @@ Welcome to my webpage.
 <sup></sup>To make sure I was well-prepared for a career in economics, I got a BA in theatre. You can find the evidence [here](https://davidvandijcke.com/performing-arts). <sup></sup>
 
 <!-- AI Assistant Button -->
-<div id="ai-assistant-container">
-  <button id="ai-assistant-btn" class="btn btn--primary" style="border-radius: 50px; padding: 1rem 1.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); display: flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%); border: none; color: white; cursor: pointer; transition: transform 0.2s;">
+<div id="ai-assistant-container" style="position: fixed !important; bottom: 20px !important; right: 30px !important; z-index: 99999 !important; display: block !important; visibility: visible !important; opacity: 1 !important; animation: none !important;">
+  <button id="ai-assistant-btn" class="btn btn--primary" style="border-radius: 50px; padding: 1rem 1.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); display: flex !important; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%); border: none; color: white; cursor: pointer; transition: transform 0.2s; visibility: visible !important; opacity: 1 !important; animation: none !important;">
     <i class="fas fa-robot"></i>
     <span>Ask about my research</span>
   </button>
@@ -67,6 +67,22 @@ Welcome to my webpage.
 </div>
 
 <script>
+// Prevent animations from affecting AI assistant
+document.addEventListener('DOMContentLoaded', function() {
+  const style = document.createElement('style');
+  style.textContent = `
+    #ai-assistant-container,
+    #ai-assistant-container *,
+    #ai-chat-interface,
+    #ai-chat-interface * {
+      animation: none !important;
+      animation-delay: 0s !important;
+      opacity: 1 !important;
+    }
+  `;
+  document.head.appendChild(style);
+});
+
 // Ensure button stays visible
 window.addEventListener('load', function() {
   // Force show the AI assistant button after page fully loads
@@ -77,11 +93,11 @@ window.addEventListener('load', function() {
     const closeChat = document.getElementById('close-chat');
     
     if (container) {
-      container.style.cssText = 'position: fixed !important; bottom: 20px !important; right: 30px !important; z-index: 99999 !important; display: block !important; visibility: visible !important; opacity: 1 !important;';
+      container.style.cssText = 'position: fixed !important; bottom: 20px !important; right: 30px !important; z-index: 99999 !important; display: block !important; visibility: visible !important; opacity: 1 !important; animation: none !important;';
     }
     
     if (assistantBtn) {
-      assistantBtn.style.cssText = 'border-radius: 50px; padding: 1rem 1.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); display: flex !important; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%); border: none; color: white; cursor: pointer; transition: transform 0.2s; visibility: visible !important; opacity: 1 !important;';
+      assistantBtn.style.cssText = 'border-radius: 50px; padding: 1rem 1.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); display: flex !important; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%); border: none; color: white; cursor: pointer; transition: transform 0.2s; visibility: visible !important; opacity: 1 !important; animation: none !important;';
       
       // Add hover effect to button
       assistantBtn.addEventListener('mouseenter', function() {
@@ -112,6 +128,15 @@ window.addEventListener('load', function() {
         }
       });
     }
-  }, 500); // Wait 500ms to ensure all other scripts have run
+  }, 100); // Reduced delay to show button faster
+  
+  // Additional failsafe to ensure button visibility
+  setInterval(function() {
+    const container = document.getElementById('ai-assistant-container');
+    if (container && container.style.display !== 'none' && (!container.style.opacity || container.style.opacity === '0')) {
+      container.style.opacity = '1';
+      container.style.visibility = 'visible';
+    }
+  }, 1000);
 });
 </script>
