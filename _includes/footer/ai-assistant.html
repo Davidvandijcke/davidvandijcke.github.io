@@ -15,56 +15,98 @@
   /* Ensure the container is always visible and fixed */
   #ai-assistant-container {
     position: fixed !important;
-    bottom: 20px !important;
+    bottom: 30px !important;
     right: 30px !important;
     z-index: 99999 !important;
     display: block !important;
   }
   
-  /* Style the button */
+  /* Style the button - make it more prominent */
   #ai-assistant-btn {
     border-radius: 50px;
-    padding: 1rem 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.2rem 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
     display: flex !important;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
     background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
     border: none;
     color: white;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Add floating animation */
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  #ai-assistant-container {
+    animation: float 3s ease-in-out infinite !important;
   }
   
   #ai-assistant-btn:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  }
+  
+  /* Add a pulse effect to draw attention */
+  #ai-assistant-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s;
+  }
+  
+  #ai-assistant-btn:hover::before {
+    transform: translate(-50%, -50%) scale(1.1);
   }
   
   /* Style the chat interface */
   #ai-chat-interface {
     position: fixed !important;
-    bottom: 90px !important;
+    bottom: 120px !important;
     right: 30px !important;
     z-index: 100000 !important;
     width: 450px;
-    height: 500px;
+    height: 600px;
     background: white;
     border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     overflow: hidden;
+    display: none;
   }
   
   @media (max-width: 768px) {
     #ai-assistant-container {
-      bottom: 80px !important;
+      bottom: 20px !important;
       right: 20px !important;
     }
     
+    #ai-assistant-btn {
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+    }
+    
     #ai-chat-interface {
-      bottom: 150px !important;
+      bottom: 100px !important;
       right: 20px !important;
       width: calc(100vw - 40px) !important;
       max-width: 400px !important;
+      height: 70vh !important;
+      max-height: 600px !important;
     }
   }
 </style>
@@ -93,9 +135,12 @@
 </div>
 
 <script>
-(function() {
-  // Wait for DOM to be ready
+document.addEventListener('DOMContentLoaded', function() {
+  let initialized = false;
+  
   function initAIAssistant() {
+    if (initialized) return;
+    
     const container = document.getElementById('ai-assistant-container');
     const assistantBtn = document.getElementById('ai-assistant-btn');
     const chatInterface = document.getElementById('ai-chat-interface');
@@ -107,42 +152,68 @@
       return;
     }
     
+    initialized = true;
+    
     // Ensure visibility
     container.style.display = 'block';
     container.style.visibility = 'visible';
     container.style.opacity = '1';
     
+    // Remove any existing click handlers
+    const newBtn = assistantBtn.cloneNode(true);
+    assistantBtn.parentNode.replaceChild(newBtn, assistantBtn);
+    
+    const newClose = closeChat.cloneNode(true);
+    closeChat.parentNode.replaceChild(newClose, closeChat);
+    
     // Button click handler
-    assistantBtn.addEventListener('click', function(e) {
+    newBtn.onclick = function(e) {
+      e.preventDefault();
       e.stopPropagation();
+      console.log('AI Assistant button clicked');
       chatInterface.style.display = 'block';
       container.style.display = 'none';
-    });
+      return false;
+    };
     
     // Close button handler
-    closeChat.addEventListener('click', function(e) {
+    newClose.onclick = function(e) {
+      e.preventDefault();
       e.stopPropagation();
+      console.log('Close button clicked');
       chatInterface.style.display = 'none';
       container.style.display = 'block';
-    });
+      return false;
+    };
+    
+    // Add hover effect for close button
+    newClose.onmouseover = function() {
+      this.style.background = 'rgba(255,255,255,0.2)';
+    };
+    
+    newClose.onmouseout = function() {
+      this.style.background = 'none';
+    };
     
     // Close chat when clicking outside
     document.addEventListener('click', function(event) {
-      if (!chatInterface.contains(event.target) && !container.contains(event.target) && chatInterface.style.display === 'block') {
+      if (chatInterface.style.display === 'block' && 
+          !chatInterface.contains(event.target) && 
+          !container.contains(event.target)) {
         chatInterface.style.display = 'none';
         container.style.display = 'block';
       }
     });
+    
+    console.log('AI Assistant initialized successfully');
   }
   
-  // Initialize when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initAIAssistant);
-  } else {
-    initAIAssistant();
-  }
+  // Try to initialize immediately
+  initAIAssistant();
   
-  // Also initialize on window load as a fallback
-  window.addEventListener('load', initAIAssistant);
-})();
+  // Also try on window load
+  window.addEventListener('load', function() {
+    setTimeout(initAIAssistant, 100);
+  });
+});
 </script>
