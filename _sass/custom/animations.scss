@@ -1,0 +1,55 @@
+// Smooth fade-in animation for page content
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Apply animation to main content areas
+.page__content,
+.author__content,
+.pub-entry,
+.archive__item {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+// Stagger animation for list items
+.pub-entry {
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.1}s;
+    }
+  }
+}
+
+// Smooth transition for page navigation
+.page__hero--overlay {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+// Author profile animation
+.author__avatar {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.author__content {
+  animation: fadeInUp 0.6s ease-out;
+  animation-delay: 0.2s;
+}
+
+// Social icons staggered animation
+.author__urls.social-icons {
+  li {
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        animation: fadeInUp 0.5s ease-out;
+        animation-delay: #{0.3 + $i * 0.05}s;
+      }
+    }
+  }
+}

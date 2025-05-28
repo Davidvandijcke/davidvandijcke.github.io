@@ -13,8 +13,12 @@
 
   {% if post.venue %}
   <p>
-    {{ post.venue | markdownify
-                  | remove: '<p>'   | remove: '</p>'   | strip }}
+    {% comment %}Check if venue contains markdown link syntax{% endcomment %}
+    {% if post.venue contains '[' and post.venue contains '](' %}
+      {{ post.venue | markdownify | remove: '<p>' | remove: '</p>' | strip }}
+    {% else %}
+      {{ post.venue }}
+    {% endif %}
     ({{ date_string }})
   </p>  
   {% endif %}
@@ -59,7 +63,8 @@
       </p>
     {% endif %}
 
-    {% if post.excerpt and post.excerpt != '' %}
+    {% if 
+      post.excerpt and post.excerpt != '' %}
       <p>
       <strong>Abstract:</strong><br>
       {{ post.excerpt | markdownify }}
