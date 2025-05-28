@@ -93,6 +93,32 @@
     width: 100%;
   }
   
+  #ai-chat-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+    padding: 20px;
+  }
+  
+  #ai-chat-loading .spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #7c3aed;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
   @media (max-width: 768px) {
     #ai-assistant-wrapper {
       bottom: 20px;
@@ -129,10 +155,16 @@
     <h3>David's Research Assistant</h3>
     <button id="ai-chat-close">&times;</button>
   </div>
+  <div id="ai-chat-loading">
+    <div class="spinner"></div>
+    <p>Loading AI Assistant...</p>
+    <p style="font-size: 14px; color: #999;">If this takes too long, the Hugging Face Space might be starting up.</p>
+  </div>
   <iframe 
     id="ai-chat-frame"
     src="https://dvdijcke-david-research-assistant.hf.space"
-    title="AI Research Assistant">
+    title="AI Research Assistant"
+    onload="document.getElementById('ai-chat-loading').style.display='none';">
   </iframe>
 </div>
 
