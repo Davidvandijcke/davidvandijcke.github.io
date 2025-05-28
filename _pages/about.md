@@ -36,38 +36,34 @@ Welcome to my webpage.
 
   <p style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
     <img src="/images/favicon.ico" alt="drawing" width="20" style="margin-right: 0.75rem; margin-top: 0.25rem; flex-shrink: 0;"/> 
-    <span>Please find my <a href="https://davidvandijcke.github.io/cv">CV</a> here.</span>
+    <span>Please find my <a href="https://davidvandijcke.com/cv">CV</a> here.</span>
   </p>
 </div> 
 
 
-<sup></sup>To make sure I was well-prepared for a career in economics, I got a BA in theatre. You can find the evidence [here](https://davidvandijcke.github.io/performing-arts). <sup></sup>
+<sup></sup>To make sure I was well-prepared for a career in economics, I got a BA in theatre. You can find the evidence [here](https://davidvandijcke.com/performing-arts). <sup></sup>
 
 <!-- AI Assistant Button -->
 <div id="ai-assistant-container" style="position: fixed; bottom: 30px; right: 30px; z-index: 1000;">
-  <button id="ai-assistant-btn" class="btn btn--primary" style="border-radius: 50px; padding: 1rem 1.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); display: flex; align-items: center; gap: 0.5rem;">
+  <button id="ai-assistant-btn" class="btn btn--primary" style="border-radius: 50px; padding: 1rem 1.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); display: flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%); border: none; color: white; cursor: pointer; transition: transform 0.2s;">
     <i class="fas fa-robot"></i>
     <span>Ask about my research</span>
   </button>
 </div>
 
 <!-- AI Assistant Chat Interface -->
-<div id="ai-chat-interface" style="display: none; position: fixed; bottom: 100px; right: 30px; width: 400px; height: 500px; background: white; border-radius: 16px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); z-index: 1001; overflow: hidden;">
-  <div style="background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%); color: white; padding: 1rem; display: flex; justify-content: between; align-items: center;">
-    <h3 style="margin: 0; font-size: 1.1rem;">Research Assistant</h3>
-    <button id="close-chat" style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;">&times;</button>
+<div id="ai-chat-interface" style="display: none; position: fixed; bottom: 100px; right: 30px; width: 450px; height: 600px; background: white; border-radius: 16px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); z-index: 1001; overflow: hidden;">
+  <div style="background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%); color: white; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+    <h3 style="margin: 0; font-size: 1.1rem; font-weight: 600;">David's Research Assistant</h3>
+    <button id="close-chat" style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; padding: 0; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='none'">&times;</button>
   </div>
-  <div id="chat-messages" style="height: 380px; overflow-y: auto; padding: 1rem; background: #f8fafc;">
-    <div class="assistant-message" style="background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);">
-      <p style="margin: 0; color: #475569;">Hi! I'm an AI assistant trained on David Van Dijcke's research and publications. Ask me about his work on econometric methods, causal inference, or any of his papers!</p>
-    </div>
-  </div>
-  <div style="padding: 1rem; border-top: 1px solid #e2e8f0;">
-    <form id="chat-form" style="display: flex; gap: 0.5rem;">
-      <input type="text" id="user-input" placeholder="Ask about my research..." style="flex: 1; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 8px;">
-      <button type="submit" class="btn btn--primary" style="padding: 0.75rem 1rem; border-radius: 8px;">Send</button>
-    </form>
-  </div>
+  <iframe
+    src="https://dvdijcke-david-research-assistant.hf.space"
+    frameborder="0"
+    width="100%"
+    height="calc(100% - 60px)"
+    style="display: block;"
+  ></iframe>
 </div>
 
 <script>
@@ -75,9 +71,15 @@ document.addEventListener('DOMContentLoaded', function() {
   const assistantBtn = document.getElementById('ai-assistant-btn');
   const chatInterface = document.getElementById('ai-chat-interface');
   const closeChat = document.getElementById('close-chat');
-  const chatForm = document.getElementById('chat-form');
-  const userInput = document.getElementById('user-input');
-  const chatMessages = document.getElementById('chat-messages');
+  
+  // Add hover effect to button
+  assistantBtn.addEventListener('mouseenter', function() {
+    this.style.transform = 'scale(1.05)';
+  });
+  
+  assistantBtn.addEventListener('mouseleave', function() {
+    this.style.transform = 'scale(1)';
+  });
   
   assistantBtn.addEventListener('click', function() {
     chatInterface.style.display = 'block';
@@ -89,44 +91,12 @@ document.addEventListener('DOMContentLoaded', function() {
     assistantBtn.style.display = 'flex';
   });
   
-  chatForm.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const message = userInput.value.trim();
-    if (!message) return;
-    
-    // Add user message
-    const userMessageDiv = document.createElement('div');
-    userMessageDiv.style.cssText = 'background: #e0e7ff; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; text-align: right;';
-    userMessageDiv.innerHTML = `<p style="margin: 0; color: #1e40af;">${message}</p>`;
-    chatMessages.appendChild(userMessageDiv);
-    
-    userInput.value = '';
-    
-    // Add loading message
-    const loadingDiv = document.createElement('div');
-    loadingDiv.className = 'assistant-message';
-    loadingDiv.style.cssText = 'background: white; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);';
-    loadingDiv.innerHTML = '<p style="margin: 0; color: #475569;">Thinking...</p>';
-    chatMessages.appendChild(loadingDiv);
-    
-    // Scroll to bottom
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-    
-    // Note: This is a placeholder - the actual API endpoint will be created
-    // For now, we'll show a placeholder response
-  // Replace the placeholder API call with:
-    const response = await fetch('https://huggingface.co/spaces/dvdijcke/david-research-assistant/api/predict', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        data: [message, []]  // message and history
-      })
-    });
-
-    const data = await response.json();
-    const botResponse = data.data[0];
-      });
+  // Close chat when clicking outside
+  document.addEventListener('click', function(event) {
+    if (!chatInterface.contains(event.target) && !assistantBtn.contains(event.target) && chatInterface.style.display === 'block') {
+      chatInterface.style.display = 'none';
+      assistantBtn.style.display = 'flex';
+    }
+  });
 });
 </script>
