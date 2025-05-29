@@ -55,6 +55,8 @@
     z-index: 10000;
     overflow: hidden;
     animation: slideIn 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
   }
   
   @keyframes slideIn {
@@ -76,6 +78,7 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
   }
   
   .ai-modal-header h3 {
@@ -107,8 +110,9 @@
   
   .ai-modal iframe {
     width: 100%;
-    height: calc(100% - 61px);
+    height: 100%;
     border: none;
+    flex: 1;
   }
   
   /* Backdrop for better focus */
@@ -144,9 +148,9 @@
   }
 </style>
 
-<div class="ai-backdrop" id="aiBackdrop" onclick="document.getElementById('aiModal').style.display='none'; document.getElementById('aiButton').style.display='block'; document.getElementById('aiBackdrop').style.display='none';"></div>
+<div class="ai-backdrop" id="aiBackdrop" onclick="document.getElementById('aiModal').style.display='none'; document.getElementById('aiButton').style.display='flex'; document.getElementById('aiBackdrop').style.display='none';"></div>
 
-<button class="ai-button" onclick="document.getElementById('aiModal').style.display='block'; document.getElementById('aiButton').style.display='none'; document.getElementById('aiBackdrop').style.display='block';" id="aiButton">
+<button class="ai-button" onclick="document.getElementById('aiModal').style.display='flex'; document.getElementById('aiButton').style.display='none'; document.getElementById('aiBackdrop').style.display='block';" id="aiButton">
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" fill="currentColor"/>
     <circle cx="8" cy="9" r="1" fill="currentColor"/>
@@ -159,7 +163,7 @@
 <div class="ai-modal" id="aiModal">
   <div class="ai-modal-header">
     <h3>💬 Research Assistant</h3>
-    <button class="ai-close" onclick="document.getElementById('aiModal').style.display='none'; document.getElementById('aiButton').style.display='block'; document.getElementById('aiBackdrop').style.display='none';">✕</button>
+    <button class="ai-close" onclick="document.getElementById('aiModal').style.display='none'; document.getElementById('aiButton').style.display='flex'; document.getElementById('aiBackdrop').style.display='none';">✕</button>
   </div>
-  <iframe src="https://dvdijcke-david-research-assistant.hf.space"></iframe>
+  <iframe src="https://dvdijcke-david-research-assistant.hf.space" loading="eager" scrolling="auto"></iframe>
 </div>
