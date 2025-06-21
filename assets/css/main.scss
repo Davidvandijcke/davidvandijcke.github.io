@@ -10,8 +10,8 @@
  *
 */
 
-// Import epic theme first to set base
-@import "custom/epic-tech-theme";
+// Import sleek professional theme
+@import "custom/sleek-pro-theme";
 
 @import "vendor/breakpoint/breakpoint"; // media query mixins
 @import "variables";
@@ -46,5 +46,5 @@
 @import "custom/publications";
 @import "custom/layout-fixes";
 
-// Import epic theme again at the end to ensure it overrides everything
-@import "custom/epic-tech-theme";
+// Import sleek theme again at the end to ensure it overrides everything
+@import "custom/sleek-pro-theme";
