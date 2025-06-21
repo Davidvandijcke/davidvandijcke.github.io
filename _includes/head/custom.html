@@ -35,69 +35,9 @@
 </script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
 
-<!-- Critical layout fixes -->
+<!-- Nuclear fix: Minimal emergency styles only -->
 <style>
-  /* FORCE SLEEK THEME OVERRIDES */
-  html, body {
-    background: #1a1f2e !important;
-    color: #f1f5f9 !important;
-  }
-  
-  /* Fix sidebar layout */
-  @media (min-width: 64em) {
-    .sidebar {
-      width: 300px !important;
-      float: left !important;
-      margin-right: 2rem !important;
-      padding-right: 2rem !important;
-    }
-    
-    .archive {
-      float: right !important;
-      width: calc(100% - 350px) !important;
-    }
-  }
-  
-  .sidebar__right {
-    display: none !important;
-  }
-  
-  /* Force proper spacing */
-  .author__avatar {
-    display: block !important;
-    margin: 0 auto 2rem !important;
-    text-align: center !important;
-  }
-  
-  .author__avatar img {
-    max-width: 200px !important;
-    width: 100% !important;
-  }
-  
-  .author__content {
-    text-align: center !important;
-    margin-bottom: 2rem !important;
-  }
-  
-  .author__urls {
-    margin-top: 2rem !important;
-  }
-  
-  .social-icons li {
-    margin-bottom: 0.75rem !important;
-  }
-  
-  /* Emergency footer fix */
-  .page__footer {
-    position: relative !important;
-    bottom: auto !important;
-    margin-top: 4em !important;
-    height: auto !important;
-    padding: 1em 0 !important;
-    clear: both !important;
-  }
-  
-  /* Ensure AI assistant is visible */
+  /* Ensure AI assistant is always visible */
   #ai-assistant-container {
     position: fixed !important;
     bottom: 20px !important;
@@ -106,24 +46,6 @@
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
-    animation: none !important;
-  }
-  
-  #ai-assistant-btn {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-  
-  #ai-chat-interface {
-    position: fixed !important;
-    z-index: 100000 !important;
-  }
-  
-  /* Override any animations that might hide elements */
-  #ai-assistant-container * {
-    animation: none !important;
-    transition: transform 0.2s !important;
   }
 </style>
 

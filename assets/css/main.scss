@@ -12,6 +12,7 @@
 
 // Import sleek professional theme
 @import "custom/sleek-pro-theme";
+@import "custom/nuclear-fix"; // Nuclear option to fix all layout issues
 
 @import "vendor/breakpoint/breakpoint"; // media query mixins
 @import "variables";
@@ -48,3 +49,4 @@
 
 // Import sleek theme again at the end to ensure it overrides everything
 @import "custom/sleek-pro-theme";
+@import "custom/nuclear-fix"; // Import again at the end to ensure maximum priority

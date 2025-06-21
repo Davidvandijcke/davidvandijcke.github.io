@@ -1,0 +1,439 @@
+// NUCLEAR CSS RESET - Fix everything
+
+// Reset ALL styles first
+* {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+// Force proper document structure
+html {
+  font-size: 16px !important;
+  scroll-behavior: smooth !important;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #1a1f2e !important;
+  color: #f1f5f9 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  line-height: 1.6 !important;
+  min-height: 100vh !important;
+  position: relative !important;
+}
+
+// Fix the main container
+.initial-content {
+  background: transparent !important;
+  position: relative !important;
+  min-height: 100vh !important;
+}
+
+// Force proper layout structure
+.layout--single {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 2rem !important;
+  
+  @media (min-width: 64em) {
+    display: grid !important;
+    grid-template-columns: 280px 1fr !important;
+    gap: 3rem !important;
+  }
+}
+
+// Fix sidebar completely
+.sidebar {
+  width: 100% !important;
+  margin-bottom: 2rem !important;
+  
+  @media (min-width: 64em) {
+    width: 280px !important;
+    position: sticky !important;
+    top: 80px !important;
+    height: fit-content !important;
+    margin-bottom: 0 !important;
+  }
+  
+  &__right {
+    display: none !important;
+  }
+  
+  .author__avatar {
+    text-align: center !important;
+    margin-bottom: 1.5rem !important;
+    
+    img {
+      display: block !important;
+      margin: 0 auto !important;
+      max-width: 180px !important;
+      width: 100% !important;
+      height: auto !important;
+      border-radius: 16px !important;
+      border: 2px solid #4a9eff !important;
+      box-shadow: 0 4px 20px rgba(74, 158, 255, 0.3) !important;
+    }
+  }
+  
+  .author__content {
+    text-align: center !important;
+    padding: 0 1rem !important;
+    
+    h3 {
+      font-size: 1.75rem !important;
+      color: #f1f5f9 !important;
+      margin: 0 0 0.5rem 0 !important;
+      font-weight: 700 !important;
+    }
+    
+    .author__name {
+      font-size: 1.75rem !important;
+      color: #f1f5f9 !important;
+      margin: 0 0 0.5rem 0 !important;
+      font-weight: 700 !important;
+    }
+    
+    .author__bio {
+      color: #cbd5e1 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      line-height: 1.5 !important;
+    }
+    
+    p {
+      color: #cbd5e1 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  }
+  
+  .author__urls-wrapper {
+    margin-top: 1.5rem !important;
+    
+    .author__urls {
+      padding: 0 !important;
+      
+      .social-icons {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        
+        li {
+          margin: 0 0 0.5rem 0 !important;
+          padding: 0 !important;
+          
+          &:last-child {
+            margin-bottom: 0 !important;
+          }
+          
+          a {
+            display: block !important;
+            padding: 0.75rem 1rem !important;
+            background: rgba(255, 255, 255, 0.05) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 8px !important;
+            color: #cbd5e1 !important;
+            text-decoration: none !important;
+            transition: all 0.3s ease !important;
+            
+            &:hover {
+              background: rgba(74, 158, 255, 0.1) !important;
+              border-color: #4a9eff !important;
+              color: #4a9eff !important;
+              transform: translateX(5px) !important;
+            }
+            
+            .svg-inline--fa,
+            i {
+              margin-right: 0.5rem !important;
+              width: 20px !important;
+              text-align: center !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Fix main content area
+.archive {
+  width: 100% !important;
+  
+  @media (min-width: 64em) {
+    width: auto !important;
+  }
+  
+  .page__content {
+    background: rgba(255, 255, 255, 0.02) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 16px !important;
+    padding: 2rem !important;
+    margin-bottom: 2rem !important;
+    
+    // Fix all text
+    p, li, span, div {
+      color: #cbd5e1 !important;
+      line-height: 1.7 !important;
+      margin-bottom: 1rem !important;
+      
+      &:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      color: #f1f5f9 !important;
+      font-weight: 700 !important;
+      margin: 2rem 0 1rem 0 !important;
+      
+      &:first-child {
+        margin-top: 0 !important;
+      }
+    }
+    
+    a {
+      color: #4a9eff !important;
+      text-decoration: none !important;
+      
+      &:hover {
+        color: #8b5cf6 !important;
+        text-decoration: underline !important;
+      }
+    }
+  }
+}
+
+// Fix navigation
+.masthead {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  background: rgba(26, 31, 46, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  border-bottom: 1px solid rgba(74, 158, 255, 0.1) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  
+  &__inner-wrap {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 1rem 2rem !important;
+  }
+  
+  &__menu {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+.greedy-nav {
+  background: transparent !important;
+  display: flex !important;
+  align-items: center !important;
+  
+  .site-title {
+    color: #f1f5f9 !important;
+    font-weight: 600 !important;
+    font-size: 1.4rem !important;
+    text-decoration: none !important;
+    margin-right: 2rem !important;
+  }
+  
+  .visible-links {
+    display: flex !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    
+    li {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    
+    a {
+      display: block !important;
+      padding: 0.5rem 1rem !important;
+      color: #cbd5e1 !important;
+      text-decoration: none !important;
+      border-radius: 6px !important;
+      transition: all 0.3s ease !important;
+      
+      &:hover,
+      &.active {
+        background: rgba(74, 158, 255, 0.1) !important;
+        color: #4a9eff !important;
+      }
+    }
+  }
+}
+
+// Fix publication entries
+.pub-entry {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 12px !important;
+  padding: 1.5rem !important;
+  margin: 0 0 1.5rem 0 !important;
+  display: block !important;
+  clear: both !important;
+  transition: all 0.3s ease !important;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: #4a9eff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 24px rgba(74, 158, 255, 0.15) !important;
+  }
+  
+  .pub-title {
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    color: #f1f5f9 !important;
+    margin: 0 0 0.5rem 0 !important;
+    padding: 0 !important;
+  }
+  
+  .pub-authors {
+    color: #cbd5e1 !important;
+    margin: 0 0 0.25rem 0 !important;
+    padding: 0 !important;
+  }
+  
+  .pub-venue {
+    color: #94a3b8 !important;
+    font-style: italic !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .pub-details {
+    margin-top: 1rem !important;
+    
+    summary {
+      color: #4a9eff !important;
+      cursor: pointer !important;
+      padding: 0.5rem 0 !important;
+      
+      &:hover {
+        color: #8b5cf6 !important;
+      }
+    }
+    
+    .pub-abstract {
+      background: rgba(0, 0, 0, 0.2) !important;
+      padding: 1rem !important;
+      margin: 0.5rem 0 0 0 !important;
+      border-radius: 8px !important;
+      border-left: 3px solid #4a9eff !important;
+      color: #cbd5e1 !important;
+    }
+  }
+}
+
+// Fix archive items
+.archive__item {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 12px !important;
+  padding: 1.5rem !important;
+  margin: 0 0 1.25rem 0 !important;
+  display: block !important;
+  clear: both !important;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border-color: #4a9eff !important;
+    transform: translateY(-2px) !important;
+  }
+  
+  .archive__item-title {
+    font-size: 1.4rem !important;
+    margin: 0 0 0.5rem 0 !important;
+    padding: 0 !important;
+    
+    a {
+      color: #f1f5f9 !important;
+      text-decoration: none !important;
+      
+      &:hover {
+        color: #4a9eff !important;
+      }
+    }
+  }
+  
+  .archive__item-excerpt {
+    color: #cbd5e1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+// Fix footer
+.page__footer {
+  background: #242937 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+  margin: 4rem 0 0 0 !important;
+  padding: 2rem !important;
+  clear: both !important;
+  
+  footer {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  
+  a {
+    color: #4a9eff !important;
+    
+    &:hover {
+      color: #8b5cf6 !important;
+    }
+  }
+}
+
+// Ensure AI assistant is visible
+#ai-assistant-container {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 9999 !important;
+}
+
+// Remove any problematic styles
+.page__hero,
+.page__hero--overlay,
+.page__hero-image,
+.page__hero-caption {
+  display: none !important;
+}
+
+// Fix any floating issues
+.clearfix::after,
+.archive::after,
+.page__content::after {
+  content: "" !important;
+  display: table !important;
+  clear: both !important;
+}
+
+// Mobile fixes
+@media (max-width: 768px) {
+  .layout--single {
+    padding: 1rem !important;
+  }
+  
+  .page__content {
+    padding: 1.5rem !important;
+  }
+  
+  .pub-entry,
+  .archive__item {
+    padding: 1rem !important;
+  }
+}

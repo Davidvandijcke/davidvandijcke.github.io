@@ -152,25 +152,51 @@ body {
   }
 }
 
-// Fix layout issues
-.layout--single {
+// Fix layout issues - properly handle both archive and single layouts
+.layout--single, .layout--archive {
+  #main {
+    @media (min-width: 64em) {
+      display: flex !important;
+      gap: 2rem !important;
+      align-items: flex-start !important;
+    }
+  }
+  
   .sidebar {
     @media (min-width: 64em) {
-      float: left !important;
-      width: 280px !important;
-      padding-right: 2rem !important;
+      flex: 0 0 280px !important;
       position: sticky !important;
       top: 100px !important;
       height: fit-content !important;
     }
   }
   
-  .archive {
+  .archive, .page {
     @media (min-width: 64em) {
-      float: right !important;
-      width: calc(100% - 300px) !important;
-      padding-left: 1rem !important;
+      flex: 1 1 auto !important;
+      max-width: 100% !important;
+      float: none !important;
     }
+  }
+}
+
+// Override Susy grid for archive layout
+.archive {
+  @media (min-width: 64em) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+// Override Susy grid for page layout
+.page {
+  @media (min-width: 64em) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
 
@@ -253,6 +279,12 @@ body {
 #main {
   padding: 2rem !important;
   background: transparent !important;
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  
+  @media (max-width: 64em) {
+    padding: 1rem !important;
+  }
 }
 
 .page__content {
@@ -262,6 +294,9 @@ body {
   border-radius: 16px !important;
   padding: 2.5rem !important;
   box-shadow: var(--shadow-lg) !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
   
   // Fix text visibility
   p, li, span, div {
@@ -270,6 +305,11 @@ body {
   
   h1, h2, h3, h4, h5, h6 {
     color: var(--text-primary) !important;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 1.5rem !important;
+    border-radius: 12px !important;
   }
 }
 
@@ -322,6 +362,9 @@ a:not(.btn):not(.social-icons a):not(.greedy-nav a) {
   transition: all 0.3s ease !important;
   position: relative !important;
   clear: both !important; // Fix overlap
+  display: block !important;
+  width: 100% !important;
+  overflow: hidden !important;
   
   &:hover {
     transform: translateY(-2px) !important;
@@ -578,6 +621,14 @@ a:not(.btn):not(.social-icons a):not(.greedy-nav a) {
   margin-top: 4rem !important;
   padding: 2rem 0 !important;
   clear: both !important;
+  position: relative !important;
+  bottom: auto !important;
+  width: 100% !important;
+  
+  footer {
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+  }
   
   a {
     color: var(--accent-blue) !important;

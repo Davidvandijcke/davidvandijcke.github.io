@@ -1,48 +1,52 @@
 <!-- start custom footer snippets -->
 <a href="/sitemap/">Sitemap</a>
 
-<!-- Force epic theme styles -->
+<!-- Nuclear fix JavaScript -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Force sleek background
-  document.body.style.background = '#1a1f2e';
-  document.body.style.color = '#f1f5f9';
+  // Force proper layout structure
+  const layoutSingle = document.querySelector('.layout--single');
+  if (layoutSingle) {
+    // Remove any conflicting inline styles
+    layoutSingle.style.display = '';
+    layoutSingle.style.float = '';
+    layoutSingle.style.clear = '';
+  }
   
-  // Force all text to be visible
-  document.querySelectorAll('p, li, span, div').forEach(el => {
-    if (el.style.color === '' || el.style.color === 'inherit') {
-      el.style.color = '#c9d1d9';
-    }
-  });
-  
-  // Force headers to be white
-  document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(el => {
-    el.style.color = '#ffffff';
-  });
-  
-  // Fix sidebar width
+  // Fix sidebar
   const sidebar = document.querySelector('.sidebar');
-  if (sidebar && window.innerWidth >= 1024) {
-    sidebar.style.width = '300px';
-    sidebar.style.float = 'left';
-    sidebar.style.marginRight = '2rem';
-    sidebar.style.paddingRight = '2rem';
+  if (sidebar) {
+    sidebar.style.float = '';
+    sidebar.style.width = '';
+    sidebar.style.position = '';
   }
   
-  // Fix main content area
+  // Fix archive/main content
   const archive = document.querySelector('.archive');
-  if (archive && window.innerWidth >= 1024) {
-    archive.style.float = 'right';
-    archive.style.width = 'calc(100% - 350px)';
+  if (archive) {
+    archive.style.float = '';
+    archive.style.width = '';
+    archive.style.marginLeft = '';
   }
   
-  // Ensure page content has proper background
-  const pageContent = document.querySelector('.page__content');
-  if (pageContent) {
-    pageContent.style.background = 'rgba(22, 29, 42, 0.6)';
-    pageContent.style.backdropFilter = 'blur(10px)';
-    pageContent.style.padding = '3rem';
-    pageContent.style.borderRadius = '20px';
+  // Clear all floats on archive items to prevent overlap
+  document.querySelectorAll('.archive__item').forEach(item => {
+    item.style.clear = 'both';
+  });
+  
+  // Ensure text is visible
+  const mainContent = document.querySelector('.page__content, .archive');
+  if (mainContent && !mainContent.textContent.trim()) {
+    console.log('Main content appears empty, checking for hidden text...');
+    mainContent.querySelectorAll('*').forEach(el => {
+      if (window.getComputedStyle(el).display === 'none' || 
+          window.getComputedStyle(el).visibility === 'hidden' ||
+          window.getComputedStyle(el).opacity === '0') {
+        el.style.display = '';
+        el.style.visibility = '';
+        el.style.opacity = '';
+      }
+    });
   }
 });
 </script>

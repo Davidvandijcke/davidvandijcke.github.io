@@ -2,17 +2,7 @@
    Layout Fixes for Footer and AI Assistant
    ========================================================================== */
 
-/* Fix the sticky footer to be relative positioned */
-.page__footer {
-  position: relative !important; /* Override absolute positioning */
-  bottom: auto !important;
-  margin-top: 4em !important; /* Give good spacing from content */
-  
-  footer {
-    margin-top: 0.5em !important; /* Reduced from 2em */
-    padding: 0.5em 1em 1em !important; /* Compact padding */
-  }
-}
+/* Footer has been properly styled in sleek-pro-theme.scss */
 
 /* Make footer more compact */
 .page__footer-follow {
@@ -40,18 +30,21 @@ body {
   position: relative !important;
 }
 
-/* Ensure main content has enough bottom margin */
+/* Ensure main content has proper spacing */
 #main {
-  padding-bottom: 2em !important; /* Normal padding since footer is relative now */
+  padding-bottom: 4em !important;
   margin-bottom: 0 !important;
+  min-height: calc(100vh - 300px) !important;
 }
 
 /* Fix AI assistant button positioning - make it truly fixed */
 #ai-assistant-container {
   position: fixed !important;
-  bottom: 20px !important; /* Lower since footer won't overlap */
+  bottom: 20px !important;
   right: 30px !important;
-  z-index: 9999 !important; /* Ensure it's above everything */
+  z-index: 9999 !important;
+  max-width: 60px !important;
+  max-height: 60px !important;
 }
 
 #ai-assistant-btn {
