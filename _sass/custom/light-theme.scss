@@ -516,12 +516,12 @@ body {
   }
 }
 
-// Footer
+// Footer - Reduced size
 .page__footer {
   background: $bg-secondary;
   border-top: 1px solid $border-color;
   margin-top: 4rem;
-  padding: 3rem 0;
+  padding: 1.5rem 0; // Reduced from 3rem
   
   footer {
     max-width: 1200px;
@@ -529,6 +529,7 @@ body {
     padding: 0 2rem;
     text-align: center;
     color: $text-muted;
+    font-size: 0.875rem; // Smaller font
   }
   
   a {
@@ -692,6 +693,194 @@ body {
   opacity: 1 !important;
 }
 
+// Research timeline with connecting line
+.research-timeline {
+  position: relative;
+  padding-left: 2rem;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, $accent-primary, $accent-secondary);
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: -2.5rem;
+      top: 0.5rem;
+      width: 12px;
+      height: 12px;
+      background: $accent-primary;
+      border-radius: 50%;
+      border: 3px solid $bg-primary;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    }
+    
+    .timeline-date {
+      font-size: 0.875rem;
+      color: $text-muted;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    
+    .timeline-content {
+      background: $bg-card;
+      padding: 1rem;
+      border-radius: 12px;
+      border: 1px solid $border-color;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transform: translateX(5px);
+      }
+    }
+  }
+}
+
+// Animated skill bars
+.skills-container {
+  margin: 2rem 0;
+  
+  .skill-item {
+    margin-bottom: 1.5rem;
+    
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      
+      .skill-name {
+        font-weight: 600;
+        color: $text-primary;
+      }
+      
+      .skill-percentage {
+        color: $accent-primary;
+        font-weight: 600;
+      }
+    }
+    
+    .skill-bar {
+      width: 100%;
+      height: 8px;
+      background: $bg-tertiary;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      
+      .skill-progress {
+        height: 100%;
+        background: linear-gradient(90deg, $accent-primary, $accent-secondary);
+        border-radius: 4px;
+        width: 0;
+        transition: width 1.5s ease-out;
+        position: relative;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          width: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+          animation: shimmer 2s infinite;
+        }
+      }
+    }
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+// Interactive hover cards for projects
+.project-card {
+  background: $bg-card;
+  border: 1px solid $border-color;
+  border-radius: 16px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: $gradient-2;
+    border-radius: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+// Floating animation for elements
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.floating {
+  animation: float 4s ease-in-out infinite;
+}
+
+// Enhanced AI assistant button
+#ai-assistant-container {
+  #ai-assistant-btn {
+    background: $gradient-2 !important;
+    box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.25) !important;
+    transition: all 0.3s ease !important;
+    
+    &:hover {
+      transform: scale(1.1) !important;
+      box-shadow: 0 15px 35px -5px rgba(124, 58, 237, 0.35) !important;
+    }
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    &:hover::before {
+      opacity: 1;
+    }
+  }
+}
+
 // Mobile responsiveness
 @media (max-width: 768px) {
   .layout--single {
@@ -701,6 +890,7 @@ body {
   
   .page__content {
     padding: 2rem;
+    margin-bottom: 3rem !important; // Extra margin for mobile
   }
   
   .archive__item {
@@ -715,6 +905,25 @@ body {
   .author__name {
     font-size: 1.5rem !important;
   }
+  
+  // Mobile footer fix
+  .page__footer {
+    position: relative !important;
+    margin-top: 3rem !important;
+    
+    footer {
+      padding-bottom: 2rem !important;
+    }
+  }
+  
+  // Ensure content is not cut off
+  body {
+    padding-bottom: 4rem !important;
+  }
+  
+  .initial-content {
+    padding-bottom: 3rem !important;
+  }
 }
 
 // Selection styling
@@ -726,4 +935,9 @@ body {
 ::-moz-selection {
   background: rgba(37, 99, 235, 0.2);
   color: $text-primary;
+}
+
+// Smooth page transitions
+body {
+  transition: opacity 0.3s ease;
 }
