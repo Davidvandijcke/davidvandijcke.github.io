@@ -10,8 +10,7 @@
  *
 */
 
-// ULTIMATE THEME MUST COME FIRST TO OVERRIDE EVERYTHING
-@import "custom/ultimate-programmer-theme";
+// Data science theme for professional look
 
 @import "vendor/breakpoint/breakpoint"; // media query mixins
 @import "variables";
@@ -45,6 +44,4 @@
 
 @import "custom/publications";
 @import "custom/layout-fixes";
-
-// IMPORT AGAIN AT THE END TO ENSURE OVERRIDES
-@import "custom/ultimate-programmer-theme";
+@import "custom/data-science-theme";

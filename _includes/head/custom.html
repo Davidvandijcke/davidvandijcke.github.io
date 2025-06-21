@@ -37,61 +37,6 @@
 
 <!-- Critical layout fixes -->
 <style>
-  /* NUCLEAR OVERRIDE - FORCE DARK THEME */
-  html, body {
-    background: #0a0e27 !important;
-    background-image: 
-      radial-gradient(at 40% 20%, hsla(240, 100%, 74%, 0.3) 0px, transparent 50%),
-      radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 0.3) 0px, transparent 50%),
-      radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 0.3) 0px, transparent 50%),
-      radial-gradient(at 80% 50%, hsla(340, 100%, 76%, 0.3) 0px, transparent 50%),
-      radial-gradient(at 0% 100%, hsla(224, 100%, 88%, 0.3) 0px, transparent 50%),
-      radial-gradient(at 80% 100%, hsla(242, 100%, 70%, 0.3) 0px, transparent 50%) !important;
-    color: #e2e8f0 !important;
-  }
-  
-  /* Force all text to be light */
-  *, *::before, *::after {
-    color: inherit !important;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    color: #f1f5f9 !important;
-  }
-  
-  p, li, span, div {
-    color: #cbd5e1 !important;
-  }
-  
-  a {
-    color: #818cf8 !important;
-  }
-  
-  /* Force dark navigation */
-  .masthead, .greedy-nav {
-    background: rgba(15, 23, 42, 0.95) !important;
-    backdrop-filter: blur(20px) !important;
-  }
-  
-  /* Force glassmorphism on main content */
-  #main, .page__content, .page {
-    background: rgba(15, 23, 42, 0.8) !important;
-    backdrop-filter: blur(10px) !important;
-    border-radius: 24px !important;
-    padding: 2rem !important;
-    margin: 2rem auto !important;
-  }
-  
-  /* Force card style on all content blocks */
-  .archive__item, .pub-entry, article, section {
-    background: rgba(30, 41, 59, 0.5) !important;
-    backdrop-filter: blur(10px) !important;
-    border: 1px solid rgba(99, 102, 241, 0.3) !important;
-    border-radius: 16px !important;
-    padding: 1.5rem !important;
-    margin-bottom: 1.5rem !important;
-  }
-  
   /* Emergency footer fix */
   .page__footer {
     position: relative !important;
@@ -99,7 +44,6 @@
     margin-top: 4em !important;
     height: auto !important;
     padding: 1em 0 !important;
-    background: rgba(15, 23, 42, 0.95) !important;
   }
   
   /* Ensure AI assistant is visible */
