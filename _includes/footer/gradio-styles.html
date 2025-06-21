@@ -1,0 +1,155 @@
+<!-- Gradio Interface Enhancement -->
+<script>
+// Enhanced Gradio styling injection
+document.addEventListener('DOMContentLoaded', function() {
+  // Wait for AI modal to be available
+  const checkModal = setInterval(() => {
+    const modal = document.querySelector('.ai-modal, #aiModal');
+    if (modal) {
+      clearInterval(checkModal);
+      
+      // Style the modal itself first
+      modal.style.cssText += `
+        width: 550px !important;
+        height: 750px !important;
+        border-radius: 24px !important;
+        overflow: hidden !important;
+        box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.3) !important;
+        border: 1px solid rgba(0, 0, 0, 0.1) !important;
+      `;
+      
+      // Monitor when modal is opened
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.target === modal && modal.style.display === 'flex') {
+            setTimeout(() => enhanceGradio(), 1000);
+          }
+        });
+      });
+      
+      observer.observe(modal, { attributes: true, attributeFilter: ['style'] });
+    }
+  }, 100);
+  
+  function enhanceGradio() {
+    const iframe = document.querySelector('.ai-modal iframe, #aiModal iframe');
+    if (!iframe) return;
+    
+    // Method 1: Try postMessage approach
+    iframe.onload = function() {
+      // Send custom styles via postMessage
+      const customStyles = `
+        <style>
+          * { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important; }
+          body { background: white !important; }
+          .gradio-container { padding: 1rem !important; }
+          footer { display: none !important; }
+          .dark { background: white !important; }
+          textarea, input { 
+            border: 2px solid #e5e7eb !important; 
+            border-radius: 12px !important;
+            padding: 12px !important;
+            font-size: 16px !important;
+          }
+          textarea:focus, input:focus { 
+            border-color: #3b82f6 !important;
+            outline: none !important;
+          }
+          button {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%) !important;
+            color: white !important;
+            border: none !important;
+            border-radius: 10px !important;
+            padding: 10px 20px !important;
+            font-weight: 600 !important;
+          }
+          .message { 
+            padding: 12px 16px !important;
+            margin: 8px 0 !important;
+            border-radius: 12px !important;
+          }
+        </style>
+      `;
+      
+      try {
+        iframe.contentWindow.postMessage({
+          type: 'inject-styles',
+          styles: customStyles
+        }, '*');
+      } catch (e) {
+        console.log('Could not post message to iframe');
+      }
+    };
+    
+    // Method 2: URL parameters for Gradio customization
+    const currentSrc = iframe.src;
+    if (!currentSrc.includes('?')) {
+      // Add parameters that Gradio might recognize
+      iframe.src = currentSrc + '?__theme=light&css=custom';
+    }
+  }
+});
+
+// Also add global message listener for potential Gradio responses
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'gradio-ready') {
+    // If Gradio sends a ready message, we can respond with styles
+    e.source.postMessage({
+      type: 'apply-custom-styles',
+      styles: 'modern'
+    }, e.origin);
+  }
+});
+</script>
+
+<style>
+/* Additional styling for the AI assistant button and modal */
+.ai-button#aiButton {
+  width: 85px !important;
+  height: 85px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  font-size: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%) !important;
+  border: 3px solid rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 12px 35px rgba(59, 130, 246, 0.35) !important;
+  animation: float 3s ease-in-out infinite, pulse-glow 2s ease-out infinite !important;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 12px 35px rgba(59, 130, 246, 0.35);
+  }
+  50% {
+    box-shadow: 0 12px 35px rgba(59, 130, 246, 0.35), 0 0 0 20px rgba(59, 130, 246, 0.1);
+  }
+}
+
+.ai-button#aiButton:hover {
+  transform: scale(1.1) rotate(5deg) !important;
+  animation-play-state: paused !important;
+}
+
+.ai-button#aiButton svg {
+  width: 40px !important;
+  height: 40px !important;
+  color: white !important;
+}
+
+/* Hide the text, only show icon */
+.ai-button#aiButton {
+  font-size: 0 !important;
+}
+
+/* Ensure modal has proper z-index */
+.ai-modal#aiModal {
+  z-index: 100000 !important;
+}
+
+.ai-backdrop#aiBackdrop {
+  z-index: 99999 !important;
+}
+</style>
