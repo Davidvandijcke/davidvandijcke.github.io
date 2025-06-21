@@ -1,0 +1,395 @@
+// Advanced programmer-style animations
+
+// Neon glow pulse
+@keyframes neonPulse {
+  0%, 100% {
+    text-shadow: 
+      0 0 4px var(--primary-color),
+      0 0 11px var(--primary-color),
+      0 0 19px var(--primary-color),
+      0 0 40px var(--shadow-color);
+  }
+  50% {
+    text-shadow: 
+      0 0 2px var(--primary-color),
+      0 0 5px var(--primary-color),
+      0 0 10px var(--primary-color),
+      0 0 20px var(--shadow-color);
+  }
+}
+
+// Circuit board trace animation
+@keyframes circuitTrace {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+// Data stream effect
+@keyframes dataStream {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+// Terminal cursor blink
+@keyframes terminalCursor {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+// Holographic shimmer
+@keyframes holographic {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// Code execution effect
+@keyframes codeExecute {
+  0% {
+    color: var(--text-muted);
+    background: transparent;
+  }
+  50% {
+    color: var(--primary-color);
+    background: rgba(0, 255, 136, 0.1);
+  }
+  100% {
+    color: var(--text-secondary);
+    background: transparent;
+  }
+}
+
+// Glitch text effect
+@keyframes glitchText {
+  0%, 100% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  20% {
+    transform: translate(-1px, 1px);
+    filter: hue-rotate(90deg);
+  }
+  40% {
+    transform: translate(1px, -1px);
+    filter: hue-rotate(180deg);
+  }
+  60% {
+    transform: translate(-1px, -1px);
+    filter: hue-rotate(270deg);
+  }
+  80% {
+    transform: translate(1px, 1px);
+    filter: hue-rotate(360deg);
+  }
+}
+
+// Scanner line effect
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+// Boot sequence animation
+@keyframes bootSequence {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// Apply animations to elements
+.site-title {
+  animation: neonPulse 2s ease-in-out infinite;
+}
+
+// Navigation hover with data execution effect
+.greedy-nav .visible-links a {
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover::before {
+    transform: translateY(0);
+  }
+}
+
+// Author avatar with holographic effect
+.author__avatar img {
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(
+      45deg,
+      var(--primary-color),
+      var(--secondary-color),
+      var(--accent-color),
+      var(--primary-color)
+    );
+    background-size: 400% 400%;
+    border-radius: inherit;
+    z-index: -1;
+    animation: holographic 3s ease infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+// Publication entries with scan effect
+.pub-entry {
+  position: relative;
+  overflow: hidden;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--primary-color),
+      transparent
+    );
+    transform: translateY(-100%);
+    animation: scanline 6s linear infinite;
+    opacity: 0.3;
+  }
+}
+
+// Button ripple effect
+.btn {
+  position: relative;
+  overflow: hidden;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+  
+  &:active::after {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+// Page load animation
+.page__content {
+  animation: bootSequence 0.8s ease-out;
+}
+
+// Code blocks with typing effect
+pre code {
+  display: block;
+  position: relative;
+  
+  &::after {
+    content: '|';
+    position: absolute;
+    right: 0;
+    animation: terminalCursor 1s infinite;
+    color: var(--primary-color);
+  }
+}
+
+// Archive items with staggered fade-in
+.archive__item {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+  
+  @for $i from 1 through 20 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.05}s;
+    }
+  }
+}
+
+// Social icons with circuit board effect
+.social-icons {
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--border-color) 0px,
+      var(--border-color) 2px,
+      transparent 2px,
+      transparent 4px
+    );
+    opacity: 0.3;
+    z-index: -1;
+  }
+}
+
+// Loading dots animation
+@keyframes loadingDots {
+  0%, 20% {
+    content: '.';
+  }
+  40% {
+    content: '..';
+  }
+  60%, 100% {
+    content: '...';
+  }
+}
+
+.loading::after {
+  content: '.';
+  animation: loadingDots 1.5s infinite;
+}
+
+// Hover lift effect with shadow
+@mixin hoverLift {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+      0 10px 20px rgba(0, 0, 0, 0.2),
+      0 0 30px var(--shadow-color);
+  }
+}
+
+// Apply hover lift to cards
+.pub-entry,
+.archive__item,
+.author__avatar img {
+  @include hoverLift;
+}
+
+// Parallax scrolling effect for background
+@keyframes parallaxDrift {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(-50px) translateY(-50px);
+  }
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: 
+    radial-gradient(circle at 20% 50%, var(--shadow-color) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 212, 255, 0.05) 0%, transparent 50%);
+  animation: parallaxDrift 20s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: -2;
+}
+
+// Mobile optimizations
+@media (max-width: 768px) {
+  // Reduce animation complexity on mobile
+  @keyframes mobileBootSequence {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .page__content {
+    animation: mobileBootSequence 0.5s ease-out;
+  }
+  
+  // Disable heavy animations on mobile
+  body::after,
+  .pub-entry::after {
+    animation: none;
+  }
+}
+
+// Accessibility - respect reduced motion preference
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

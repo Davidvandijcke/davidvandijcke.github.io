@@ -1,0 +1,629 @@
+// Programmer-style theme with cyberpunk/terminal aesthetics
+// Includes mobile fixes for publication readability
+
+// CSS Variables for a cohesive dark-mode programmer aesthetic
+:root {
+  // Core colors - cyberpunk/terminal inspired
+  --primary-color: #00ff88;
+  --secondary-color: #00d4ff;
+  --accent-color: #ff0080;
+  --warning-color: #ffaa00;
+  
+  // Text colors with better contrast
+  --text-primary: #e8e8e8;
+  --text-secondary: #b4b4b4;
+  --text-muted: #808080;
+  --text-code: #00ff88;
+  
+  // Background colors
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #141414;
+  --bg-tertiary: #1a1a1a;
+  --bg-card: #161616;
+  --bg-hover: #222222;
+  
+  // Border and effects
+  --border-color: #333333;
+  --glow-color: #00ff88;
+  --shadow-color: rgba(0, 255, 136, 0.3);
+  
+  // Terminal-style font stack
+  --font-mono: 'Fira Code', 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+// Light mode overrides (for accessibility)
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --text-muted: #6a6a6a;
+    --bg-primary: #fafafa;
+    --bg-secondary: #f0f0f0;
+    --bg-tertiary: #e8e8e8;
+    --bg-card: #ffffff;
+    --bg-hover: #f5f5f5;
+    --border-color: #d0d0d0;
+    --primary-color: #00b860;
+    --secondary-color: #0099cc;
+    --accent-color: #cc0066;
+    --shadow-color: rgba(0, 184, 96, 0.2);
+  }
+}
+
+// Global styles
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  position: relative;
+  
+  // Matrix-style background pattern
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 20% 50%, var(--shadow-color) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 20%, rgba(255, 0, 128, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+// Typography with monospace accents
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--text-primary);
+  position: relative;
+  
+  // Terminal prompt style for headers
+  &::before {
+    content: '> ';
+    color: var(--primary-color);
+    font-weight: 400;
+  }
+}
+
+// Code-style links
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: var(--primary-color);
+    text-shadow: 0 0 8px var(--shadow-color);
+  }
+  
+  // Animated underline
+  &:not(.btn):not(.social-icons a)::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transition: width 0.3s ease;
+  }
+  
+  &:not(.btn):not(.social-icons a):hover::after {
+    width: 100%;
+  }
+}
+
+// Navigation with glassmorphism and glow effects
+.masthead {
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 20px rgba(0, 255, 136, 0.1);
+  
+  &__inner-wrap {
+    padding: 0.5rem 1rem;
+  }
+}
+
+.greedy-nav {
+  background: transparent;
+  
+  .site-title {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: lowercase;
+    
+    &::before {
+      content: '~/';
+      color: var(--text-secondary);
+    }
+  }
+  
+  .visible-links {
+    a {
+      font-family: var(--font-mono);
+      color: var(--text-primary);
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      
+      // Hover effect with glow
+      &:hover {
+        background: var(--bg-hover);
+        color: var(--primary-color);
+        box-shadow: inset 0 0 20px rgba(0, 255, 136, 0.1);
+      }
+      
+      // Active page indicator
+      &.active {
+        color: var(--primary-color);
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 10%;
+          right: 10%;
+          height: 2px;
+          background: var(--primary-color);
+          box-shadow: 0 0 10px var(--shadow-color);
+        }
+      }
+    }
+  }
+}
+
+// Author profile with cyberpunk styling
+.author__avatar {
+  margin-bottom: 1rem;
+  
+  img {
+    border-radius: 8px;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 30px var(--shadow-color);
+    transition: all 0.4s ease;
+    filter: grayscale(20%);
+    
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 50px var(--shadow-color);
+      filter: grayscale(0%);
+    }
+  }
+}
+
+.author__content {
+  h3 {
+    font-family: var(--font-mono);
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--shadow-color);
+    
+    &::before {
+      content: '';
+    }
+  }
+  
+  .author__bio {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+// Social icons with terminal styling
+.author__urls {
+  .social-icons {
+    li a {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      transition: all 0.3s ease;
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      position: relative;
+      overflow: hidden;
+      
+      &::before {
+        content: '$ ';
+        color: var(--primary-color);
+        margin-right: 0.25rem;
+      }
+      
+      &:hover {
+        border-color: var(--primary-color);
+        background: var(--bg-hover);
+        color: var(--primary-color);
+        transform: translateX(5px);
+        box-shadow: 0 0 20px var(--shadow-color);
+      }
+    }
+  }
+}
+
+// Publication entries with enhanced readability
+.pub-entry {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  
+  // Glowing border on hover
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    border-radius: 8px;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.pub-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-sans);
+  
+  // Better mobile readability
+  @media (max-width: 768px) {
+    color: var(--text-primary) !important;
+    font-size: 1.1rem;
+  }
+}
+
+.pub-authors {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  
+  // Enhanced mobile contrast
+  @media (max-width: 768px) {
+    color: var(--text-secondary) !important;
+    font-size: 0.9rem;
+  }
+}
+
+.pub-venue {
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 0.9rem;
+  
+  // Better mobile visibility
+  @media (max-width: 768px) {
+    color: var(--text-secondary) !important;
+  }
+}
+
+// Abstract details with terminal styling
+.pub-details {
+  margin-top: 1rem;
+  
+  summary {
+    cursor: pointer;
+    color: var(--secondary-color);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+    
+    &::before {
+      content: '▶ ';
+      display: inline-block;
+      transition: transform 0.3s ease;
+      margin-right: 0.5rem;
+    }
+    
+    &:hover {
+      color: var(--primary-color);
+      text-shadow: 0 0 5px var(--shadow-color);
+    }
+  }
+  
+  &[open] summary::before {
+    transform: rotate(90deg);
+  }
+  
+  .pub-abstract {
+    background: var(--bg-secondary);
+    border-left: 3px solid var(--primary-color);
+    padding: 1rem;
+    margin-top: 0.5rem;
+    border-radius: 0 4px 4px 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    
+    // Ensure good readability on mobile
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+      padding: 0.75rem;
+    }
+  }
+}
+
+// Terminal-style buttons
+.btn {
+  font-family: var(--font-mono);
+  background: var(--bg-card);
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-transform: lowercase;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: var(--primary-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+  
+  &:hover {
+    color: var(--bg-primary);
+    box-shadow: 0 0 20px var(--shadow-color);
+    transform: translateY(-2px);
+    
+    &::before {
+      width: 300px;
+      height: 300px;
+    }
+  }
+  
+  span {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// Page content with typing animation
+.page__content {
+  p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    
+    @media (max-width: 768px) {
+      font-size: 0.95rem;
+    }
+  }
+  
+  // Code blocks with terminal styling
+  pre {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 1.5rem;
+    overflow-x: auto;
+    position: relative;
+    
+    &::before {
+      content: 'terminal';
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: lowercase;
+    }
+    
+    code {
+      color: var(--text-code);
+      font-family: var(--font-mono);
+    }
+  }
+}
+
+// Archive items with card styling
+.archive__item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 20px var(--shadow-color);
+    transform: translateY(-2px);
+  }
+  
+  .archive__item-title {
+    font-family: var(--font-sans);
+    
+    a {
+      color: var(--text-primary);
+      
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+}
+
+// Footer with terminal aesthetic
+.page__footer {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  
+  a {
+    color: var(--secondary-color);
+    
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+}
+
+// Typing cursor animation
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.typing-cursor::after {
+  content: '_';
+  color: var(--primary-color);
+  animation: blink 1s infinite;
+}
+
+// Glitch effect for special elements
+@keyframes glitch {
+  0%, 100% {
+    text-shadow: 
+      0.05em 0 0 rgba(255, 0, 128, 0.75),
+      -0.05em -0.025em 0 rgba(0, 255, 136, 0.75),
+      0.025em 0.05em 0 rgba(0, 212, 255, 0.75);
+  }
+  15% {
+    text-shadow: 
+      0.05em 0 0 rgba(255, 0, 128, 0.75),
+      -0.05em -0.025em 0 rgba(0, 255, 136, 0.75),
+      0.025em 0.05em 0 rgba(0, 212, 255, 0.75);
+  }
+  16% {
+    text-shadow: 
+      -0.05em -0.025em 0 rgba(255, 0, 128, 0.75),
+      0.025em 0.025em 0 rgba(0, 255, 136, 0.75),
+      -0.05em -0.05em 0 rgba(0, 212, 255, 0.75);
+  }
+  49% {
+    text-shadow: 
+      -0.05em -0.025em 0 rgba(255, 0, 128, 0.75),
+      0.025em 0.025em 0 rgba(0, 255, 136, 0.75),
+      -0.05em -0.05em 0 rgba(0, 212, 255, 0.75);
+  }
+  50% {
+    text-shadow: 
+      0.025em 0.05em 0 rgba(255, 0, 128, 0.75),
+      0.05em 0 0 rgba(0, 255, 136, 0.75),
+      0 -0.05em 0 rgba(0, 212, 255, 0.75);
+  }
+  99% {
+    text-shadow: 
+      0.025em 0.05em 0 rgba(255, 0, 128, 0.75),
+      0.05em 0 0 rgba(0, 255, 136, 0.75),
+      0 -0.05em 0 rgba(0, 212, 255, 0.75);
+  }
+}
+
+.glitch {
+  animation: glitch 2s infinite;
+}
+
+// Matrix rain effect (optional, can be toggled)
+.matrix-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+  
+  &::before {
+    content: '10101010 11001100 01010101 00110011';
+    position: absolute;
+    color: var(--primary-color);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    opacity: 0.05;
+    animation: rain 20s linear infinite;
+  }
+}
+
+@keyframes rain {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+// Responsive improvements
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+  
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  
+  .masthead__inner-wrap {
+    padding: 0.5rem;
+  }
+  
+  .greedy-nav .visible-links a {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .pub-entry {
+    padding: 1rem;
+  }
+  
+  .author__urls .social-icons li a {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+// Accessibility improvements
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+// High contrast mode
+@media (prefers-contrast: high) {
+  :root {
+    --primary-color: #00ff00;
+    --secondary-color: #00ffff;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --bg-primary: #000000;
+    --bg-secondary: #111111;
+  }
+}
