@@ -1,5 +1,90 @@
 <!-- start custom footer snippets -->
 <a href="/sitemap/">Sitemap</a>
+
+<!-- Force dark theme styles -->
+<style>
+/* ULTIMATE OVERRIDE - This runs after all CSS is loaded */
+body {
+  background: #0a0e27 !important;
+  background-image: 
+    radial-gradient(at 40% 20%, hsla(240, 100%, 74%, 0.3) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 0.3) 0px, transparent 50%) !important;
+}
+
+/* Force dark cards on everything */
+.page__inner-wrap > *,
+.archive__item,
+.pub-entry,
+article > *,
+section > * {
+  background: rgba(30, 41, 59, 0.8) !important;
+  backdrop-filter: blur(10px) !important;
+  padding: 1.5rem !important;
+  border-radius: 12px !important;
+  margin-bottom: 1rem !important;
+  border: 1px solid rgba(99, 102, 241, 0.3) !important;
+}
+
+/* Force text colors */
+* {
+  color: #cbd5e1 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #f1f5f9 !important;
+}
+
+a {
+  color: #818cf8 !important;
+}
+
+a:hover {
+  color: #a78bfa !important;
+}
+
+/* Force dark nav */
+.masthead {
+  background: rgba(15, 23, 42, 0.95) !important;
+}
+
+.greedy-nav .visible-links a {
+  color: #cbd5e1 !important;
+}
+</style>
+
+<script>
+// Nuclear option - force styles via JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(function() {
+    // Force body background
+    document.body.style.setProperty('background', '#0a0e27', 'important');
+    document.body.style.setProperty('color', '#e2e8f0', 'important');
+    
+    // Force all elements
+    const allElements = document.querySelectorAll('*');
+    allElements.forEach(el => {
+      const tag = el.tagName.toLowerCase();
+      if (['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tag)) {
+        el.style.setProperty('color', '#f1f5f9', 'important');
+      } else if (tag === 'a') {
+        el.style.setProperty('color', '#818cf8', 'important');
+      } else if (['p', 'li', 'span', 'div'].includes(tag)) {
+        el.style.setProperty('color', '#cbd5e1', 'important');
+      }
+    });
+    
+    // Force containers
+    const containers = document.querySelectorAll('.page__content, .archive, article, section');
+    containers.forEach(el => {
+      el.style.setProperty('background', 'rgba(15, 23, 42, 0.8)', 'important');
+      el.style.setProperty('backdrop-filter', 'blur(10px)', 'important');
+      el.style.setProperty('border-radius', '16px', 'important');
+      el.style.setProperty('padding', '2rem', 'important');
+    });
+  }, 100);
+});
+</script>
+
 <!-- end custom footer snippets -->
 
 {% include footer/ai-assistant-simple.html %}
