@@ -1,56 +1,6 @@
 <!-- start custom footer snippets -->
 <a href="/sitemap/">Sitemap</a>
 
-<!-- Nuclear fix JavaScript -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Force proper layout structure
-  const layoutSingle = document.querySelector('.layout--single');
-  if (layoutSingle) {
-    // Remove any conflicting inline styles
-    layoutSingle.style.display = '';
-    layoutSingle.style.float = '';
-    layoutSingle.style.clear = '';
-  }
-  
-  // Fix sidebar
-  const sidebar = document.querySelector('.sidebar');
-  if (sidebar) {
-    sidebar.style.float = '';
-    sidebar.style.width = '';
-    sidebar.style.position = '';
-  }
-  
-  // Fix archive/main content
-  const archive = document.querySelector('.archive');
-  if (archive) {
-    archive.style.float = '';
-    archive.style.width = '';
-    archive.style.marginLeft = '';
-  }
-  
-  // Clear all floats on archive items to prevent overlap
-  document.querySelectorAll('.archive__item').forEach(item => {
-    item.style.clear = 'both';
-  });
-  
-  // Ensure text is visible
-  const mainContent = document.querySelector('.page__content, .archive');
-  if (mainContent && !mainContent.textContent.trim()) {
-    console.log('Main content appears empty, checking for hidden text...');
-    mainContent.querySelectorAll('*').forEach(el => {
-      if (window.getComputedStyle(el).display === 'none' || 
-          window.getComputedStyle(el).visibility === 'hidden' ||
-          window.getComputedStyle(el).opacity === '0') {
-        el.style.display = '';
-        el.style.visibility = '';
-        el.style.opacity = '';
-      }
-    });
-  }
-});
-</script>
-
 <!-- end custom footer snippets -->
 
 {% include footer/ai-assistant-simple.html %}

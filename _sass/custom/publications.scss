@@ -1,30 +1,209 @@
+// Enhanced publication styles - inherits from unified theme
+
 .pub-entry {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  background-color: #fafafa;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 1.75rem;
+  transition: all 0.3s ease;
+  
+  // Add publication number indicator
+  &::before {
+    content: attr(data-pub-number);
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(139, 92, 246, 0.1);
+    z-index: 0;
+  }
+  
+  // Gradient accent on hover
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #3b82f6, #8b5cf6, transparent);
+    transition: left 0.8s ease;
+  }
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #3b82f6;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+    
+    &::after {
+      left: 100%;
+    }
+  }
+  
+  .pub-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #f8fafc;
+    margin: 0 0 0.75rem 0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .pub-authors {
+    color: #cbd5e1;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .pub-venue {
+    color: #94a3b8;
+    font-style: italic;
+    margin: 0 0 1rem 0;
+  }
+  
+  .pub-details {
+    summary {
+      cursor: pointer;
+      color: #3b82f6;
+      font-weight: 500;
+      padding: 0.5rem 0;
+      outline: none;
+      transition: color 0.3s ease;
+      
+      &:hover {
+        color: #8b5cf6;
+      }
+      
+      &::-webkit-details-marker {
+        color: #3b82f6;
+      }
+    }
+    
+    .pub-abstract {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 1.25rem;
+      margin-top: 0.75rem;
+      border-radius: 12px;
+      border-left: 3px solid #3b82f6;
+      color: #cbd5e1;
+      line-height: 1.7;
+    }
+  }
+  
+  .pub-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 8px;
+      color: #3b82f6;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background: rgba(59, 130, 246, 0.2);
+        border-color: #3b82f6;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+      }
+      
+      &::before {
+        content: '📄';
+        font-size: 1rem;
+      }
+      
+      &[href*="pdf"]::before {
+        content: '📑';
+      }
+      
+      &[href*="github"]::before {
+        content: '💻';
+      }
+      
+      &[href*="slides"]::before {
+        content: '🎯';
+      }
+    }
+  }
 }
 
-.pub-title {
-  margin-top: 0;
-  font-size: 1.15rem;
-  font-weight: 600;
+// Add publication numbering
+.archive {
+  counter-reset: pub-counter;
+  
+  .pub-entry {
+    counter-increment: pub-counter;
+    
+    &::before {
+      content: counter(pub-counter, decimal-leading-zero);
+    }
+  }
 }
 
-/* Collapsible details styling */
-.pub-details summary {
-  cursor: pointer;
-  font-weight: 500;
-  margin-top: 1rem;
-  color: #444;
+// Working papers section special styling
+.working-papers {
+  .pub-entry {
+    border-left: 3px solid #f59e0b;
+    
+    &::after {
+      background: linear-gradient(90deg, transparent, #f59e0b, #ef4444, transparent);
+    }
+  }
 }
 
-.pub-details[open] summary {
-  margin-bottom: 0.5rem;
+// Published papers special styling  
+.published-papers {
+  .pub-entry {
+    border-left: 3px solid #10b981;
+    
+    &::after {
+      background: linear-gradient(90deg, transparent, #10b981, #3b82f6, transparent);
+    }
+  }
 }
 
-/* Improve the default arrow (optional) */
-.pub-details summary::-webkit-details-marker {
-  color: #888;
+// Year dividers
+.archive__subtitle {
+  margin: 3rem 0 2rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #f8fafc;
+  position: relative;
+  padding-left: 1rem;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    border-radius: 2px;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, transparent);
+  }
 }
