@@ -37,6 +37,56 @@
 
 <!-- Critical layout fixes -->
 <style>
+  /* FORCE EPIC THEME OVERRIDES */
+  html, body {
+    background: #0f1419 !important;
+    color: #ffffff !important;
+  }
+  
+  /* Fix sidebar layout */
+  @media (min-width: 64em) {
+    .sidebar {
+      width: 300px !important;
+      float: left !important;
+      margin-right: 2rem !important;
+      padding-right: 2rem !important;
+    }
+    
+    .archive {
+      float: right !important;
+      width: calc(100% - 350px) !important;
+    }
+  }
+  
+  .sidebar__right {
+    display: none !important;
+  }
+  
+  /* Force proper spacing */
+  .author__avatar {
+    display: block !important;
+    margin: 0 auto 2rem !important;
+    text-align: center !important;
+  }
+  
+  .author__avatar img {
+    max-width: 200px !important;
+    width: 100% !important;
+  }
+  
+  .author__content {
+    text-align: center !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .author__urls {
+    margin-top: 2rem !important;
+  }
+  
+  .social-icons li {
+    margin-bottom: 0.75rem !important;
+  }
+  
   /* Emergency footer fix */
   .page__footer {
     position: relative !important;
@@ -44,6 +94,7 @@
     margin-top: 4em !important;
     height: auto !important;
     padding: 1em 0 !important;
+    clear: both !important;
   }
   
   /* Ensure AI assistant is visible */

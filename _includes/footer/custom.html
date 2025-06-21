@@ -1,7 +1,51 @@
 <!-- start custom footer snippets -->
 <a href="/sitemap/">Sitemap</a>
 
-<!-- Additional styling if needed -->
+<!-- Force epic theme styles -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Force dark background
+  document.body.style.background = '#0f1419';
+  document.body.style.color = '#ffffff';
+  
+  // Force all text to be visible
+  document.querySelectorAll('p, li, span, div').forEach(el => {
+    if (el.style.color === '' || el.style.color === 'inherit') {
+      el.style.color = '#c9d1d9';
+    }
+  });
+  
+  // Force headers to be white
+  document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(el => {
+    el.style.color = '#ffffff';
+  });
+  
+  // Fix sidebar width
+  const sidebar = document.querySelector('.sidebar');
+  if (sidebar && window.innerWidth >= 1024) {
+    sidebar.style.width = '300px';
+    sidebar.style.float = 'left';
+    sidebar.style.marginRight = '2rem';
+    sidebar.style.paddingRight = '2rem';
+  }
+  
+  // Fix main content area
+  const archive = document.querySelector('.archive');
+  if (archive && window.innerWidth >= 1024) {
+    archive.style.float = 'right';
+    archive.style.width = 'calc(100% - 350px)';
+  }
+  
+  // Ensure page content has proper background
+  const pageContent = document.querySelector('.page__content');
+  if (pageContent) {
+    pageContent.style.background = 'rgba(22, 29, 42, 0.6)';
+    pageContent.style.backdropFilter = 'blur(10px)';
+    pageContent.style.padding = '3rem';
+    pageContent.style.borderRadius = '20px';
+  }
+});
+</script>
 
 <!-- end custom footer snippets -->
 
