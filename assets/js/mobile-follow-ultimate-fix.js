@@ -41,34 +41,57 @@
       const style = document.createElement('style');
       style.textContent = `
         @media (max-width: 768px) {
+          /* Position follow button below author info */
+          .sidebar__right {
+            display: flex !important;
+            flex-direction: column !important;
+          }
+          
+          .author__avatar {
+            margin-bottom: 1rem !important;
+          }
+          
+          .author__content {
+            margin-bottom: 1rem !important;
+          }
+          
           .author__urls-wrapper {
             position: relative !important;
+            width: auto !important;
+            display: inline-block !important;
+            margin: 0 auto !important;
+            text-align: center !important;
           }
           
           .author__urls-wrapper .btn.btn--inverse {
-            width: 100% !important;
-            padding: 0.75rem 1.5rem !important;
-            margin-bottom: 0.5rem !important;
-            background: #2563eb !important;
+            width: auto !important;
+            padding: 0.5rem 1.5rem !important;
+            margin: 0 !important;
+            background: #7c3aed !important;  /* Purple color */
             color: white !important;
             border: none !important;
-            border-radius: 8px !important;
-            font-size: 16px !important;
+            border-radius: 25px !important;  /* Pill shape */
+            font-size: 14px !important;
             font-weight: 500 !important;
             cursor: pointer !important;
             -webkit-tap-highlight-color: transparent !important;
+            box-shadow: 0 2px 8px rgba(124, 58, 237, 0.3) !important;
           }
           
           .author__urls.social-icons {
-            position: static !important;
+            position: absolute !important;
+            top: 100% !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
             display: none;
-            width: 100% !important;
-            margin: 0 !important;
-            padding: 1rem !important;
+            width: 200px !important;
+            margin-top: 0.5rem !important;
+            padding: 0.75rem !important;
             background: white !important;
             border: 1px solid #e5e7eb !important;
             border-radius: 12px !important;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+            z-index: 1000 !important;
           }
           
           .author__urls.social-icons.show {
