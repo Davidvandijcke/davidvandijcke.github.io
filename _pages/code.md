@@ -21,6 +21,9 @@ Please find my GitHub commits and repositories here:
 
 <img src="/images/favicon.ico" alt="drawing" width="20"/>  [**Regression Discontinuity Design with Distributions (R3D) R package**](https://github.com/Davidvandijcke/R3D). Implements the method in my job market paper. 
 
+
+<img src="/images/favicon.ico" alt="drawing" width="20"/>  [** A Test for Jumps in Metric-Space Conditional Means (frechesTest) R package**](https://github.com/Davidvandijcke/frechesTest). Implements the test for metric-space conditional mean jumps described in the corresponding paper. 
+
 <img src="/images/favicon.ico" alt="drawing" width="20"/>  [**Distributional Synthetic Controls (disco) Stata package**](https://github.com/Davidvandijcke/DiSCos_stata) Implements the method in Gunsilius (2023). 
 
 <img src="/images/favicon.ico" alt="drawing" width="20"/>  [**Distributional Synthetic Controls (DiSCos) R package**](https://www.davidvandijcke.com/DiSCos/) Implements the method in Gunsilius (2023). 

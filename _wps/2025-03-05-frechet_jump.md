@@ -1,0 +1,16 @@
+---
+title: "A Test for Jumps in Metric-Space Conditional Means"
+collection: wps
+permalink: /wp/2025-03-05-frechet_jump
+excerpt: 'Standard methods for detecting discontinuities in conditional means are not applicable to outcomes that are complex, non-Euclidean objects like distributions, networks, or covariance matrices. This article develops a nonparametric test for jumps in conditional means when outcomes lie in a non-Euclidean metric space. Using local Fréchet regression—which generalizes standard regression to metric-space–valued data—the method estimates a mean path on either side of a candidate cutoff, extending existing k-sample tests to a flexible regression setting. Key theoretical contributions include a central limit theorem for the local estimator of the conditional Fréchet variance and the asymptotic validity and consistency of the proposed test. Simulations confirm nominal size control and robust power in finite samples. Two applications demonstrate the method’s value by revealing effects invisible to scalar-based tests. First, I detect a sharp change in work-from-home compositions at Washington State’s income threshold for non-compete enforceability during COVID-19, highlighting remote work’s role as a bargaining margin. Second, I find that countries restructure their input-output networks after losing preferential US trade access. These findings underscore that analyzing regression functions within their native metric spaces can reveal structural discontinuities that scalar summaries would miss.'
+date: 2025-03-05
+venue: 'arXiv'
+paperurl: 'https://davidvandijcke.com/files/frechet_anova_arxiv_submission.pdf'
+citation: 'Van Dijcke, D. (2025). A Test for Jumps in Metric-Space Conditional Means. Manuscript.'
+replication: '[R Package](https://github.com/Davidvandijcke/frechesTest)'
+field: 'Econometrics'
+---
+
+<a href='https://davidvandijcke.com/files/frechet_anova_arxiv_submission.pdf'>Download paper here</a>
+
+Standard methods for detecting discontinuities in conditional means are not applicable to outcomes that are complex, non-Euclidean objects like distributions, networks, or covariance matrices. This article develops a nonparametric test for jumps in conditional means when outcomes lie in a non-Euclidean metric space. Using local Fréchet regression—which generalizes standard regression to metric-space–valued data—the method estimates a mean path on either side of a candidate cutoff, extending existing k-sample tests to a flexible regression setting. Key theoretical contributions include a central limit theorem for the local estimator of the conditional Fréchet variance and the asymptotic validity and consistency of the proposed test. Simulations confirm nominal size control and robust power in finite samples. Two applications demonstrate the method’s value by revealing effects invisible to scalar-based tests. First, I detect a sharp change in work-from-home compositions at Washington State’s income threshold for non-compete enforceability during COVID-19, highlighting remote work’s role as a bargaining margin. Second, I find that countries restructure their input-output networks after losing preferential US trade access. These findings underscore that analyzing regression functions within their native metric spaces can reveal structural discontinuities that scalar summaries would miss.

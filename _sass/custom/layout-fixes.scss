@@ -4,6 +4,17 @@
 
 /* Footer has been properly styled in sleek-pro-theme.scss */
 
+/* Ensure footer stays at bottom and doesn't overlap content */
+.page__footer {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  height: auto !important;
+  margin-top: 3em !important;
+}
+
 /* Make footer more compact */
 .page__footer-follow {
   margin-bottom: 0.5em !important;
@@ -28,6 +39,7 @@
 body {
   min-height: 100vh !important;
   position: relative !important;
+  padding-bottom: 200px !important; /* Space for footer */
 }
 
 /* Ensure main content has proper spacing */
@@ -35,6 +47,18 @@ body {
   padding-bottom: 4em !important;
   margin-bottom: 0 !important;
   min-height: calc(100vh - 300px) !important;
+}
+
+/* Fix sidebar to prevent overlap with footer on desktop */
+@media (min-width: 1024px) {
+  .sidebar {
+    padding-bottom: 2em !important;
+    margin-bottom: 200px !important; /* Ensure space for footer */
+  }
+  
+  .author__urls {
+    margin-bottom: 2em !important;
+  }
 }
 
 /* Fix AI assistant button positioning - make it truly fixed */
