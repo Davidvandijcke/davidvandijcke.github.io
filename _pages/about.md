@@ -16,7 +16,7 @@ Welcome to my webpage.
 <div style="margin: 1.5rem 0;">
   <p style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
     <img src="/images/favicon.ico" alt="drawing" width="20" style="margin-right: 0.75rem; margin-top: 0.25rem; flex-shrink: 0;"/> 
-    <span>I am a PhD student in Economics at the University of Michigan (Ann Arbor). I am on the job market for the 2025-26 academic year.</span>
+    <span>I am a PhD student in Economics at the University of Michigan (Ann Arbor). I am on the job market for the 2025-26 academic year. My Job Market Paper <a href="https://www.davidvandijcke.com/files/r3d_latest.pdf">here</a>. </span>
   </p>
 
   <p style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
