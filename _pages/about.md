@@ -21,7 +21,8 @@ Welcome to my webpage.
   </p>
     
   <p style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
-    I am on the job market for the 2025–26 academic year. My <a href="https://www.davidvandijcke.com/files/r3d_latest.pdf">Job Market Paper</a> is here.</span>
+      <img src="/images/favicon.ico" alt="DVD icon" width="20" style="margin-right: 0.75rem; margin-top: 0.25rem; flex-shrink: 0;"/> 
+   <span> I am on the job market in 2025-26. My <a href="https://www.davidvandijcke.com/files/r3d_latest.pdf">Job Market Paper</a> is here.</span>
   </p>
 
   <p style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
