@@ -129,31 +129,7 @@
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Force fix homepage main content positioning */
-.page__hero--overlay {
-    min-height: 250px !important;
-    max-height: 250px !important;
-    padding: 3em 0 2em 0 !important;
-}
-
-.page__hero--overlay .wrapper {
-    min-height: inherit !important;
-    padding: 0 !important;
-}
-
-.page__hero--overlay .page__title {
-    margin-bottom: 0.5em !important;
-}
-
-/* Force main content to be right below hero */
-#main {
-    margin-top: 0 !important;
-    padding-top: 2rem !important;
-}
-
-.initial-content {
-    margin-top: 0 !important;
-}
+/* Remove all the problematic spacing */
 
 /* Better spacing between sidebar and main content */
 @media (min-width: 64em) {
@@ -178,22 +154,7 @@
         margin: 0 auto;
     }
     
-    body.layout--home .archive {
-        margin-top: 0 !important;
-        padding-top: 0;
-    }
-    
-    /* Fix main content positioning on homepage */
-    .page__hero--overlay {
-        min-height: 200px !important;
-        max-height: 300px !important;
-        padding: 3em 0 1em 0 !important;
-        margin-bottom: 0 !important;
-    }
-    
-    .layout--home .page__content {
-        margin-top: 0 !important;
-    }
+    /* Keep sidebar and archive layout but remove spacing overrides */
 }
 
 @media (min-width: 80em) {
@@ -219,34 +180,14 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* Make sure homepage intro section is properly positioned */
-.page__hero--overlay + .page__wrapper {
-    margin-top: 0 !important;
-    padding-top: 2rem !important;
+/* Simple approach: just style the hero and let natural flow work */
+.page__hero--overlay {
+    padding: 4em 0 3em 0;
 }
 
-/* Override any default spacing that pushes content down */
-.page__inner-wrap {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-}
-
-/* Fix the archive/main content area */
-.archive {
-    margin-top: 0 !important;
-    padding-top: 2rem !important;
-    min-height: auto !important;
-}
-
-/* Absolutely position fix for homepage content */
-.layout--home .archive__item {
-    margin-top: 0 !important;
-}
-
-/* Remove any extra spacing from page wrapper */
-.page__wrapper {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+.page__hero--overlay .page__title {
+    color: #ffffff !important;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 p {
