@@ -1,0 +1,350 @@
+// Enhanced Sidebar Styling for Economics Job Market
+// Professional and clean design with optimal readability
+
+// Professional sidebar container
+.sidebar {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  
+  @media (min-width: 64em) {
+    position: sticky;
+    top: 80px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #e1e4e8 transparent;
+    
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: #e1e4e8;
+      border-radius: 3px;
+      
+      &:hover {
+        background: #d1d5da;
+      }
+    }
+  }
+  
+  @media (max-width: 64em) {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+}
+
+// Author profile card design
+.author__avatar {
+  display: block;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 1.5rem;
+  position: relative;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 3px solid #ffffff;
+    
+    &:hover {
+      transform: scale(1.02) translateY(-2px);
+      box-shadow: 
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+  }
+  
+  // Status indicator (for online presence)
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background: #10b981;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// Author information
+.author__content {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  
+  @media (min-width: 64em) {
+    text-align: left;
+  }
+  
+  .author__name {
+    font-size: 1.625rem;
+    font-weight: 700;
+    color: #24292e;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    
+    // Subtle gradient text effect
+    background: linear-gradient(135deg, #24292e 0%, #0366d6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+  }
+  
+  .author__bio {
+    font-size: 0.95rem;
+    color: #586069;
+    line-height: 1.6;
+    font-weight: 400;
+    
+    // Make institution name stand out
+    strong {
+      color: #24292e;
+      font-weight: 600;
+    }
+  }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+// Enhanced social links section
+.author__urls-wrapper {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e1e4e8;
+  
+  .btn {
+    display: none; // Hide the follow button
+  }
+  
+  .author__urls {
+    padding: 0;
+    
+    &.social-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      
+      li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        
+        // Location styling
+        &:first-child:not(:has(a)) {
+          color: #586069;
+          font-size: 0.9rem;
+          padding: 0.5rem 0.75rem;
+          background: #f6f8fa;
+          border-radius: 8px;
+          margin-bottom: 0.75rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          
+          @media (min-width: 64em) {
+            justify-content: flex-start;
+          }
+          
+          i {
+            color: #0366d6;
+            margin-right: 0.5rem;
+          }
+        }
+        
+        a {
+          display: flex;
+          align-items: center;
+          padding: 0.625rem 0.75rem;
+          border-radius: 8px;
+          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+          text-decoration: none !important;
+          font-size: 0.9rem;
+          color: #586069;
+          background: transparent;
+          border: 1px solid transparent;
+          position: relative;
+          overflow: hidden;
+          
+          @media (min-width: 64em) {
+            justify-content: flex-start;
+          }
+          
+          @media (max-width: 64em) {
+            justify-content: center;
+          }
+          
+          i {
+            width: 18px;
+            height: 18px;
+            margin-right: 0.625rem;
+            color: #0366d6;
+            font-size: 1rem;
+            transition: transform 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          
+          &:hover {
+            background: #f6f8fa;
+            color: #0366d6;
+            transform: translateX(4px);
+            border-color: #e1e4e8;
+            
+            i {
+              transform: scale(1.1);
+              color: #032f62;
+            }
+            
+            &::before {
+              transform: translateX(0);
+            }
+          }
+          
+          // Animated background on hover
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(3, 102, 214, 0.05), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Special emphasis for important links
+.author__urls a[href*="calendar.app.google"],
+.author__urls a[href*="googlescholar"] {
+  font-weight: 500;
+  background: #e1ecf4;
+  border: 1px solid #c8d9e8;
+  
+  &:hover {
+    background: #0366d6;
+    color: white !important;
+    border-color: #0366d6;
+    
+    i {
+      color: white !important;
+    }
+  }
+}
+
+// CV link special styling
+.author__urls a[href*="/cv"] {
+  background: linear-gradient(135deg, #0366d6 0%, #032f62 100%);
+  color: white !important;
+  font-weight: 500;
+  
+  i {
+    color: white !important;
+  }
+  
+  &:hover {
+    background: linear-gradient(135deg, #032f62 0%, #0366d6 100%);
+    transform: translateX(4px) translateY(-1px);
+    box-shadow: 0 4px 12px rgba(3, 102, 214, 0.3);
+  }
+}
+
+// Email link enhancement
+.author__urls a[href^="mailto:"] {
+  &:hover {
+    background: #28a745;
+    color: white !important;
+    border-color: #28a745;
+    
+    i {
+      color: white !important;
+      animation: emailPulse 0.5s ease;
+    }
+  }
+}
+
+@keyframes emailPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .sidebar {
+    padding: 1.25rem;
+  }
+  
+  .author__avatar {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .author__content {
+    .author__name {
+      font-size: 1.375rem;
+    }
+    
+    .author__bio {
+      font-size: 0.9rem;
+    }
+  }
+  
+  .author__urls a {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.625rem;
+  }
+}
+
+// Dark mode support (optional)
+@media (prefers-color-scheme: dark) {
+  .sidebar {
+    background: #1f2937;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    
+    .author__content {
+      .author__name {
+        background: linear-gradient(135deg, #ffffff 0%, #60a5fa 100%);
+      }
+      
+      .author__bio {
+        color: #9ca3af;
+      }
+    }
+    
+    .author__urls a {
+      color: #d1d5db;
+      
+      &:hover {
+        background: #374151;
+        border-color: #4b5563;
+      }
+    }
+  }
+}

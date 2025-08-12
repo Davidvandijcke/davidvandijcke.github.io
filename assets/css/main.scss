@@ -10,8 +10,8 @@
  *
 */
 
-// Import light theme
-@import "custom/light-theme";
+// Import economics job market theme for professional academic presentation
+@import "custom/econ-job-market";
 
 @import "vendor/breakpoint/breakpoint"; // media query mixins
 @import "variables";
@@ -44,4 +44,7 @@
 @import "print";
 
 @import "custom/publications";
-// Removed layout-fixes as unified-theme handles everything
+@import "custom/sidebar-enhancements";
+@import "custom/responsive-enhancements";
+@import "custom/professional-animations";
+// Professional economics job market styling
