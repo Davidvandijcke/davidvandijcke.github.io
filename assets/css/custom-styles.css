@@ -1,0 +1,321 @@
+/* Custom Styles for Professional Polish */
+
+/* Navigation Bar Improvements */
+.masthead__menu-item {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 0.5rem;
+    padding: 0;
+}
+
+.masthead__menu-item a {
+    color: #2c3e50 !important;
+    text-decoration: none !important;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+/* Remove blue underline and add subtle hover effect */
+.masthead__menu-item a:hover {
+    background: rgba(52, 152, 219, 0.08);
+    color: #2980b9 !important;
+    text-decoration: none !important;
+    transform: translateY(-1px);
+}
+
+.masthead__menu-item a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #3498db;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.masthead__menu-item a:hover::after {
+    width: 30px;
+}
+
+/* Active/current page styling */
+.masthead__menu-item a.active,
+.masthead__menu-item a[aria-current="page"] {
+    background: rgba(52, 152, 219, 0.1);
+    color: #2980b9 !important;
+}
+
+/* Navigation container */
+.masthead__inner-wrap {
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Improved sidebar positioning */
+.sidebar {
+    margin-top: 2rem !important;
+    padding: 1.5rem !important;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Author profile improvements */
+.author__avatar {
+    margin-bottom: 1rem;
+}
+
+.author__avatar img {
+    border: 3px solid white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.author__name {
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    color: #2c3e50 !important;
+    margin-bottom: 0.5rem;
+}
+
+.author__bio {
+    color: #7f8c8d !important;
+    font-size: 0.9rem !important;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.author__urls {
+    border-top: 1px solid #ecf0f1;
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.author__urls a {
+    color: #34495e !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    padding: 0.25rem 0;
+}
+
+.author__urls a:hover {
+    color: #3498db !important;
+    transform: translateX(3px);
+}
+
+/* Main content card improvements */
+.page__content {
+    background: white;
+    padding: 2.5rem !important;
+    border-radius: 12px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Better spacing between sidebar and main content */
+@media (min-width: 80em) {
+    .page {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 3rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+    
+    .page__inner-wrap {
+        grid-column: 2;
+    }
+    
+    .sidebar {
+        grid-column: 1;
+        position: sticky;
+        top: 2rem;
+        height: fit-content;
+    }
+}
+
+/* Typography improvements */
+h1, h2, h3, h4, h5, h6 {
+    color: #2c3e50 !important;
+    font-weight: 600 !important;
+}
+
+p {
+    color: #34495e;
+    line-height: 1.7;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+/* Links with better styling */
+.page__content a:not(.btn) {
+    color: #3498db;
+    border-bottom: 1px solid rgba(52, 152, 219, 0.3);
+    transition: all 0.2s ease;
+}
+
+.page__content a:not(.btn):hover {
+    color: #2980b9;
+    border-bottom-color: #2980b9;
+}
+
+/* Button improvements */
+.btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white !important;
+    border: none !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Page title */
+.page__title {
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    color: #2c3e50 !important;
+    margin-bottom: 1.5rem !important;
+    letter-spacing: -0.02em;
+}
+
+/* Footer improvements */
+.page__footer {
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+/* Remove default underlines */
+.masthead a {
+    text-decoration: none !important;
+}
+
+/* Site title in navigation */
+.site-title {
+    font-weight: 600 !important;
+    font-size: 1.25rem !important;
+    color: #2c3e50 !important;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Better focus states */
+*:focus {
+    outline: 2px solid rgba(52, 152, 219, 0.5);
+    outline-offset: 2px;
+}
+
+/* Cards for content sections */
+.archive__item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.archive__item:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+/* Mobile responsiveness improvements */
+@media (max-width: 768px) {
+    .page__content {
+        padding: 1.5rem !important;
+    }
+    
+    .masthead__menu-item {
+        margin: 0 0.25rem;
+    }
+    
+    .masthead__menu-item a {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Remove any box shadows from navigation items */
+.greedy-nav__toggle,
+.greedy-nav .visible-links {
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+.greedy-nav .visible-links li {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Clean up navigation background */
+.masthead {
+    background: white !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Better list styling */
+ul, ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+}
+
+/* Code blocks */
+pre, code {
+    background: #f6f8fa;
+    border-radius: 6px;
+    padding: 0.2rem 0.4rem;
+    font-size: 0.9em;
+}
+
+pre {
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+/* Blockquotes */
+blockquote {
+    border-left: 4px solid #3498db;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: #5a6c7d;
+    font-style: italic;
+}
