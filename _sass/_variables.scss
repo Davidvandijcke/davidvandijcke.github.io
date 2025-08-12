@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
 /* ==========================================================================
    Variables
    ========================================================================== */
@@ -13,8 +15,8 @@ $paragraph-indent           : false; // true, false (default)
 $indent-var                 : 1.3em;
 
 /* system typefaces */
-$serif                      : Georgia, Times, serif;
-$sans-serif                 : -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+$serif                      : "Playfair Display", serif;
+$sans-serif                 : "Inter", -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
 $monospace                  : Monaco, Consolas, "Lucida Console", monospace;
 
 /* sans serif typefaces */
@@ -48,19 +50,20 @@ $type-size-8                : 0.625em;  // ~10px
    ========================================================================== */
 
 $gray                       : #7a8288;
-$dark-gray                  : mix(#000, $gray, 40%);
-$darker-gray                : mix(#000, $gray, 60%);
-$light-gray                 : mix(#fff, $gray, 50%);
-$lighter-gray               : mix(#fff, $gray, 90%);
+$dark-gray                  : #333333;
+$darker-gray                : #1a1a1a;
+$light-gray                 : #f5f5f5;
+$lighter-gray               : #e0e0e0;
 
-$body-color                 : #fff;
-$background-color           : #fff;
-$code-background-color      : #fafafa;
-$code-background-color-dark : $light-gray;
+$body-color                 : #ffffff;
+$background-color           : #ffffff;
+$code-background-color      : #f5f5f5;
+$code-background-color-dark : #222222;
 $text-color                 : $dark-gray;
 $border-color               : $lighter-gray;
 
 $primary-color              : #2563eb;
+$secondary-color            : #f59e0b;
 $success-color              : #10b981;
 $warning-color              : #f59e0b;
 $danger-color               : #ef4444;
@@ -120,9 +123,9 @@ $x-large                    : 1280px !default;
    Grid
    ========================================================================== */
 
-$right-sidebar-width-narrow : 0px;
-$right-sidebar-width        : 0px;
-$right-sidebar-width-wide   : 0px;
+$right-sidebar-width-narrow : 300px;
+$right-sidebar-width        : 300px;
+$right-sidebar-width-wide   : 300px;
 
 $susy: (
   columns: 12,
