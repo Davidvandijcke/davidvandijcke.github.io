@@ -87,9 +87,8 @@
 .author__name {
     font-size: 1.25rem !important;
     font-weight: 600 !important;
-    color: #ffffff !important;
+    color: #2c3e50 !important;
     margin-bottom: 0.5rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .author__bio {
@@ -126,6 +125,7 @@
     border-radius: 12px;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
     margin-bottom: 2rem;
+    margin-top: 0;
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -150,6 +150,11 @@
         padding: 0 1rem !important;
         max-width: 1200px;
         margin: 0 auto;
+    }
+    
+    body.layout--home .archive {
+        margin-top: 0;
+        padding-top: 0;
     }
 }
 
@@ -241,7 +246,8 @@ a:hover {
 .site-title {
     font-weight: 600 !important;
     font-size: 1.25rem !important;
-    color: #2c3e50 !important;
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Smooth scrolling */
