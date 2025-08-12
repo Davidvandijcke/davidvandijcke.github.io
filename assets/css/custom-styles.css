@@ -129,6 +129,27 @@
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+/* Force fix homepage main content positioning */
+.layout--home .wrapper {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.layout--home .page__hero--overlay {
+    padding-bottom: 2em !important;
+    margin-bottom: 0 !important;
+}
+
+.layout--home .page {
+    margin-top: -2em !important;
+    padding-top: 0 !important;
+}
+
+.layout--home #main {
+    margin-top: 0 !important;
+    padding-top: 2rem !important;
+}
+
 /* Better spacing between sidebar and main content */
 @media (min-width: 64em) {
     .sidebar {
@@ -153,17 +174,25 @@
     }
     
     body.layout--home .archive {
-        margin-top: 2rem !important;
+        margin-top: 0 !important;
         padding-top: 0;
     }
     
     /* Fix main content positioning on homepage */
     .layout--home .page__hero--overlay {
         margin-bottom: 0;
+        min-height: auto !important;
+        padding: 4em 0 2em 0 !important;
     }
     
     .layout--home .page__content {
-        margin-top: 2rem !important;
+        margin-top: 0 !important;
+    }
+    
+    /* Ensure content is near the top */
+    .layout--home .initial-content {
+        margin-top: 0 !important;
+        padding-top: 2rem !important;
     }
 }
 
@@ -194,6 +223,19 @@ h1, h2, h3, h4, h5, h6 {
 .page__hero--overlay + .page__wrapper {
     margin-top: 0 !important;
     padding-top: 2rem !important;
+}
+
+/* Override any default spacing that pushes content down */
+.layout--home .page__inner-wrap {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Fix the archive/main content area */
+.layout--home .archive {
+    margin-top: 0 !important;
+    padding-top: 2rem !important;
+    min-height: auto !important;
 }
 
 p {
