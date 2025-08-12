@@ -130,24 +130,29 @@
 }
 
 /* Force fix homepage main content positioning */
-.layout--home .wrapper {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+.page__hero--overlay {
+    min-height: 250px !important;
+    max-height: 250px !important;
+    padding: 3em 0 2em 0 !important;
 }
 
-.layout--home .page__hero--overlay {
-    padding-bottom: 2em !important;
-    margin-bottom: 0 !important;
+.page__hero--overlay .wrapper {
+    min-height: inherit !important;
+    padding: 0 !important;
 }
 
-.layout--home .page {
-    margin-top: -2em !important;
-    padding-top: 0 !important;
+.page__hero--overlay .page__title {
+    margin-bottom: 0.5em !important;
 }
 
-.layout--home #main {
+/* Force main content to be right below hero */
+#main {
     margin-top: 0 !important;
     padding-top: 2rem !important;
+}
+
+.initial-content {
+    margin-top: 0 !important;
 }
 
 /* Better spacing between sidebar and main content */
@@ -179,20 +184,15 @@
     }
     
     /* Fix main content positioning on homepage */
-    .layout--home .page__hero--overlay {
-        margin-bottom: 0;
-        min-height: auto !important;
-        padding: 4em 0 2em 0 !important;
+    .page__hero--overlay {
+        min-height: 200px !important;
+        max-height: 300px !important;
+        padding: 3em 0 1em 0 !important;
+        margin-bottom: 0 !important;
     }
     
     .layout--home .page__content {
         margin-top: 0 !important;
-    }
-    
-    /* Ensure content is near the top */
-    .layout--home .initial-content {
-        margin-top: 0 !important;
-        padding-top: 2rem !important;
     }
 }
 
@@ -226,16 +226,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Override any default spacing that pushes content down */
-.layout--home .page__inner-wrap {
+.page__inner-wrap {
     margin-top: 0 !important;
     padding-top: 0 !important;
 }
 
 /* Fix the archive/main content area */
-.layout--home .archive {
+.archive {
     margin-top: 0 !important;
     padding-top: 2rem !important;
     min-height: auto !important;
+}
+
+/* Absolutely position fix for homepage content */
+.layout--home .archive__item {
+    margin-top: 0 !important;
+}
+
+/* Remove any extra spacing from page wrapper */
+.page__wrapper {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
 }
 
 p {
