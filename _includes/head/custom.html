@@ -23,7 +23,6 @@
 <meta name="msapplication-config" content="{{ base_path }}/images/browserconfig.xml?v=M44lzPylqQ">
 <meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
-<link rel="stylesheet" href="{{ base_path }}/assets/css/custom-styles.css"/>
 
 <script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
 <script type="text/x-mathjax-config">
@@ -36,17 +35,46 @@
 </script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
 
-<!-- Nuclear fix: Minimal emergency styles only -->
+<!-- Inline styles for visual improvements without breaking layout -->
 <style>
-  /* Ensure AI assistant is always visible */
-  #ai-assistant-container {
-    position: fixed !important;
-    bottom: 20px !important;
-    right: 30px !important;
-    z-index: 99999 !important;
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+  /* White site title in navigation */
+  .site-title {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* White page titles on homepage */
+  .page__hero--overlay .page__title {
+    color: #ffffff !important;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Clean navigation styling */
+  .masthead__menu-item {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  
+  .masthead__menu-item a {
+    color: #64748b !important;
+    text-decoration: none !important;
+    font-weight: 500;
+    border-bottom: none !important;
+  }
+  
+  .masthead__menu-item a:hover {
+    color: #334155 !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
+  
+  /* Active page indicator */
+  .masthead__menu-item a.active,
+  .masthead__menu-item a[aria-current="page"] {
+    color: #1e293b !important;
+    font-weight: 600;
+    border-bottom: 2px solid #3b82f6 !important;
   }
 </style>
 
