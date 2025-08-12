@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interface</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #7c3aed;
+            --light-gray: #f3f4f6;
+            --medium-gray: #e5e7eb;
+            --dark-gray: #4b5563;
+            --text-color: #1f2937;
+            --white: #ffffff;
+            --black: #000000;
+        }
+
+        /* General styling */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background-color: var(--white) !important;
+            margin: 0;
+            padding: 1rem;
+        }
+
+        /* Header */
+        .markdown-text h1 {
+            font-size: 1.5rem !important;
+            font-weight: 700 !important;
+            color: var(--black) !important;
+            text-align: center;
+            margin-bottom: 0.5rem !important;
+        }
+
+        .markdown-text p {
+            font-size: 0.9rem !important;
+            color: var(--dark-gray) !important;
+            text-align: center;
+            margin-bottom: 1rem !important;
+        }
+
+        /* Chatbot area */
+        .chatbot-container {
+            height: 400px !important;
+            background-color: var(--light-gray) !important;
+            border: 1px solid var(--medium-gray) !important;
+            border-radius: 12px !important;
+            padding: 0.5rem !important;
+            overflow-y: auto;
+        }
+
+        /* Message bubbles */
+        .message {
+            font-size: 1rem !important;
+            line-height: 1.6 !important;
+            margin: 0.5rem;
+            display: flex;
+        }
+
+        .user-message {
+            justify-content: flex-end;
+        }
+
+        .bot-message {
+            justify-content: flex-start;
+        }
+
+        .user {
+            background: var(--primary-color) !important;
+            color: var(--white) !important;
+            border-radius: 18px 18px 4px 18px !important;
+            padding: 0.75rem 1.25rem !important;
+            max-width: 80%;
+        }
+
+        .bot {
+            background: var(--white) !important;
+            color: var(--text-color) !important;
+            border: 1px solid var(--medium-gray) !important;
+            border-radius: 18px 18px 18px 4px !important;
+            padding: 0.75rem 1.25rem !important;
+            max-width: 80%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+        }
+
+        /* Input area */
+        .input-container {
+            display: flex;
+            padding: 1rem;
+        }
+
+        .textbox {
+            background-color: var(--white) !important;
+            color: var(--black) !important;
+            border: 1px solid var(--medium-gray) !important;
+            border-radius: 12px !important;
+            padding: 1rem !important;
+            font-size: 1rem !important;
+            flex-grow: 1;
+        }
+
+        .textbox:focus {
+            border-color: var(--primary-color) !important;
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2) !important;
+            outline: none;
+        }
+
+        /* Buttons */
+        .submit-button {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+            border: none !important;
+            color: var(--white) !important;
+            font-weight: 600 !important;
+            border-radius: 12px !important;
+            padding: 1rem !important;
+            font-size: 1rem !important;
+            margin-left: 1rem;
+            cursor: pointer;
+        }
+
+        /* Examples */
+        .examples-container {
+            padding: 0.5rem 1rem !important;
+            text-align: center;
+        }
+
+        .examples-container button {
+            font-size: 0.8rem !important;
+            padding: 0.5rem 1rem !important;
+            background: var(--light-gray) !important;
+            color: var(--dark-gray) !important;
+            border: 1px solid var(--medium-gray) !important;
+            border-radius: 12px !important;
+            margin: 0.25rem;
+            cursor: pointer;
+        }
+
+        .examples-container button:hover {
+            background: var(--medium-gray) !important;
+            border-color: var(--primary-color) !important;
+            color: var(--primary-color) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="gradio-container">
+        <div class="markdown-text">
+            <h1>David Van Dijcke - Research Assistant</h1>
+            <p>Welcome! I can help you learn about David Van Dijcke's econometric research. David is on the 2025-26 academic job market.</p>
+            <p><strong>Job Market Paper:</strong> R3D - Regression Discontinuity Design with Distribution-Valued Outcomes</p>
+            <p><em>Note: This session allows up to 15 questions. Refresh the page to start a new session.</em></p>
+        </div>
+        <div class="chatbot-container">
+            <div class="message bot-message">
+                <div class="bot">Hi! How can I help you today?</div>
+            </div>
+            <div class="message user-message">
+                <div class="user">What is David's job market paper about?</div>
+            </div>
+        </div>
+        <div class="input-container">
+            <input type="text" class="textbox" placeholder="Ask about David's research, methods, or papers...">
+            <button class="submit-button">Send</button>
+        </div>
+        <div class="examples-container">
+            <button>What is David's job market paper about?</button>
+            <button>What makes R3D innovative?</button>
+            <button>What are the practical applications of R3D?</button>
+        </div>
+    </div>
+</body>
+</html>
