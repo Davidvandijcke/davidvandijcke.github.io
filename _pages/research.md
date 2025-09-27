@@ -11,13 +11,15 @@ header:
 {%- comment -%}
 Selected publications (one-line). Priority:
 1) Job Market Paper
-2) Free Discontinuity Regression
-3) Metric-Space Conditional Means
-4) all R&Rs (any field)
-5) all Econometrics publications
+2) Free Discontinuity Regression (title contains "free discontinuity", case-insensitive)
+3) Metric-Space Conditional Means (title contains "metric-space conditional means", case-insensitive)
+4) ALL R&Rs (venue contains "revise"+"resubmit" or "r&r", case-insensitive)
+5) ALL Econometrics publications (econ_pubs)
 
-We do case-insensitive checks by assigning downcased helpers,
-which is safe in GitHub Pages (no filters inside where_exp).
+Notes:
+- Case-insensitive matching done by precomputing downcased strings (safe for GitHub Pages).
+- Title links prefer 'link', then fall back to 'url' (relative), 'doi', then 'pdf'.
+- Field sections below remain intact to show ALL pubs and WPs in their usual card style.
 {%- endcomment -%}
 
 {% assign all_items = site.publications | concat: site.wps %}
@@ -28,7 +30,7 @@ which is safe in GitHub Pages (no filters inside where_exp).
 {% capture selected_list %}
 <ul class="selected-list">
 
-  {%- comment -%} 1) Job Market Paper (exact venue) {%- endcomment -%}
+  {# 1) Job Market Paper #}
   {% for post in all_items %}
     {% assign v = post.venue | default: "" %}
     {% if v == "Job Market Paper" %}
@@ -37,8 +39,12 @@ which is safe in GitHub Pages (no filters inside where_exp).
         {% if (yr == nil or yr == "") and post.date %}{% assign yr = post.date | date: "%Y" %}{% endif %}
         <li class="one-line-pub">
           {% if post.authors %}<span class="pub-authors">{{ post.authors }}</span><span class="sep"> · </span>{% endif %}
-          {% if post.link %}
-            <a href="{{ post.link }}" class="pub-title" target="_blank" rel="noopener">“{{ post.title }}”</a>
+          {% assign href = post.link | default: "" %}
+          {% if href == "" and post.url %}{% assign href = post.url | relative_url %}{% endif %}
+          {% if href == "" and post.doi %}{% assign href = "https://doi.org/" | append: post.doi %}{% endif %}
+          {% if href == "" and post.pdf %}{% assign href = post.pdf %}{% endif %}
+          {% if href != "" %}
+            <a href="{{ href }}" class="pub-title" target="_blank" rel="noopener">“{{ post.title }}”</a>
           {% else %}
             <span class="pub-title">“{{ post.title }}”</span>
           {% endif %}
@@ -50,7 +56,7 @@ which is safe in GitHub Pages (no filters inside where_exp).
     {% endif %}
   {% endfor %}
 
-  {%- comment -%} 2) Free Discontinuity Regression (case-insensitive title contains) {%- endcomment -%}
+  {# 2) Free Discontinuity Regression (case-insensitive) #}
   {% for post in all_items %}
     {% assign t_lc = post.title | default: "" | downcase %}
     {% if t_lc contains "free discontinuity" %}
@@ -59,8 +65,12 @@ which is safe in GitHub Pages (no filters inside where_exp).
         {% if (yr == nil or yr == "") and post.date %}{% assign yr = post.date | date: "%Y" %}{% endif %}
         <li class="one-line-pub">
           {% if post.authors %}<span class="pub-authors">{{ post.authors }}</span><span class="sep"> · </span>{% endif %}
-          {% if post.link %}
-            <a href="{{ post.link }}" class="pub-title" target="_blank" rel="noopener">“{{ post.title }}”</a>
+          {% assign href = post.link | default: "" %}
+          {% if href == "" and post.url %}{% assign href = post.url | relative_url %}{% endif %}
+          {% if href == "" and post.doi %}{% assign href = "https://doi.org/" | append: post.doi %}{% endif %}
+          {% if href == "" and post.pdf %}{% assign href = post.pdf %}{% endif %}
+          {% if href != "" %}
+            <a href="{{ href }}" class="pub-title" target="_blank" rel="noopener">“{{ post.title }}”</a>
           {% else %}
             <span class="pub-title">“{{ post.title }}”</span>
           {% endif %}
@@ -72,7 +82,7 @@ which is safe in GitHub Pages (no filters inside where_exp).
     {% endif %}
   {% endfor %}
 
-  {%- comment -%} 3) Metric-Space Conditional Means (case-insensitive title contains) {%- endcomment -%}
+  {# 3) Metric-Space Conditional Means (case-insensitive) #}
   {% for post in all_items %}
     {% assign t_lc = post.title | default: "" | downcase %}
     {% if t_lc contains "metric-space conditional means" %}
@@ -81,8 +91,12 @@ which is safe in GitHub Pages (no filters inside where_exp).
         {% if (yr == nil or yr == "") and post.date %}{% assign yr = post.date | date: "%Y" %}{% endif %}
         <li class="one-line-pub">
           {% if post.authors %}<span class="pub-authors">{{ post.authors }}</span><span class="sep"> · </span>{% endif %}
-          {% if post.link %}
-            <a href="{{ post.link }}" class="pub-title" target="_blank" rel="noopener">“{{ post.title }}”</a>
+          {% assign href = post.link | default: "" %}
+          {% if href == "" and post.url %}{% assign href = post.url | relative_url %}{% endif %}
+          {% if href == "" and post.doi %}{% assign href = "https://doi.org/" | append: post.doi %}{% endif %}
+          {% if href == "" and post.pdf %}{% assign href = post.pdf %}{% endif %}
+          {% if href != "" %}
+            <a href="{{ href }}" class="pub-title" target="_blank" rel="noopener">“{{ post.title }}”</a>
           {% else %}
             <span class="pub-title">“{{ post.title }}”</span>
           {% endif %}
@@ -94,17 +108,21 @@ which is safe in GitHub Pages (no filters inside where_exp).
     {% endif %}
   {% endfor %}
 
-  {%- comment -%} 4) All R&Rs (case-insensitive venue contains both 'revise' and 'resubmit') {%- endcomment -%}
+  {# 4) ALL R&Rs (case-insensitive: "revise", "resubmit" OR "r&r") #}
   {% for post in all_items %}
     {% assign v_lc = post.venue | default: "" | downcase %}
-    {% if v_lc contains "revise" and v_lc contains "resubmit" %}
+    {% if (v_lc contains "revise" and v_lc contains "resubmit") or (v_lc contains "r&r") %}
       {% unless printed contains post.title %}
         {% assign yr = post.year %}
         {% if (yr == nil or yr == "") and post.date %}{% assign yr = post.date | date: "%Y" %}{% endif %}
         <li class="one-line-pub">
           {% if post.authors %}<span class="pub-authors">{{ post.authors }}</span><span class="sep"> · </span>{% endif %}
-          {% if post.link %}
-            <a href="{{ post.link }}" class="pub-title" target="_blank" rel="noopener">“{{ post.title }}”</a>
+          {% assign href = post.link | default: "" %}
+          {% if href == "" and post.url %}{% assign href = post.url | relative_url %}{% endif %}
+          {% if href == "" and post.doi %}{% assign href = "https://doi.org/" | append: post.doi %}{% endif %}
+          {% if href == "" and post.pdf %}{% assign href = post.pdf %}{% endif %}
+          {% if href != "" %}
+            <a href="{{ href }}" class="pub-title" target="_blank" rel="noopener">“{{ post.title }}”</a>
           {% else %}
             <span class="pub-title">“{{ post.title }}”</span>
           {% endif %}
@@ -116,15 +134,19 @@ which is safe in GitHub Pages (no filters inside where_exp).
     {% endif %}
   {% endfor %}
 
-  {%- comment -%} 5) All published Econometrics papers {%- endcomment -%}
-  {% for post in econ_pubs %}
+  {# 5) ALL Econometrics publications #}
+  {% for post in policy_pubs %}
     {% unless printed contains post.title %}
       {% assign yr = post.year %}
       {% if (yr == nil or yr == "") and post.date %}{% assign yr = post.date | date: "%Y" %}{% endif %}
       <li class="one-line-pub">
         {% if post.authors %}<span class="pub-authors">{{ post.authors }}</span><span class="sep"> · </span>{% endif %}
-        {% if post.link %}
-          <a href="{{ post.link }}" class="pub-title" target="_blank" rel="noopener">“{{ post.title }}”</a>
+        {% assign href = post.link | default: "" %}
+        {% if href == "" and post.url %}{% assign href = post.url | relative_url %}{% endif %}
+        {% if href == "" and post.doi %}{% assign href = "https://doi.org/" | append: post.doi %}{% endif %}
+        {% if href == "" and post.pdf %}{% assign href = post.pdf %}{% endif %}
+        {% if href != "" %}
+          <a href="{{ href }}" class="pub-title" target="_blank" rel="noopener">“{{ post.title }}”</a>
         {% else %}
           <span class="pub-title">“{{ post.title }}”</span>
         {% endif %}
@@ -140,7 +162,7 @@ which is safe in GitHub Pages (no filters inside where_exp).
 {% assign selected_html = selected_list | strip %}
 
 {% if selected_html != "<ul class=\"selected-list\"></ul>" %}
-## Selected publications
+# Selected publications
 {{ selected_html }}
 <hr/>
 {% endif %}
