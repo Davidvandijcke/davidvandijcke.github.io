@@ -9,17 +9,19 @@ header:
 ---
 
 {% comment %}
-Selected publications: explicit curation, ordered.
+Selected publications: explicit order you requested.
 Order:
-  1) Job Market Paper (by venue == "Job Market Paper")
+  1) Job Market Paper (venue == "Job Market Paper")
   2) Free Discontinuity Regression
   3) A Test for Jumps in Metric-Space Conditional Means
-  4) Return to Office and the Tenure Distribution  (Revision Requested: REStat, 2025)
-  5) Refugee Return and Conflict: Evidence from a Natural Experiment (Revision Requested: AER, 2025)
-  6) Science Skepticism Reduces Compliance with COVID-19 Shelter-in-Place Policies (NHB, 2021)
-  7) Unmasking Partisanship: Polarization undermines public response to collective risk (JPubE, 2021)
-  8) Public response to government alerts saves lives during Russian invasion of Ukraine (PNAS, 2023)
-We match titles case-insensitively.
+  4) Return to Office and the Tenure Distribution  — Revision requested: REStat (2025)
+  5) Refugee Return and Conflict: Evidence from a Natural Experiment — Revision requested: AER (2025)
+  6) Science Skepticism Reduces Compliance with COVID-19 Shelter-in-Place Policies — Nature Human Behaviour (2021)
+  7) Unmasking Partisanship: Polarization undermines public response to collective risk — JPubE (2021)
+  8) Public response to government alerts saves lives during Russian invasion of Ukraine — PNAS (2023)
+
+Links: prefer `link`, fall back to `url` (relative), `doi`, then `pdf`.
+Coauthors: show as “(with …)” after the title; we remove “David Van Dijcke” from the authors string.
 {% endcomment %}
 
 {% assign all_items = site.publications | concat: site.wps %}
@@ -36,7 +38,7 @@ We match titles case-insensitively.
 {% capture selected_list %}
 <ul class="selected-list">
 
-  {%- comment -%} 1) Job Market Paper by venue {%- endcomment -%}
+  {%- comment -%} 1) Job Market Paper (by venue) {%- endcomment -%}
   {% for post in all_items %}
     {% if post.venue == "Job Market Paper" %}
       {% unless printed contains post.title %}
@@ -45,18 +47,20 @@ We match titles case-insensitively.
         {% if href == "" and post.url %}{% assign href = post.url | relative_url %}{% endif %}
         {% if href == "" and post.doi %}{% assign href = "https://doi.org/" | append: post.doi %}{% endif %}
         {% if href == "" and post.pdf %}{% assign href = post.pdf %}{% endif %}
-        {% assign auth = post.authors | default: post.author | default: post.coauthors %}
+        {% assign auth_raw = post.authors | default: post.author | default: post.coauthors | default: "" %}
+        {% assign co = auth_raw | replace: "David Van Dijcke, ", "" | replace: ", David Van Dijcke", "" | replace: "David Van Dijcke", "" | strip %}
         <li class="one-line-pub">
-          {% if auth %}<span class="pub-authors">{{ auth }}</span><span class="sep"> · </span>{% endif %}
           {% if href != "" %}<a href="{{ href }}" class="pub-title" target="_blank" rel="noopener">“{{ post.title }}”</a>{% else %}<span class="pub-title">“{{ post.title }}”</span>{% endif %}
-          {% if yr %} <span class="pub-year">({{ yr }})</span>{% endif %}. <em class="pub-venue">{{ post.venue }}</em>
+          {% if yr %} <span class="pub-year">({{ yr }})</span>{% endif %}.
+          <em class="pub-venue">{{ post.venue }}</em>
+          {% if co != "" %} <span class="pub-coauthors">(with {{ co }})</span>{% endif %}
         </li>
         {% assign printed = printed | append: "||" | append: post.title %}
       {% endunless %}
     {% endif %}
   {% endfor %}
 
-  {%- comment -%} helper: render-by-title (repeat block; no macros in GH Pages) {%- endcomment -%}
+  {%- comment -%} Helpers: render explicit titles in order (case-insensitive) {%- endcomment -%}
   {% assign targets = t_fdr | append:"||" | append:t_mscm | append:"||" | append:t_rto | append:"||" | append:t_ref | append:"||" | append:t_nhb | append:"||" | append:t_jpube | append:"||" | append:t_pnas %}
   {% assign targets_list = targets | split:"||" %}
 
@@ -70,11 +74,13 @@ We match titles case-insensitively.
           {% if href == "" and post.url %}{% assign href = post.url | relative_url %}{% endif %}
           {% if href == "" and post.doi %}{% assign href = "https://doi.org/" | append: post.doi %}{% endif %}
           {% if href == "" and post.pdf %}{% assign href = post.pdf %}{% endif %}
-          {% assign auth = post.authors | default: post.author | default: post.coauthors %}
+          {% assign auth_raw = post.authors | default: post.author | default: post.coauthors | default: "" %}
+          {% assign co = auth_raw | replace: "David Van Dijcke, ", "" | replace: ", David Van Dijcke", "" | replace: "David Van Dijcke", "" | strip %}
           <li class="one-line-pub">
-            {% if auth %}<span class="pub-authors">{{ auth }}</span><span class="sep"> · </span>{% endif %}
             {% if href != "" %}<a href="{{ href }}" class="pub-title" target="_blank" rel="noopener">“{{ post.title }}”</a>{% else %}<span class="pub-title">“{{ post.title }}”</span>{% endif %}
-            {% if yr %} <span class="pub-year">({{ yr }})</span>{% endif %}. <em class="pub-venue">{{ post.venue }}</em>
+            {% if yr %} <span class="pub-year">({{ yr }})</span>{% endif %}.
+            <em class="pub-venue">{{ post.venue }}</em>
+            {% if co != "" %} <span class="pub-coauthors">(with {{ co }})</span>{% endif %}
           </li>
           {% assign printed = printed | append: "||" | append: post.title %}
         {% endunless %}
@@ -131,25 +137,31 @@ We match titles case-insensitively.
 {% endif %}
 
 <style>
-/* Selected block: widen only this section */
+/* widen ONLY the Selected block; offset to clear the left avatar on desktop */
+:root { --avatar-offset: 220px; } /* tweak this if it still touches your photo */
+
 .selected-wide{
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  width: 100vw;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  /* mobile/tablet: just use container width */
+}
+@media (min-width: 992px){
+  .selected-wide{
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: calc(-50vw + var(--avatar-offset));
+    margin-right: -50vw;
+    width: calc(100vw - var(--avatar-offset));
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 /* One-line styling */
 .selected-list { list-style: none; padding-left: 0; margin-left: 0; }
 .one-line-pub { margin: .35rem 0; line-height: 1.4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.pub-authors { font-weight: 500; }
 .pub-title { text-decoration: none; border-bottom: 1px solid rgba(0,0,0,.15); }
 .pub-title:hover { border-bottom-color: rgba(0,0,0,.35); }
 .pub-year { color: #666; }
 .pub-venue { font-style: italic; color: #444; }
-.sep { color: #aaa; }
+.pub-coauthors { color: #555; }
 </style>
