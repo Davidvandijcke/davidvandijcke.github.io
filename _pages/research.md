@@ -27,7 +27,7 @@ Coauthors: show as “(with …)” after the title; we remove “David Van Dijc
 {% assign all_items = site.publications | concat: site.wps %}
 
 {% assign printed = "" %}
-{% assign t_fdr   = "free discontinuity regression" %}
+{% assign t_fdr   = "free discontinuity regression: with an application to the economic effects of internet shutdowns" %}
 {% assign t_mscm  = "a test for jumps in metric-space conditional means" %}
 {% assign t_rto   = "return to office and the tenure distribution" %}
 {% assign t_ref   = "refugee return and conflict: evidence from a natural experiment" %}
