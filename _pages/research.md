@@ -138,19 +138,11 @@ Coauthors: show as “(with …)” after the title; we remove “David Van Dijc
 
 <style>
 /* ========= Selected publications (scoped styles) ========= */
-/* Tweak this if the avatar still overlaps on large screens */
-:root { --selected-top-offset-desktop: 140px; }
 
-/* Container for the curated list */
+/* Container */
 .selected-block {
-  margin-top: 0;                 /* mobile/tablet: no extra offset */
-}
-
-/* Add vertical clearance only on desktop to avoid the profile image */
-@media (min-width: 992px) {
-  .selected-block {
-    margin-top: var(--selected-top-offset-desktop);
-  }
+  margin-top: .5rem;     /* small breathing room under the heading */
+  margin-bottom: 0;
 }
 
 /* List + item layout */
@@ -161,8 +153,9 @@ Coauthors: show as “(with …)” after the title; we remove “David Van Dijc
 }
 
 .one-line-pub {
-  margin: 0.35rem 0;
-  line-height: 1.5;             /* readable, wraps to multiple lines when needed */
+  margin: 0.25rem 0;     /* tighter spacing between items */
+  line-height: 1.5;      /* allows wrapping cleanly */
+  word-break: break-word; /* prevent overflow on very long titles */
 }
 
 /* Title link */
@@ -176,11 +169,11 @@ Coauthors: show as “(with …)” after the title; we remove “David Van Dijc
 }
 
 /* Metadata */
-.pub-year   { color: #666; }
-.pub-venue  { font-style: italic; color: #444; }
+.pub-year     { color: #666; }
+.pub-venue    { font-style: italic; color: #444; }
 .pub-coauthors { color: #555; }
 
-/* Small-screen refinements */
+/* Mobile refinements */
 @media (max-width: 575.98px) {
   .one-line-pub { line-height: 1.6; }
   .pub-title { border-bottom-width: 0.75px; }
