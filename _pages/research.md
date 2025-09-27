@@ -8,29 +8,27 @@ header:
   overlay_filter: 0.5
 ---
 
-{%- comment -%}
+{% comment %}
 Selected publications (one-line). Priority:
 1) Job Market Paper
 2) Free Discontinuity Regression (title contains "free discontinuity", case-insensitive)
 3) Metric-Space Conditional Means (title contains "metric-space conditional means", case-insensitive)
-4) ALL R&Rs (venue contains "revise"+"resubmit" or "r&r", case-insensitive)
-5) ALL Econometrics publications (econ_pubs)
+4) ALL R&Rs (venue contains "revise" + "resubmit" OR "r&r", case-insensitive)
+5) ALL Policy publications
 
-Notes:
-- Case-insensitive matching done by precomputing downcased strings (safe for GitHub Pages).
-- Title links prefer 'link', then fall back to 'url' (relative), 'doi', then 'pdf'.
-- Field sections below remain intact to show ALL pubs and WPs in their usual card style.
-{%- endcomment -%}
+Case-insensitive checks via downcased helper strings (safe on GitHub Pages).
+Title links prefer 'link', then 'url' (relative), then 'doi', then 'pdf'.
+{% endcomment %}
 
 {% assign all_items = site.publications | concat: site.wps %}
-{% assign econ_pubs = site.publications | where: "field", "Econometrics" %}
+{% assign policy_pubs = site.publications | where: "field", "Policy" %}
 
 {% assign printed = "" %}
 
 {% capture selected_list %}
 <ul class="selected-list">
 
-  {# 1) Job Market Paper #}
+  {% comment %} 1) Job Market Paper (exact venue) {% endcomment %}
   {% for post in all_items %}
     {% assign v = post.venue | default: "" %}
     {% if v == "Job Market Paper" %}
@@ -56,7 +54,7 @@ Notes:
     {% endif %}
   {% endfor %}
 
-  {# 2) Free Discontinuity Regression (case-insensitive) #}
+  {% comment %} 2) Free Discontinuity Regression (case-insensitive title contains) {% endcomment %}
   {% for post in all_items %}
     {% assign t_lc = post.title | default: "" | downcase %}
     {% if t_lc contains "free discontinuity" %}
@@ -82,7 +80,7 @@ Notes:
     {% endif %}
   {% endfor %}
 
-  {# 3) Metric-Space Conditional Means (case-insensitive) #}
+  {% comment %} 3) Metric-Space Conditional Means (case-insensitive title contains) {% endcomment %}
   {% for post in all_items %}
     {% assign t_lc = post.title | default: "" | downcase %}
     {% if t_lc contains "metric-space conditional means" %}
@@ -108,7 +106,7 @@ Notes:
     {% endif %}
   {% endfor %}
 
-  {# 4) ALL R&Rs (case-insensitive: "revise", "resubmit" OR "r&r") #}
+  {% comment %} 4) ALL R&Rs (case-insensitive: "revise", "resubmit" OR "r&r") {% endcomment %}
   {% for post in all_items %}
     {% assign v_lc = post.venue | default: "" | downcase %}
     {% if (v_lc contains "revise" and v_lc contains "resubmit") or (v_lc contains "r&r") %}
@@ -134,7 +132,7 @@ Notes:
     {% endif %}
   {% endfor %}
 
-  {# 5) ALL Econometrics publications #}
+  {% comment %} 5) ALL Policy publications {% endcomment %}
   {% for post in policy_pubs %}
     {% unless printed contains post.title %}
       {% assign yr = post.year %}
@@ -169,6 +167,7 @@ Notes:
 
 # Econometrics 
 
+{% assign econ_pubs = site.publications | where: "field", "Econometrics" %}
 {% if econ_pubs.size > 0 %}
 ## Publications
 {% for post in econ_pubs reversed %}
