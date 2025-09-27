@@ -94,7 +94,7 @@ Coauthors: show as “(with …)” after the title; we remove “David Van Dijc
 {% assign selected_html = selected_list | strip %}
 {% if selected_html != "<ul class=\"selected-list\"></ul>" %}
 # Selected publications
-<div class="selected-wide">
+<div class="selected-block">
   {{ selected_html }}
 </div>
 <hr/>
@@ -137,31 +137,26 @@ Coauthors: show as “(with …)” after the title; we remove “David Van Dijc
 {% endif %}
 
 <style>
-/* widen ONLY the Selected block; offset to clear the left avatar on desktop */
-:root { --avatar-offset: 220px; } /* tweak this if it still touches your photo */
+/* Desktop avatar clearance (tweak if needed) */
+:root { --avatar-offset: 260px; } /* try 240–300 depending on your avatar size/position */
 
-.selected-wide{
-  /* mobile/tablet: just use container width */
-}
+/* Selected block: keep normal page width; just pad left on desktop to avoid the avatar */
+.selected-block { }
 @media (min-width: 992px){
-  .selected-wide{
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: calc(-50vw + var(--avatar-offset));
-    margin-right: -50vw;
-    width: calc(100vw - var(--avatar-offset));
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
+  .selected-block { padding-left: var(--avatar-offset); }
 }
 
-/* One-line styling */
+/* Clean multiline styling (no overlap, wrap onto next line) */
 .selected-list { list-style: none; padding-left: 0; margin-left: 0; }
-.one-line-pub { margin: .35rem 0; line-height: 1.4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.one-line-pub { margin: .35rem 0; line-height: 1.5; }
 .pub-title { text-decoration: none; border-bottom: 1px solid rgba(0,0,0,.15); }
 .pub-title:hover { border-bottom-color: rgba(0,0,0,.35); }
 .pub-year { color: #666; }
 .pub-venue { font-style: italic; color: #444; }
 .pub-coauthors { color: #555; }
+
+/* If list feels too tight on mobile, add small left padding there too */
+@media (max-width: 991.98px){
+  .selected-block { padding-left: .25rem; padding-right: .25rem; }
+}
 </style>
