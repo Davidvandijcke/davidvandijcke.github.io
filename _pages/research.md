@@ -93,7 +93,7 @@ Coauthors: show as “(with …)” after the title; we remove “David Van Dijc
 
 {% assign selected_html = selected_list | strip %}
 {% if selected_html != "<ul class=\"selected-list\"></ul>" %}
-# Selected publications
+# Selected research
 <div class="selected-block">
   {{ selected_html }}
 </div>
