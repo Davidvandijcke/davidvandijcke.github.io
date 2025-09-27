@@ -10,18 +10,24 @@ header:
 
 {%- comment -%}
 Selected publications: one-line entries only.
-Priority: 1) Job Market Paper, 2) all R&Rs (venue contains 'Revise and Resubmit'),
-3) pubs in Journal of Public Economics + Proceedings of the National Academy of Sciences.
+Priority: 1) Job Market Paper
+         2) all items whose venue contains "Revise and Resubmit"
+         3) items whose venue contains "Journal of Public Economics" or "Proceedings of the National Academy of Sciences"
+NOTE: no filters in where_exp; match exact-case strings.
 {%- endcomment -%}
+
 {% assign all_items = site.publications | concat: site.wps %}
 
 {% assign jmp = all_items | where: "venue", "Job Market Paper" %}
-{% assign rr_all = all_items | where_exp:"p","p.venue and p.venue downcase contains 'revise and resubmit'" %}
-{% assign top_pubs_jpube = all_items | where_exp:"p","p.venue and p.venue downcase contains 'journal of public economics'" %}
-{% assign top_pubs_pnas  = all_items | where_exp:"p","p.venue and p.venue downcase contains 'proceedings of the national academy of sciences'" %}
+
+{% assign rr_all = all_items | where_exp:"p","p.venue and p.venue contains 'Revise and Resubmit'" %}
+
+{% assign top_pubs_jpube = all_items | where_exp:"p","p.venue and p.venue contains 'Journal of Public Economics'" %}
+{% assign top_pubs_pnas  = all_items | where_exp:"p","p.venue and p.venue contains 'Proceedings of the National Academy of Sciences'" %}
+
 {% assign selected_raw = jmp | concat: rr_all | concat: top_pubs_jpube | concat: top_pubs_pnas %}
 
-{%- comment -%} Deduplicate by title (preserve priority order) {%- endcomment -%}
+{%- comment -%} Deduplicate by title (preserve order) {%- endcomment -%}
 {% assign seen_titles = "" | split:"" %}
 {% assign selected = "" | split:"" %}
 {% for p in selected_raw %}
@@ -36,9 +42,7 @@ Priority: 1) Job Market Paper, 2) all R&Rs (venue contains 'Revise and Resubmit'
 <ul class="selected-list">
   {% for post in selected %}
     {% assign yr = post.year %}
-    {% if yr == nil or yr == "" %}
-      {% if post.date %}{% assign yr = post.date | date: "%Y" %}{% endif %}
-    {% endif %}
+    {% if (yr == nil or yr == "") and post.date %}{% assign yr = post.date | date: "%Y" %}{% endif %}
     <li class="one-line-pub">
       <span class="pub-authors">{{ post.authors }}</span>
       ·
@@ -55,15 +59,13 @@ Priority: 1) Job Market Paper, 2) all R&Rs (venue contains 'Revise and Resubmit'
 <hr/>
 {% endif %}
 
-{%- comment -%} Hide selected items from sections below? Set to false to show again. {%- endcomment -%}
+{%- comment -%} Hide selected items from sections below (set to false to show again) {%- endcomment -%}
 {% assign hide_selected = true %}
 {% assign selected_titles = selected | map: "title" %}
 
-# Econometrics
+# Econometrics 
 
 {% assign econ_pubs = site.publications | where: "field", "Econometrics" %}
-{% assign econ_wps  = site.wps          | where: "field", "Econometrics" %}
-
 {% if econ_pubs.size > 0 %}
 ## Publications
 {% for post in econ_pubs reversed %}
@@ -72,6 +74,7 @@ Priority: 1) Job Market Paper, 2) all R&Rs (venue contains 'Revise and Resubmit'
 {% endfor %}
 {% endif %}
 
+{% assign econ_wps = site.wps | where: "field", "Econometrics" %}
 {% if econ_wps.size > 0 %}
 ## Working Papers
 {% for post in econ_wps reversed %}
@@ -83,8 +86,6 @@ Priority: 1) Job Market Paper, 2) all R&Rs (venue contains 'Revise and Resubmit'
 # Policy
 
 {% assign policy_pubs = site.publications | where: "field", "Policy" %}
-{% assign policy_wps  = site.wps          | where: "field", "Policy" %}
-
 {% if policy_pubs.size > 0 %}
 ## Publications
 {% for post in policy_pubs reversed %}
@@ -93,6 +94,7 @@ Priority: 1) Job Market Paper, 2) all R&Rs (venue contains 'Revise and Resubmit'
 {% endfor %}
 {% endif %}
 
+{% assign policy_wps = site.wps | where: "field", "Policy" %}
 {% if policy_wps.size > 0 %}
 ## Working Papers
 {% for post in policy_wps reversed %}
