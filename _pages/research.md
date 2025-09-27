@@ -9,21 +9,34 @@ header:
 ---
 
 {% comment %}
-Selected publications: explicit curation + order.
-We match by exact title (case-insensitive) where you specified, and by venue for JMP.
-Links prefer 'link', then 'url' (relative), then 'doi', then 'pdf'.
-We also show authors, falling back across common front-matter keys.
-The Selected block is widened (full-bleed) without affecting sections below.
+Selected publications: explicit curation, ordered.
+Order:
+  1) Job Market Paper (by venue == "Job Market Paper")
+  2) Free Discontinuity Regression
+  3) A Test for Jumps in Metric-Space Conditional Means
+  4) Return to Office and the Tenure Distribution  (Revision Requested: REStat, 2025)
+  5) Refugee Return and Conflict: Evidence from a Natural Experiment (Revision Requested: AER, 2025)
+  6) Science Skepticism Reduces Compliance with COVID-19 Shelter-in-Place Policies (NHB, 2021)
+  7) Unmasking Partisanship: Polarization undermines public response to collective risk (JPubE, 2021)
+  8) Public response to government alerts saves lives during Russian invasion of Ukraine (PNAS, 2023)
+We match titles case-insensitively.
 {% endcomment %}
 
 {% assign all_items = site.publications | concat: site.wps %}
 
-{% assign printed = "" %} {# guard so an item added earlier won't repeat later in Selected #}
+{% assign printed = "" %}
+{% assign t_fdr   = "free discontinuity regression" %}
+{% assign t_mscm  = "a test for jumps in metric-space conditional means" %}
+{% assign t_rto   = "return to office and the tenure distribution" %}
+{% assign t_ref   = "refugee return and conflict: evidence from a natural experiment" %}
+{% assign t_nhb   = "science skepticism reduces compliance with covid-19 shelter-in-place policies" %}
+{% assign t_jpube = "unmasking partisanship: polarization undermines public response to collective risk" %}
+{% assign t_pnas  = "public response to government alerts saves lives during russian invasion of ukraine" %}
 
 {% capture selected_list %}
 <ul class="selected-list">
 
-  {%- comment -%} 1) JOB MARKET PAPER (by venue) {%- endcomment -%}
+  {%- comment -%} 1) Job Market Paper by venue {%- endcomment -%}
   {% for post in all_items %}
     {% if post.venue == "Job Market Paper" %}
       {% unless printed contains post.title %}
@@ -35,26 +48,19 @@ The Selected block is widened (full-bleed) without affecting sections below.
         {% assign auth = post.authors | default: post.author | default: post.coauthors %}
         <li class="one-line-pub">
           {% if auth %}<span class="pub-authors">{{ auth }}</span><span class="sep"> · </span>{% endif %}
-          {% if href != "" %}<a href="{{ href }}" class="pub-title" target="_blank" rel="noopener">“{{ post.title }}”</a>
-          {% else %}<span class="pub-title">“{{ post.title }}”</span>{% endif %}
-          {% if yr %} <span class="pub-year">({{ yr }})</span>{% endif %}.
-          <em class="pub-venue">{{ post.venue }}</em>
+          {% if href != "" %}<a href="{{ href }}" class="pub-title" target="_blank" rel="noopener">“{{ post.title }}”</a>{% else %}<span class="pub-title">“{{ post.title }}”</span>{% endif %}
+          {% if yr %} <span class="pub-year">({{ yr }})</span>{% endif %}. <em class="pub-venue">{{ post.venue }}</em>
         </li>
         {% assign printed = printed | append: "||" | append: post.title %}
       {% endunless %}
     {% endif %}
   {% endfor %}
 
-  {%- assign t1 = "free discontinuity regression" -%}
-  {%- assign t2 = "metric-space conditional means" -%}
-  {%- assign t3 = "return to office and the tenure distribution" -%}
-  {%- assign t4 = "refugee return and conflict: evidence from a natural experiment" -%}
-  {%- assign t5 = "science skepticism reduces compliance with covid-19 shelter-in-place policies" -%}
-  {%- assign t6 = "unmasking partisanship: polarization undermines public response to collective risk" -%}
-  {%- assign t7 = "public response to government alerts saves lives during russian invasion of ukraine" -%}
+  {%- comment -%} helper: render-by-title (repeat block; no macros in GH Pages) {%- endcomment -%}
+  {% assign targets = t_fdr | append:"||" | append:t_mscm | append:"||" | append:t_rto | append:"||" | append:t_ref | append:"||" | append:t_nhb | append:"||" | append:t_jpube | append:"||" | append:t_pnas %}
+  {% assign targets_list = targets | split:"||" %}
 
-  {%- comment -%} helper to render by matching title (case-insensitive) {%- endcomment -%}
-  {% macro render_by_title target %}
+  {% for target in targets_list %}
     {% for post in all_items %}
       {% assign t_lc = post.title | default: "" | downcase %}
       {% if t_lc == target %}
@@ -67,39 +73,19 @@ The Selected block is widened (full-bleed) without affecting sections below.
           {% assign auth = post.authors | default: post.author | default: post.coauthors %}
           <li class="one-line-pub">
             {% if auth %}<span class="pub-authors">{{ auth }}</span><span class="sep"> · </span>{% endif %}
-            {% if href != "" %}<a href="{{ href }}" class="pub-title" target="_blank" rel="noopener">“{{ post.title }}”</a>
-            {% else %}<span class="pub-title">“{{ post.title }}”</span>{% endif %}
-            {% if yr %} <span class="pub-year">({{ yr }})</span>{% endif %}.
-            <em class="pub-venue">{{ post.venue }}</em>
+            {% if href != "" %}<a href="{{ href }}" class="pub-title" target="_blank" rel="noopener">“{{ post.title }}”</a>{% else %}<span class="pub-title">“{{ post.title }}”</span>{% endif %}
+            {% if yr %} <span class="pub-year">({{ yr }})</span>{% endif %}. <em class="pub-venue">{{ post.venue }}</em>
           </li>
           {% assign printed = printed | append: "||" | append: post.title %}
         {% endunless %}
       {% endif %}
     {% endfor %}
-  {% endmacro %}
-
-  {%- comment -%} 2) FDR {%- endcomment -%}
-  {% call render_by_title t1 %}{% endcall %}
-
-  {%- comment -%} 3) MSCM {%- endcomment -%}
-  {% call render_by_title t2 %}{% endcall %}
-
-  {%- comment -%} 4) R&R: Return to Office… {%- endcomment -%}
-  {% call render_by_title t3 %}{% endcall %}
-
-  {%- comment -%} 5) R&R: Refugee Return… {%- endcomment -%}
-  {% call render_by_title t4 %}{% endcall %}
-
-  {%- comment -%} 6–8) Specific policy publications {%- endcomment -%}
-  {% call render_by_title t5 %}{% endcall %}
-  {% call render_by_title t6 %}{% endcall %}
-  {% call render_by_title t7 %}{% endcall %}
+  {% endfor %}
 
 </ul>
 {% endcapture %}
 
 {% assign selected_html = selected_list | strip %}
-
 {% if selected_html != "<ul class=\"selected-list\"></ul>" %}
 # Selected publications
 <div class="selected-wide">
@@ -145,18 +131,8 @@ The Selected block is widened (full-bleed) without affecting sections below.
 {% endif %}
 
 <style>
-/* one-line selected list */
-.selected-list { list-style: none; padding-left: 0; margin-left: 0; }
-.one-line-pub { margin: .35rem 0; line-height: 1.4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.pub-authors { font-weight: 500; }
-.pub-title { text-decoration: none; border-bottom: 1px solid rgba(0,0,0,.15); }
-.pub-title:hover { border-bottom-color: rgba(0,0,0,.35); }
-.pub-year { color: #666; }
-.pub-venue { font-style: italic; color: #444; }
-.sep { color: #aaa; }
-
-/* make ONLY the Selected block full-bleed */
-.selected-wide {
+/* Selected block: widen only this section */
+.selected-wide{
   position: relative;
   left: 50%;
   right: 50%;
@@ -166,4 +142,14 @@ The Selected block is widened (full-bleed) without affecting sections below.
   padding-left: 1rem;
   padding-right: 1rem;
 }
+
+/* One-line styling */
+.selected-list { list-style: none; padding-left: 0; margin-left: 0; }
+.one-line-pub { margin: .35rem 0; line-height: 1.4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pub-authors { font-weight: 500; }
+.pub-title { text-decoration: none; border-bottom: 1px solid rgba(0,0,0,.15); }
+.pub-title:hover { border-bottom-color: rgba(0,0,0,.35); }
+.pub-year { color: #666; }
+.pub-venue { font-style: italic; color: #444; }
+.sep { color: #aaa; }
 </style>
