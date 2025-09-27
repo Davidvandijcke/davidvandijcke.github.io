@@ -13,12 +13,11 @@ Selected publications (one-line). Priority:
 1) Job Market Paper
 2) Free Discontinuity Regression
 3) Metric-Space Conditional Means
-4) all items whose venue contains "Revise and Resubmit"
-5) all Econometrics publications (econ_pubs)
+4) all R&Rs (any field)
+5) all Econometrics publications
 
-Safe-mode friendly:
-- No 'where_exp', 'group_by', 'push', or 'continue'
-- Use simple if/contains and a 'printed' guard to avoid duplicates within Selected
+We do case-insensitive checks by assigning downcased helpers,
+which is safe in GitHub Pages (no filters inside where_exp).
 {%- endcomment -%}
 
 {% assign all_items = site.publications | concat: site.wps %}
@@ -27,22 +26,23 @@ Safe-mode friendly:
 {% assign printed = "" %}
 
 {% capture selected_list %}
-  <ul class="selected-list">
-  {%- comment -%} 1) Job Market Paper {%- endcomment -%}
+<ul class="selected-list">
+
+  {%- comment -%} 1) Job Market Paper (exact venue) {%- endcomment -%}
   {% for post in all_items %}
-    {% if post.venue == "Job Market Paper" %}
+    {% assign v = post.venue | default: "" %}
+    {% if v == "Job Market Paper" %}
       {% unless printed contains post.title %}
         {% assign yr = post.year %}
         {% if (yr == nil or yr == "") and post.date %}{% assign yr = post.date | date: "%Y" %}{% endif %}
         <li class="one-line-pub">
-          <span class="pub-authors">{{ post.authors }}</span>
-          ·
+          {% if post.authors %}<span class="pub-authors">{{ post.authors }}</span><span class="sep"> · </span>{% endif %}
           {% if post.link %}
             <a href="{{ post.link }}" class="pub-title" target="_blank" rel="noopener">“{{ post.title }}”</a>
           {% else %}
             <span class="pub-title">“{{ post.title }}”</span>
           {% endif %}
-          {% if yr %} ({{ yr }}){% endif %}.
+          {% if yr %} <span class="pub-year">({{ yr }})</span>{% endif %}.
           <em class="pub-venue">{{ post.venue }}</em>
         </li>
         {% assign printed = printed | append: "||" | append: post.title %}
@@ -50,21 +50,21 @@ Safe-mode friendly:
     {% endif %}
   {% endfor %}
 
-  {%- comment -%} 2) Free Discontinuity Regression (match by title substring; adjust if your casing differs) {%- endcomment -%}
+  {%- comment -%} 2) Free Discontinuity Regression (case-insensitive title contains) {%- endcomment -%}
   {% for post in all_items %}
-    {% if post.title and post.title contains "Free Discontinuity" %}
+    {% assign t_lc = post.title | default: "" | downcase %}
+    {% if t_lc contains "free discontinuity" %}
       {% unless printed contains post.title %}
         {% assign yr = post.year %}
         {% if (yr == nil or yr == "") and post.date %}{% assign yr = post.date | date: "%Y" %}{% endif %}
         <li class="one-line-pub">
-          <span class="pub-authors">{{ post.authors }}</span>
-          ·
+          {% if post.authors %}<span class="pub-authors">{{ post.authors }}</span><span class="sep"> · </span>{% endif %}
           {% if post.link %}
             <a href="{{ post.link }}" class="pub-title" target="_blank" rel="noopener">“{{ post.title }}”</a>
           {% else %}
             <span class="pub-title">“{{ post.title }}”</span>
           {% endif %}
-          {% if yr %} ({{ yr }}){% endif %}.
+          {% if yr %} <span class="pub-year">({{ yr }})</span>{% endif %}.
           <em class="pub-venue">{{ post.venue }}</em>
         </li>
         {% assign printed = printed | append: "||" | append: post.title %}
@@ -72,21 +72,21 @@ Safe-mode friendly:
     {% endif %}
   {% endfor %}
 
-  {%- comment -%} 3) Metric-Space Conditional Means (match by title substring; adjust casing if needed) {%- endcomment -%}
+  {%- comment -%} 3) Metric-Space Conditional Means (case-insensitive title contains) {%- endcomment -%}
   {% for post in all_items %}
-    {% if post.title and post.title contains "metric-space conditional means" %}
+    {% assign t_lc = post.title | default: "" | downcase %}
+    {% if t_lc contains "metric-space conditional means" %}
       {% unless printed contains post.title %}
         {% assign yr = post.year %}
         {% if (yr == nil or yr == "") and post.date %}{% assign yr = post.date | date: "%Y" %}{% endif %}
         <li class="one-line-pub">
-          <span class="pub-authors">{{ post.authors }}</span>
-          ·
+          {% if post.authors %}<span class="pub-authors">{{ post.authors }}</span><span class="sep"> · </span>{% endif %}
           {% if post.link %}
             <a href="{{ post.link }}" class="pub-title" target="_blank" rel="noopener">“{{ post.title }}”</a>
           {% else %}
             <span class="pub-title">“{{ post.title }}”</span>
           {% endif %}
-          {% if yr %} ({{ yr }}){% endif %}.
+          {% if yr %} <span class="pub-year">({{ yr }})</span>{% endif %}.
           <em class="pub-venue">{{ post.venue }}</em>
         </li>
         {% assign printed = printed | append: "||" | append: post.title %}
@@ -94,21 +94,21 @@ Safe-mode friendly:
     {% endif %}
   {% endfor %}
 
-  {%- comment -%} 4) All R&Rs (venue contains substring) {%- endcomment -%}
+  {%- comment -%} 4) All R&Rs (case-insensitive venue contains both 'revise' and 'resubmit') {%- endcomment -%}
   {% for post in all_items %}
-    {% if post.venue and post.venue contains "Revise and Resubmit" %}
+    {% assign v_lc = post.venue | default: "" | downcase %}
+    {% if v_lc contains "revise" and v_lc contains "resubmit" %}
       {% unless printed contains post.title %}
         {% assign yr = post.year %}
         {% if (yr == nil or yr == "") and post.date %}{% assign yr = post.date | date: "%Y" %}{% endif %}
         <li class="one-line-pub">
-          <span class="pub-authors">{{ post.authors }}</span>
-          ·
+          {% if post.authors %}<span class="pub-authors">{{ post.authors }}</span><span class="sep"> · </span>{% endif %}
           {% if post.link %}
             <a href="{{ post.link }}" class="pub-title" target="_blank" rel="noopener">“{{ post.title }}”</a>
           {% else %}
             <span class="pub-title">“{{ post.title }}”</span>
           {% endif %}
-          {% if yr %} ({{ yr }}){% endif %}.
+          {% if yr %} <span class="pub-year">({{ yr }})</span>{% endif %}.
           <em class="pub-venue">{{ post.venue }}</em>
         </li>
         {% assign printed = printed | append: "||" | append: post.title %}
@@ -116,26 +116,25 @@ Safe-mode friendly:
     {% endif %}
   {% endfor %}
 
-  {%- comment -%} 5) All published Econometrics papers (econ_pubs) {%- endcomment -%}
+  {%- comment -%} 5) All published Econometrics papers {%- endcomment -%}
   {% for post in econ_pubs %}
     {% unless printed contains post.title %}
       {% assign yr = post.year %}
       {% if (yr == nil or yr == "") and post.date %}{% assign yr = post.date | date: "%Y" %}{% endif %}
       <li class="one-line-pub">
-        <span class="pub-authors">{{ post.authors }}</span>
-        ·
+        {% if post.authors %}<span class="pub-authors">{{ post.authors }}</span><span class="sep"> · </span>{% endif %}
         {% if post.link %}
           <a href="{{ post.link }}" class="pub-title" target="_blank" rel="noopener">“{{ post.title }}”</a>
         {% else %}
           <span class="pub-title">“{{ post.title }}”</span>
         {% endif %}
-        {% if yr %} ({{ yr }}){% endif %}.
+        {% if yr %} <span class="pub-year">({{ yr }})</span>{% endif %}.
         <em class="pub-venue">{{ post.venue }}</em>
       </li>
       {% assign printed = printed | append: "||" | append: post.title %}
     {% endunless %}
   {% endfor %}
-  </ul>
+</ul>
 {% endcapture %}
 
 {% assign selected_html = selected_list | strip %}
@@ -183,8 +182,11 @@ Safe-mode friendly:
 
 <style>
 .selected-list { list-style: none; padding-left: 0; margin-left: 0; }
-.one-line-pub { margin: .35rem 0; }
+.one-line-pub { margin: .4rem 0 .45rem 0; line-height: 1.35; }
 .pub-authors { font-weight: 500; }
-.pub-title { text-decoration: none; }
-.pub-venue { font-style: italic; }
+.pub-title { text-decoration: none; border-bottom: 1px solid rgba(0,0,0,.15); }
+.pub-title:hover { border-bottom-color: rgba(0,0,0,.35); }
+.pub-year { color: #666; }
+.pub-venue { font-style: italic; color: #444; }
+.sep { color: #aaa; }
 </style>
