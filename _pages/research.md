@@ -137,26 +137,52 @@ Coauthors: show as “(with …)” after the title; we remove “David Van Dijc
 {% endif %}
 
 <style>
-/* Desktop avatar clearance (tweak if needed) */
-:root { --avatar-offset: 260px; } /* try 240–300 depending on your avatar size/position */
+/* ========= Selected publications (scoped styles) ========= */
+/* Tweak this if the avatar still overlaps on large screens */
+:root { --selected-top-offset-desktop: 140px; }
 
-/* Selected block: keep normal page width; just pad left on desktop to avoid the avatar */
-.selected-block { }
-@media (min-width: 992px){
-  .selected-block { padding-left: var(--avatar-offset); }
+/* Container for the curated list */
+.selected-block {
+  margin-top: 0;                 /* mobile/tablet: no extra offset */
 }
 
-/* Clean multiline styling (no overlap, wrap onto next line) */
-.selected-list { list-style: none; padding-left: 0; margin-left: 0; }
-.one-line-pub { margin: .35rem 0; line-height: 1.5; }
-.pub-title { text-decoration: none; border-bottom: 1px solid rgba(0,0,0,.15); }
-.pub-title:hover { border-bottom-color: rgba(0,0,0,.35); }
-.pub-year { color: #666; }
-.pub-venue { font-style: italic; color: #444; }
+/* Add vertical clearance only on desktop to avoid the profile image */
+@media (min-width: 992px) {
+  .selected-block {
+    margin-top: var(--selected-top-offset-desktop);
+  }
+}
+
+/* List + item layout */
+.selected-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.one-line-pub {
+  margin: 0.35rem 0;
+  line-height: 1.5;             /* readable, wraps to multiple lines when needed */
+}
+
+/* Title link */
+.pub-title {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,.15);
+}
+.pub-title:hover,
+.pub-title:focus {
+  border-bottom-color: rgba(0,0,0,.35);
+}
+
+/* Metadata */
+.pub-year   { color: #666; }
+.pub-venue  { font-style: italic; color: #444; }
 .pub-coauthors { color: #555; }
 
-/* If list feels too tight on mobile, add small left padding there too */
-@media (max-width: 991.98px){
-  .selected-block { padding-left: .25rem; padding-right: .25rem; }
+/* Small-screen refinements */
+@media (max-width: 575.98px) {
+  .one-line-pub { line-height: 1.6; }
+  .pub-title { border-bottom-width: 0.75px; }
 }
 </style>
