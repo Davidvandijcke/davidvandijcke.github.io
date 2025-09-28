@@ -43,10 +43,7 @@ Coauthors: show as “(with …)” after the title; we remove “David Van Dijc
     {% if post.venue == "Job Market Paper" %}
       {% unless printed contains post.title %}
         {% assign yr = post.year %}{% if (yr == nil or yr == "") and post.date %}{% assign yr = post.date | date: "%Y" %}{% endif %}
-        {% assign href = post.link | default: "" %}
-        {% if href == "" and post.url %}{% assign href = post.url | relative_url %}{% endif %}
-        {% if href == "" and post.doi %}{% assign href = "https://doi.org/" | append: post.doi %}{% endif %}
-        {% if href == "" and post.pdf %}{% assign href = post.pdf %}{% endif %}
+        {% assign href = post.paperurl | default: "" %}
         {% assign auth_raw = post.authors | default: post.author | default: post.coauthors | default: "" %}
         {% assign co = auth_raw | replace: "David Van Dijcke, ", "" | replace: ", David Van Dijcke", "" | replace: "David Van Dijcke", "" | strip %}
         <li class="one-line-pub">
@@ -70,10 +67,7 @@ Coauthors: show as “(with …)” after the title; we remove “David Van Dijc
       {% if t_lc == target %}
         {% unless printed contains post.title %}
           {% assign yr = post.year %}{% if (yr == nil or yr == "") and post.date %}{% assign yr = post.date | date: "%Y" %}{% endif %}
-          {% assign href = post.link | default: "" %}
-          {% if href == "" and post.url %}{% assign href = post.url | relative_url %}{% endif %}
-          {% if href == "" and post.doi %}{% assign href = "https://doi.org/" | append: post.doi %}{% endif %}
-          {% if href == "" and post.pdf %}{% assign href = post.pdf %}{% endif %}
+          {% assign href = post.paperurl | default: "" %}
           {% assign auth_raw = post.authors | default: post.author | default: post.coauthors | default: "" %}
           {% assign co = auth_raw | replace: "David Van Dijcke, ", "" | replace: ", David Van Dijcke", "" | replace: "David Van Dijcke", "" | strip %}
           <li class="one-line-pub">
