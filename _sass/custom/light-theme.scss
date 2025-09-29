@@ -67,11 +67,20 @@ body {
   min-height: 100vh;
 }
 
+// Main container to use flex properly
+#main {
+  @media (min-width: 64em) {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+}
+
 // Main layout - Grid based
 .layout--single {
   display: flex;
   flex-wrap: wrap;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
   gap: 3rem;
@@ -264,9 +273,16 @@ body {
 // Main content area
 .archive {
   width: 100%;
-  
+  flex: 1;
+  max-width: 100%;
+
   @media (min-width: 64em) {
-    width: auto;
+    width: 100%;
+    flex: 1;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
 
