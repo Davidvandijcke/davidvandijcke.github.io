@@ -76,20 +76,22 @@ body {
   }
 }
 
-// Main layout - Grid based
+// Main layout - use full width
 .layout--single {
   display: flex;
   flex-wrap: wrap;
-  max-width: 1400px;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
   padding: 2rem;
   gap: 3rem;
-  
+
   @media (min-width: 64em) {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 4rem;
+    display: flex;
+    justify-content: flex-start;
+    gap: 3rem;
     align-items: start;
+    max-width: 1600px;
   }
 }
 
@@ -270,19 +272,21 @@ body {
   to { width: 100%; }
 }
 
-// Main content area
+// Main content area - override Susy grid constraints
 .archive {
-  width: 100%;
-  flex: 1;
-  max-width: 100%;
+  width: 100% !important;
+  flex: 1 1 100% !important;
+  max-width: 100% !important;
+  float: none !important;
 
-  @media (min-width: 64em) {
-    width: 100%;
-    flex: 1;
+  @include breakpoint($large) {
+    width: calc(100% - 320px - 3rem) !important;
+    max-width: none !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
+    float: none !important;
   }
 }
 
