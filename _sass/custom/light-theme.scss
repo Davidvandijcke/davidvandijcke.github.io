@@ -280,13 +280,34 @@ body {
   float: none !important;
 
   @include breakpoint($large) {
-    width: calc(100% - 320px - 3rem) !important;
+    width: 100% !important;
     max-width: none !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
     float: none !important;
+  }
+}
+
+// Force homepage content to stretch
+.layout--single #main {
+  @include breakpoint($large) {
+    display: flex !important;
+    width: 100% !important;
+    max-width: 1600px !important;
+    margin: 0 auto !important;
+
+    .sidebar {
+      flex: 0 0 280px !important;
+      width: 280px !important;
+    }
+
+    .archive {
+      flex: 1 !important;
+      width: calc(100% - 280px - 2rem) !important;
+      margin-left: 0 !important;
+    }
   }
 }
 
