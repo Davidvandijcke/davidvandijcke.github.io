@@ -21,7 +21,7 @@ class EnhancedEffects {
     this.initHoverEffects();
     this.initCVPopup();
     if (!this.isMobile) {
-      this.initCursorTrail();
+      // this.initCursorTrail(); // Disabled blue cursor dot
       this.initInteractiveBackground();
     }
     this.initSmoothScroll();

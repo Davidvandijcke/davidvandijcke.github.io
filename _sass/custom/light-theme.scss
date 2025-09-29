@@ -273,7 +273,7 @@ body {
 // Page content with sophisticated styling
 .page__content {
   background: $bg-card;
-  box-shadow: 
+  box-shadow:
     0 1px 3px 0 rgba(0, 0, 0, 0.1),
     0 1px 2px 0 rgba(0, 0, 0, 0.06);
   border: 1px solid $border-color;
@@ -281,6 +281,8 @@ body {
   padding: 3rem;
   margin-bottom: 2rem;
   position: relative;
+  max-width: 100%;
+  width: 100%;
   
   // Ensure all content is visible
   * {
@@ -496,16 +498,7 @@ body {
       font-weight: 500;
       
       &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 0;
-        height: 3px;
-        background: $gradient-2;
-        transform: translateX(-50%);
-        transition: width 0.3s ease;
-        border-radius: 3px;
+        display: none;
       }
       
       &:hover,
