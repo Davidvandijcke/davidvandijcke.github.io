@@ -87,12 +87,14 @@ body {
 // Enhanced Sidebar with light theme
 .sidebar {
   width: 100%;
-  
+
   @media (min-width: 64em) {
-    width: 320px;
+    width: 280px;
     position: sticky;
     top: 100px;
     height: fit-content;
+    flex: 0 0 280px;
+    max-width: 280px;
   }
   
   &__right {
@@ -125,11 +127,13 @@ body {
   .author__avatar {
     text-align: center;
     margin-bottom: 1.5rem;
-    
+    width: auto !important;
+    display: block !important;
+
     img {
-      width: 400px;
-      height: 400px;
-      max-width: 400px;
+      width: 250px;
+      height: 250px;
+      max-width: 250px;
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid $bg-primary;
@@ -899,9 +903,9 @@ body {
   }
   
   .sidebar .author__avatar img {
-    width: 300px;
-    height: 300px;
-    max-width: 300px;
+    width: 200px;
+    height: 200px;
+    max-width: 200px;
   }
   
   .author__name {
