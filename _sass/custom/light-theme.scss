@@ -279,7 +279,7 @@ body {
   max-width: 100% !important;
   float: none !important;
 
-  @include breakpoint($large) {
+  @media (min-width: 64em) {
     width: 100% !important;
     max-width: none !important;
     margin-left: 0 !important;
@@ -292,7 +292,7 @@ body {
 
 // Force homepage content to stretch
 .layout--single #main {
-  @include breakpoint($large) {
+  @media (min-width: 64em) {
     display: flex !important;
     width: 100% !important;
     max-width: 1600px !important;
