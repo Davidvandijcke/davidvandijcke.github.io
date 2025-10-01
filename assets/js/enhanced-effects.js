@@ -453,29 +453,10 @@ class EnhancedEffects {
     }
   }
   
-  // Smart navigation
+  // Smart navigation - disabled to keep minimal nav style
   initSmartNavigation() {
-    const sections = document.querySelectorAll('.page__content section, .archive');
-    const navLinks = document.querySelectorAll('.greedy-nav a');
-    
-    window.addEventListener('scroll', () => {
-      let current = '';
-      
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.scrollY >= (sectionTop - 200)) {
-          current = section.getAttribute('id') || '';
-        }
-      });
-      
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').includes(current)) {
-          link.classList.add('active');
-        }
-      });
-    });
+    // Disabled - causes active states on scroll that conflict with minimal design
+    return;
   }
   
   // Enhanced research assistant
