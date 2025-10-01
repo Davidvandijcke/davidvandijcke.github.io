@@ -196,24 +196,43 @@
 </div>
 
 <script>
-  const aiButton = document.getElementById('aiButton');
-  const aiModal = document.getElementById('aiModal');
-  const aiBackdrop = document.getElementById('aiBackdrop');
-  const aiClose = document.getElementById('aiClose');
+(function() {
+  function initChatbox() {
+    const aiButton = document.getElementById('aiButton');
+    const aiModal = document.getElementById('aiModal');
+    const aiBackdrop = document.getElementById('aiBackdrop');
+    const aiClose = document.getElementById('aiClose');
 
-  function openModal() {
-    aiModal.style.display = 'flex';
-    aiButton.style.display = 'none';
-    aiBackdrop.style.display = 'block';
+    if (!aiButton || !aiModal || !aiBackdrop || !aiClose) {
+      setTimeout(initChatbox, 100);
+      return;
+    }
+
+    function openModal(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      aiModal.style.display = 'flex';
+      aiButton.style.display = 'none';
+      aiBackdrop.style.display = 'block';
+    }
+
+    function closeModal(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      aiModal.style.display = 'none';
+      aiButton.style.display = 'flex';
+      aiBackdrop.style.display = 'none';
+    }
+
+    aiButton.addEventListener('click', openModal);
+    aiClose.addEventListener('click', closeModal);
+    aiBackdrop.addEventListener('click', closeModal);
   }
 
-  function closeModal() {
-    aiModal.style.display = 'none';
-    aiButton.style.display = 'flex';
-    aiBackdrop.style.display = 'none';
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initChatbox);
+  } else {
+    initChatbox();
   }
-
-  aiButton.addEventListener('click', openModal);
-  aiClose.addEventListener('click', closeModal);
-  aiBackdrop.addEventListener('click', closeModal);
+})();
 </script>
