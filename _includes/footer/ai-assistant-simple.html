@@ -121,13 +121,23 @@
     border-radius: 10px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     overflow: hidden;
+    display: flex;
   }
-  
+
   .ai-modal iframe {
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    height: 100% !important;
     border: none;
     border-radius: 8px;
+    flex: 1;
+  }
+
+  /* Force Gradio iframe content to full width */
+  .ai-modal iframe::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
   }
   
   /* Backdrop for better focus */
@@ -163,9 +173,9 @@
   }
 </style>
 
-<div class="ai-backdrop" id="aiBackdrop" onclick="document.getElementById('aiModal').style.display='none'; document.getElementById('aiButton').style.display='flex'; document.getElementById('aiBackdrop').style.display='none';"></div>
+<div class="ai-backdrop" id="aiBackdrop"></div>
 
-<button class="ai-button" onclick="document.getElementById('aiModal').style.display='flex'; document.getElementById('aiButton').style.display='none'; document.getElementById('aiBackdrop').style.display='block';" id="aiButton">
+<button class="ai-button" id="aiButton">
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" fill="currentColor"/>
     <circle cx="8" cy="9" r="1" fill="currentColor"/>
@@ -178,9 +188,32 @@
 <div class="ai-modal" id="aiModal">
   <div class="ai-modal-header">
     <h3>Research Assistant</h3>
-    <button class="ai-close" onclick="document.getElementById('aiModal').style.display='none'; document.getElementById('aiButton').style.display='flex'; document.getElementById('aiBackdrop').style.display='none';">✕</button>
+    <button class="ai-close" id="aiClose">✕</button>
   </div>
   <div class="ai-modal-content">
     <iframe src="https://dvdijcke-david-research-assistant.hf.space" loading="eager" scrolling="auto"></iframe>
   </div>
 </div>
+
+<script>
+  const aiButton = document.getElementById('aiButton');
+  const aiModal = document.getElementById('aiModal');
+  const aiBackdrop = document.getElementById('aiBackdrop');
+  const aiClose = document.getElementById('aiClose');
+
+  function openModal() {
+    aiModal.style.display = 'flex';
+    aiButton.style.display = 'none';
+    aiBackdrop.style.display = 'block';
+  }
+
+  function closeModal() {
+    aiModal.style.display = 'none';
+    aiButton.style.display = 'flex';
+    aiBackdrop.style.display = 'none';
+  }
+
+  aiButton.addEventListener('click', openModal);
+  aiClose.addEventListener('click', closeModal);
+  aiBackdrop.addEventListener('click', closeModal);
+</script>
