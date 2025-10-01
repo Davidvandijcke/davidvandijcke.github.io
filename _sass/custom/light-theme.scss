@@ -40,24 +40,18 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   
-  // Subtle animated gradient background
+  // Subtle static gradient background
   &::before {
     content: '';
     position: fixed;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.03) 0%, transparent 70%);
-    animation: gradientShift 20s ease infinite;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.02) 0%, transparent 50%);
     pointer-events: none;
     z-index: 0;
   }
-}
-
-@keyframes gradientShift {
-  0%, 100% { transform: rotate(0deg) scale(1); }
-  50% { transform: rotate(180deg) scale(1.1); }
 }
 
 // Container structure
@@ -172,11 +166,12 @@ body {
     margin-bottom: 1rem !important;
     
     .author__name {
-      font-size: 2rem;
-      font-weight: 700;
+      font-size: 2.25rem;
+      font-weight: 600;
       margin: 0 0 0.5rem 0;
       color: $text-primary;
       position: relative;
+      letter-spacing: -0.02em;
       display: inline-block;
       
       // Animated underline
@@ -195,6 +190,8 @@ body {
     .author__bio {
       color: $text-secondary;
       margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.6;
       p {
         margin: 0;
         color: $text-secondary;
