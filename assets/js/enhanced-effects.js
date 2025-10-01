@@ -99,18 +99,19 @@ class EnhancedEffects {
       const text = authorName.textContent;
       authorName.textContent = '';
       authorName.dataset.typed = 'true';
-      
+
       const cursor = document.createElement('span');
       cursor.className = 'typewriter-cursor';
       cursor.textContent = '|';
       cursor.style.cssText = `
         display: inline-block;
-        animation: blink 0.7s infinite;
+        animation: smoothBlink 1s ease-in-out infinite;
         color: #2563eb;
         font-weight: 300;
+        will-change: opacity;
       `;
       authorName.appendChild(cursor);
-      
+
       let i = 0;
       const typeChar = () => {
         if (i < text.length) {
@@ -118,10 +119,14 @@ class EnhancedEffects {
           i++;
           setTimeout(typeChar, 80);
         } else {
-          setTimeout(() => cursor.style.opacity = '0', 1000);
+          setTimeout(() => {
+            cursor.style.animation = 'none';
+            cursor.style.opacity = '0';
+            cursor.style.transition = 'opacity 0.3s ease';
+          }, 1000);
         }
       };
-      
+
       setTimeout(typeChar, 300);
     }
   }
@@ -710,11 +715,12 @@ class EnhancedEffects {
 // Add CSS
 const style = document.createElement('style');
 style.textContent = `
-  @keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
+  @keyframes smoothBlink {
+    0%, 40% { opacity: 1; }
+    50%, 90% { opacity: 0; }
+    100% { opacity: 1; }
   }
-  
+
   @keyframes ripple-animation {
     to {
       transform: scale(4);
